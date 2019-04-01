@@ -39,4 +39,6 @@ phpcs.xml.dist export-ignore
 package-lock.json export-ignore
 package.json export-ignore
 
+/README.md export-ignore
+
 /vendor/
