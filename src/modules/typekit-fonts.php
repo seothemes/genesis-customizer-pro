@@ -2,6 +2,9 @@
 
 namespace GenesisCustomizer;
 
+// Enable config.
+add_filter('genesis-customizer_general_typekit_module', '__return_true' );
+
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\load_typekit' );
 /**
  * Description of expected behavior.

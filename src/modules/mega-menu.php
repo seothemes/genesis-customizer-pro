@@ -2,6 +2,9 @@
 
 namespace GenesisCustomizer;
 
+// Enable config.
+add_filter('genesis-customizer_menus_mega_module', '__return_true' );
+
 add_action( 'admin_init', __NAMESPACE__ . '\admin_class' );
 /**
  * Description of expected behavior.

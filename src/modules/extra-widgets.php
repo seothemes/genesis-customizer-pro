@@ -2,6 +2,10 @@
 
 namespace GenesisCustomizer;
 
+// Enable config.
+add_filter('genesis-customizer_header_above-header_module', '__return_true' );
+add_filter('genesis-customizer_footer_above-footer_module', '__return_true' );
+
 add_action( 'genesis_before_header_wrap', __NAMESPACE__ . '\above_header' );
 /**
  * Description of expected behavior.

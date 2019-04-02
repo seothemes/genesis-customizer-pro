@@ -2,7 +2,10 @@
 
 namespace GenesisCustomizer;
 
-add_action( 'genesis_before', __NAMESPACE__ . '\blog_setup', 15 );
+// Enable config.
+add_filter('genesis-customizer_archive_blog-layout_module', '__return_true' );
+
+add_action( 'genesis_meta', __NAMESPACE__ . '\blog_setup', 15 );
 /**
  * Description of expected behavior.
  *
@@ -17,9 +20,10 @@ function blog_setup() {
 
 	add_action( 'genesis_after_header', __NAMESPACE__ . '\remove_entry_elements' );
 	add_action( 'genesis_entry_header', __NAMESPACE__ . '\add_entry_elements' );
+	add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\load_isotope' );
+	add_action( 'genesis_after_header', __NAMESPACE__ . '\add_masonry_wrap' );
 	add_filter( 'genesis_attr_entry', __NAMESPACE__ . '\featured_image_first' );
 	add_filter( 'genesis_attr_entry-image-link', __NAMESPACE__ . '\featured_image_spacing' );
-	add_filter( 'genesis_attr_content', __NAMESPACE__ . '\masonry_layout' );
 }
 
 /**
@@ -93,7 +97,9 @@ function featured_image_first( $atts ) {
  *
  * @since 1.0.0
  *
- * @return void
+ * @param array $atts
+ *
+ * @return array
  */
 function featured_image_spacing( $atts ) {
 	$spacing = _get_value( 'archive_blog-layout_featured-image-spacing' );
@@ -112,12 +118,50 @@ function featured_image_spacing( $atts ) {
  *
  * @return void
  */
-function masonry_layout( $atts ) {
-	$masonry = _get_value( 'archive_blog-layout_masonry' );
-
-	if ( $masonry ) {
-		$atts['class'] .= ' masonry';
+function load_isotope() {
+	if ( ! _get_value( 'archive_blog-layout_masonry' ) ) {
+		return;
 	}
 
-	return $atts;
+	wp_register_script(
+		_get_handle() . '-isotope',
+		_get_url() . 'assets/js/min/isotope.min.js',
+		[ 'jquery', 'genesis-customizer' ],
+		_get_asset_version( 'js/min/isotope.min.js' ),
+		true
+	);
+	wp_enqueue_script( _get_handle() . '-isotope' );
+
+	wp_localize_script(
+		_get_handle() . '-isotope',
+		'genesis_customizer_isotope',
+		[
+			'gutter' => _get_value( 'base_global_gutter' ),
+		]
+	);
+}
+
+function add_masonry_wrap() {
+	if ( ! _get_value( 'archive_blog-layout_masonry' ) ) {
+		return;
+	}
+
+	add_action( 'genesis_before_loop', function () {
+		echo '<div class="masonry">';
+	}, 20 );
+
+	add_action( 'genesis_after_endwhile', function () {
+		echo '</div>';
+	}, 20 );
+
+	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
+	add_action( 'genesis_after_endwhile', 'genesis_posts_nav', 100 );
+
+	remove_action( 'genesis_before_loop', 'genesis_do_author_box_archive', 15 );
+	add_action( 'genesis_before_loop', 'genesis_do_author_box_archive', 5 );
+
+	if ( ! hero_enabled( _get_value( 'hero_settings_enable' ) ) ) {
+		remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
+		add_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 5 );
+	}
 }

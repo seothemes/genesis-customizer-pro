@@ -2,6 +2,9 @@
 
 namespace GenesisCustomizer;
 
+// Enable config.
+add_filter('genesis-customizer_header_transparent_module', '__return_true' );
+
 add_filter( 'body_class', __NAMESPACE__ . '\transparent_header_logo_class', 1000 );
 /**
  * Description of expected behavior.

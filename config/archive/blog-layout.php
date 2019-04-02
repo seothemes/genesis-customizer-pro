@@ -42,7 +42,7 @@ return [
 		'type'        => 'sortable',
 		'settings'    => 'order',
 		'label'       => __( 'Element Order', 'genesis-customizer' ),
-		'description' => esc_html__( 'Drag and drop the sortable items below to change the order of post elements. Click the eye icon to toggle an elements visibility.', 'genesis-customizer' ) . '<br>',
+		'description' => esc_html__( 'Drag and drop the sortable items below to change the order of post elements. Click the eye icon to toggle an elements visibility.', 'genesis-customizer' ) . '<br>&nbsp;',
 		'default'     => [
 			'genesis_do_post_title',
 			'genesis_post_info',

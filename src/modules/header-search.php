@@ -2,6 +2,9 @@
 
 namespace GenesisCustomizer;
 
+// Enable config.
+add_filter('genesis-customizer_header_search_module', '__return_true' );
+
 add_action( 'genesis_after_title_area', __NAMESPACE__ . '\search_toggle', 20 );
 /**
  * Description of expected behavior.

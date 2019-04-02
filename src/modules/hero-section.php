@@ -2,6 +2,12 @@
 
 namespace GenesisCustomizer;
 
+// Enable config.
+add_filter('genesis-customizer_hero_settings_module', '__return_true' );
+
+// Enable theme support by default.
+add_theme_support( 'hero-section' );
+
 add_action( 'genesis_meta', __NAMESPACE__ . '\hero_init' );
 /**
  * Initialize class.
@@ -11,7 +17,6 @@ add_action( 'genesis_meta', __NAMESPACE__ . '\hero_init' );
  * @return void
  */
 function hero_init() {
-	add_theme_support( 'hero-section' );
 	add_post_type_support( 'page', 'excerpt' );
 	add_filter( 'body_class', __NAMESPACE__ . '\hero_body_class' );
 

@@ -112,3 +112,22 @@ function _get_store_url() {
 function _get_product_id() {
 	return _get_pro_data( 'ProductID' );
 }
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function _get_pro_modules() {
+	$modules = [];
+
+	foreach ( glob( _get_pro_path() . 'src/modules/*.php' ) as $module ) {
+		$id             = basename( $module, '.php' );
+		$title          = ucwords( str_replace( '-', ' ', $id ) );
+		$modules[ $id ] = $title;
+	}
+
+	return $modules;
+}
