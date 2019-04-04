@@ -3,8 +3,8 @@
 namespace GenesisCustomizer;
 
 // Enable config.
-add_filter('genesis-customizer_code_css_module', '__return_true' );
-add_filter('genesis-customizer_code_js_module', '__return_true' );
+add_filter('genesis-customizer_code_css_config', '__return_true' );
+add_filter('genesis-customizer_code_js_config', '__return_true' );
 
 add_action( 'wp_ajax_dynamic_css', __NAMESPACE__ . '\dynamic_css' );
 add_action( 'wp_ajax_nopriv_dynamic_css', __NAMESPACE__ . '\dynamic_css' );

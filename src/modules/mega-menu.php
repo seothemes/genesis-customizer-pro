@@ -3,7 +3,7 @@
 namespace GenesisCustomizer;
 
 // Enable config.
-add_filter('genesis-customizer_menus_mega_module', '__return_true' );
+add_filter('genesis-customizer_menus_mega_config', '__return_true' );
 
 add_action( 'admin_init', __NAMESPACE__ . '\admin_class' );
 /**
@@ -54,4 +54,19 @@ function nav_class( $classes, $item ) {
 	$classes[] = $mega_menu;
 
 	return $classes;
+}
+
+add_action( 'genesis_after_title_area', __NAMESPACE__ . '\display_mega_menu', 20 );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function display_mega_menu() {
+	genesis_widget_area( 'mega-menu', [
+		'before' => '<div class="mega-menu hide"><div class="wrap">',
+		'after'  => '</div></div>',
+	] );
 }

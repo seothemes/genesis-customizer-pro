@@ -3,7 +3,7 @@
 namespace GenesisCustomizer;
 
 // Enable config.
-add_filter('genesis-customizer_archive_blog-layout_module', '__return_true' );
+add_filter( 'genesis-customizer_archive_blog-layout_config', '__return_true' );
 
 add_action( 'genesis_meta', __NAMESPACE__ . '\blog_setup', 15 );
 /**
@@ -160,7 +160,7 @@ function add_masonry_wrap() {
 	remove_action( 'genesis_before_loop', 'genesis_do_author_box_archive', 15 );
 	add_action( 'genesis_before_loop', 'genesis_do_author_box_archive', 5 );
 
-	if ( ! hero_enabled( _get_value( 'hero_settings_enable' ) ) ) {
+	if ( ! _is_module_enabled( 'hero-section' ) || ! hero_enabled( _get_value( 'hero_settings_enable' ) ) ) {
 		remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
 		add_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 5 );
 	}

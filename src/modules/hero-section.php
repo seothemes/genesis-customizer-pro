@@ -3,10 +3,21 @@
 namespace GenesisCustomizer;
 
 // Enable config.
-add_filter('genesis-customizer_hero_settings_module', '__return_true' );
+add_filter( 'genesis-customizer_hero_settings_config', '__return_true' );
 
 // Enable theme support by default.
-add_theme_support( 'hero-section' );
+add_theme_support( 'custom-header', [
+	'header-selector'  => 'section.hero-section',
+	'default_image'    => _get_url() . 'assets/img/hero-section.jpg',
+	'header-text'      => false,
+	'width'            => 1280,
+	'height'           => 720,
+	'flex-height'      => true,
+	'flex-width'       => true,
+	'uploads'          => true,
+	'video'            => false,
+	'wp-head-callback' => __NAMESPACE__ . '\custom_header',
+] );
 
 add_action( 'genesis_meta', __NAMESPACE__ . '\hero_init' );
 /**
@@ -18,6 +29,7 @@ add_action( 'genesis_meta', __NAMESPACE__ . '\hero_init' );
  */
 function hero_init() {
 	add_post_type_support( 'page', 'excerpt' );
+	add_theme_support( 'hero-section' );
 	add_filter( 'body_class', __NAMESPACE__ . '\hero_body_class' );
 
 	if ( hero_enabled( _get_value( 'hero_settings_enable' ) ) ) {
@@ -317,4 +329,121 @@ function hero_display() {
 		'close'   => '</section>',
 		'context' => 'hero-section',
 	] );
+}
+
+
+add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\other_hero_images', 15, 1 );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function other_hero_images( $sections ) {
+	if ( ! _is_pro_active() ) {
+		return $sections;
+	}
+
+	$other_pages = [
+		'search' => __( 'Search', 'genesis-customizer' ),
+		'404'    => __( 'Error / 404', 'genesis-customizer' ),
+	];
+
+	foreach ( $other_pages as $other_page => $title ) {
+		\Kirki::add_field( _get_handle(), [
+			'type'     => 'image',
+			'label'    => $title,
+			'section'  => _get_handle() . '_hero_other',
+			'settings' => $other_page . '-image',
+			'default'  => '',
+		] );
+	}
+
+	$new_sections['hero']['other'] = __( 'Other Pages', 'genesis-customizer' );
+
+	$merged = array_merge_recursive( $sections, $new_sections );
+
+	return $merged;
+}
+
+add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\archive_hero_images', 15, 1 );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function archive_hero_images( $sections ) {
+	if ( ! _is_pro_active() ) {
+		return $sections;
+	}
+
+	$post_types = \Kirki_Helper::get_post_types();
+
+	foreach ( $post_types as $post_type => $title ) {
+		$exclude = [
+			'post',
+			'page',
+			'attachment',
+		];
+
+		if ( in_array( $post_type, $exclude ) ) {
+			continue;
+		}
+
+		\Kirki::add_field( _get_handle(), [
+			'type'     => 'image',
+			'label'    => $title,
+			'section'  => _get_handle() . '_hero_archives',
+			'settings' => $post_type . '-image',
+			'default'  => '',
+		] );
+	}
+
+	$new_sections['hero']['archives'] = __( 'Post Type Archives', 'genesis-customizer' );
+
+	$merged = array_merge_recursive( $sections, $new_sections );
+
+	return $merged;
+}
+
+add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\term_hero_images', 20, 1 );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @param $sections
+ *
+ * @return array
+ */
+function term_hero_images( $sections ) {
+	if ( ! _is_pro_active() ) {
+		return $sections;
+	}
+
+	$taxonomies   = \Kirki_Helper::get_taxonomies();
+	$new_sections = [];
+
+	foreach ( $taxonomies as $taxonomy => $title ) {
+		$new_sections['hero'][ $taxonomy ] = $title;
+
+		$terms = \Kirki_Helper::get_terms( [ 'taxonomy' => $taxonomy ] );
+
+		foreach ( $terms as $term => $name ) {
+			\Kirki::add_field( _get_handle(), [
+				'type'     => 'image',
+				'label'    => $name,
+				'section'  => _get_handle() . '_hero_' . $taxonomy,
+				'settings' => 'term-' . $term,
+				'default'  => '',
+			] );
+		}
+	}
+
+	$merged = array_merge_recursive( $sections, $new_sections );
+
+	return $merged;
 }

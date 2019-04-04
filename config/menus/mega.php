@@ -15,7 +15,7 @@ return [
 			'link-hover' => __( 'Link Hover', 'genesis-customizer' ),
 		],
 		'default'  => [
-			'background' => _get_color( 'white' ),
+			'background' => _get_color( 'background' ),
 			'title'      => '',
 			'content'    => '',
 			'link'       => '',
@@ -24,7 +24,7 @@ return [
 		'output'   => [
 			[
 				'choice'   => 'background',
-				'element'  => '.mega-menu',
+				'element'  => '.mega-menu .wrap',
 				'property' => 'background-color',
 			],
 			[
@@ -62,7 +62,7 @@ return [
 		'type'     => 'slider',
 		'settings' => 'spacing',
 		'label'    => __( 'Spacing', 'genesis-customizer' ),
-		'default'  => _get_size( 'l', '' ),
+		'default'  => _get_size( 'xl', '' ),
 		'choices'  => [
 			'min'  => 0,
 			'max'  => 100,
@@ -70,7 +70,7 @@ return [
 		],
 		'output'   => [
 			[
-				'element'  => '.mega-menu',
+				'element'  => '.mega-menu .wrap',
 				'property' => 'padding',
 				'units'    => 'px',
 			],

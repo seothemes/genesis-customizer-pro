@@ -3,8 +3,10 @@
 namespace GenesisCustomizer;
 
 // Enable config.
-add_filter('genesis-customizer_header_above-header_module', '__return_true' );
-add_filter('genesis-customizer_footer_above-footer_module', '__return_true' );
+add_filter( 'genesis-customizer_header_above-header_config', '__return_true' );
+add_filter( 'genesis-customizer_header_left_config', '__return_true' );
+add_filter( 'genesis-customizer_header_below-header_config', '__return_true' );
+add_filter( 'genesis-customizer_footer_above-footer_config', '__return_true' );
 
 add_action( 'genesis_before_header_wrap', __NAMESPACE__ . '\above_header' );
 /**
@@ -23,6 +25,27 @@ function above_header() {
 
 	genesis_widget_area( 'above-header', [
 		'before' => sprintf( '<div class="above-header widget-area %s"><div class="wrap">', $enabled ),
+		'after'  => '</div></div>',
+	] );
+}
+
+add_action( 'genesis_before_content_sidebar_wrap', __NAMESPACE__ . '\below_header' );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function below_header() {
+	$enabled = _get_value( 'header_below-header_enabled' );
+
+	if ( 'hide' === $enabled ) {
+		return;
+	}
+
+	genesis_widget_area( 'below-header', [
+		'before' => sprintf( '<div class="below-header widget-area %s"><div class="wrap">', $enabled ),
 		'after'  => '</div></div>',
 	] );
 }
@@ -82,17 +105,3 @@ function display_mobile_menu_widget_area( $menu, $args ) {
 	return $menu . $widget;
 }
 
-add_action( 'genesis_after_title_area', __NAMESPACE__ . '\display_mega_menu', 20 );
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function display_mega_menu() {
-	genesis_widget_area( 'mega-menu', [
-		'before' => '<div class="mega-menu">',
-		'after'  => '</div>',
-	] );
-}

@@ -4,6 +4,45 @@ namespace GenesisCustomizer;
 
 return [
 	[
+		'type'            => 'radio-buttonset',
+		'settings'        => 'position',
+		'label'           => esc_html__( 'Positioning', 'genesis-customizer' ),
+		'default'         => 'absolute',
+		'choices'         => [
+			'absolute' => esc_html__( 'Absolute', 'genesis-customizer' ),
+			'relative' => esc_html__( 'Relative', 'genesis-customizer' ),
+		],
+		'output'          => [
+			[
+				'element'     => '.nav-primary',
+				'property'    => 'position',
+				'media_query' => _get_media_query( 'max' ),
+			],
+		],
+		'active_callback' => [
+			[
+				'setting'  => _get_setting( 'animation' ),
+				'value'    => 'has-mobile-menu-left',
+				'operator' => '!==',
+			],
+			[
+				'setting'  => _get_setting( 'animation' ),
+				'value'    => 'has-mobile-menu-right',
+				'operator' => '!==',
+			],
+			[
+				'setting'  => _get_setting( 'animation' ),
+				'value'    => 'has-mobile-menu-center',
+				'operator' => '!==',
+			],
+		],
+	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider-09720',
+		'default'  => '<hr>',
+	],
+	[
 		'type'     => 'radio',
 		'settings' => 'animation',
 		'label'    => __( 'Animation', 'genesis-customizer' ),
@@ -41,7 +80,7 @@ return [
 				],
 				'property'      => 'transform',
 				'value_pattern' => 'translateX(calc(100vw - $vw))',
-				'media_query' => _get_media_query( 'max' ),
+				'media_query'   => _get_media_query( 'max' ),
 			],
 		],
 		'required' => [
@@ -59,7 +98,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-3',
+		'settings' => 'divider-9733',
 		'default'  => '<hr>',
 	],
 	[

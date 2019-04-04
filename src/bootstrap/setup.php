@@ -3,7 +3,11 @@
 namespace GenesisCustomizer;
 
 // Enable non module configs.
-add_filter('genesis-customizer_general_breakpoints_module', '__return_true' );
+add_filter( 'genesis-customizer_general_breakpoints_config', '__return_true' );
+add_filter( 'genesis-customizer_base_body_config', '__return_true' );
+add_filter( 'genesis-customizer_base_headings_config', '__return_true' );
+add_filter( 'genesis-customizer_header_primary_config', '__return_true' );
+add_filter( 'genesis-customizer_menus_mobile_config', '__return_true' );
 
 add_filter( 'genesis_customizer_modules', __NAMESPACE__ . '\enabled_modules' );
 /**
@@ -13,10 +17,14 @@ add_filter( 'genesis_customizer_modules', __NAMESPACE__ . '\enabled_modules' );
  *
  * @param $defaults
  *
- * @return void
+ * @return array
  */
 function enabled_modules( $defaults ) {
-	$options = get_option( 'genesis-customizer-settings' );
+	$options = get_option( 'genesis-customizer-settings', [] );
+
+	if ( ! is_array( $options ) ) {
+		return $defaults;
+	}
 
 	foreach ( $defaults as $default => $name ) {
 		if ( ! array_key_exists( $default, $options ) ) {
@@ -84,7 +92,6 @@ add_filter( 'genesis_customizer_panels', __NAMESPACE__ . '\add_pro_panels' );
  */
 function add_pro_panels( $defaults ) {
 	return array_merge_recursive( $defaults, [
-		'hero'        => __( 'Hero Section', 'genesis-customizer' ),
 		'code'        => __( 'Custom Code', 'genesis-customizer' ),
 		'woocommerce' => __( 'WooCommerce', 'genesis-customizer-pro' ),
 		'edd'         => __( 'Easy Digital Downloads', 'genesis-customizer-pro' ),
@@ -110,16 +117,15 @@ function add_pro_sections( $defaults ) {
 			'typekit'     => __( 'Typekit', 'genesis-customizer' ),
 		],
 		'header'      => [
+			'left'         => __( 'Header Left', 'genesis-customizer' ),
 			'above-header' => __( 'Above Header', 'genesis-customizer' ),
+			'below-header' => __( 'Below Header', 'genesis-customizer' ),
 			'transparent'  => __( 'Transparent Header', 'genesis-customizer' ),
 			'sticky'       => __( 'Sticky Header', 'genesis-customizer' ),
 			'search'       => __( 'Search', 'genesis-customizer' ),
 		],
 		'menus'       => [
 			'mega' => __( 'Mega Menu', 'genesis-customizer' ),
-		],
-		'hero'        => [
-			'settings' => __( 'Settings', 'genesis-customizer' ),
 		],
 		'archive'     => [
 			'blog-layout' => __( 'Blog Layout', 'genesis-customizer' ),

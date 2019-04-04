@@ -139,21 +139,10 @@ return [
 		],
 	],
 	[
-		'type'      => 'checkbox',
-		'settings'  => 'enable-button',
-		'label'     => __( 'Display search form button', 'genesis-customizer' ),
-		'default'   => false,
-		'output'    => [
-			[
-				'element'       => '.header-search .search-form-submit',
-				'property'      => 'display',
-				'value_pattern' => 'none',
-				'exclude'       => [
-					true,
-					1,
-				],
-			],
-		],
+		'type'     => 'checkbox',
+		'settings' => 'enable-button',
+		'label'    => __( 'Display search form button', 'genesis-customizer' ),
+		'default'  => false,
 	],
 	[
 		'type'     => 'custom',

@@ -18,12 +18,12 @@ return [
 		'type'     => 'radio',
 		'settings' => 'enabled',
 		'label'    => __( 'Enable On', 'genesis-customizer' ),
-		'default'  => 'no-transparent-header',
+		'default'  => '',
 		'choices'  => [
-			'has-transparent-header'         => __( 'Desktop and Mobile', 'genesis-customizer' ),
-			'has-transparent-header-desktop' => __( 'Desktop', 'genesis-customizer' ),
-			'has-transparent-header-mobile'  => __( 'Mobile', 'genesis-customizer' ),
-			'no-transparent-header'          => __( 'None', 'genesis-customizer' ),
+			'all'     => __( 'Desktop and Mobile', 'genesis-customizer' ),
+			'desktop' => __( 'Desktop', 'genesis-customizer' ),
+			'mobile'  => __( 'Mobile', 'genesis-customizer' ),
+			''     => __( 'None', 'genesis-customizer' ),
 		],
 	],
 	[

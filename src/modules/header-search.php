@@ -3,7 +3,7 @@
 namespace GenesisCustomizer;
 
 // Enable config.
-add_filter('genesis-customizer_header_search_module', '__return_true' );
+add_filter( 'genesis-customizer_header_search_config', '__return_true' );
 
 add_action( 'genesis_after_title_area', __NAMESPACE__ . '\search_toggle', 20 );
 /**
@@ -127,4 +127,24 @@ function nav_menu_search( $menu, $args ) {
 	}
 
 	return $menu . get_search_button( 'hide-mobile' );
+}
+
+add_filter( 'genesis_attr_search-form', __NAMESPACE__ . '\search_form_has_button' );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @param $attr
+ *
+ * @return void
+ */
+function search_form_has_button( $attr ) {
+	$enabled = _get_value( 'header_search_enable-button' );
+
+	if ( $enabled ) {
+		$attr['class'] .= ' has-search-button';
+	}
+
+	return $attr;
 }

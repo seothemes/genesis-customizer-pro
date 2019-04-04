@@ -7,12 +7,12 @@ return [
 		'type'     => 'radio',
 		'settings' => 'enabled',
 		'label'    => __( 'Enable On', 'genesis-customizer' ),
-		'default'  => 'no-sticky-header',
+		'default'  => '',
 		'choices'  => [
-			'has-sticky-header'         => __( 'Desktop and Mobile', 'genesis-customizer' ),
-			'has-sticky-header-desktop' => __( 'Desktop', 'genesis-customizer' ),
-			'has-sticky-header-mobile'  => __( 'Mobile', 'genesis-customizer' ),
-			'no-sticky-header'          => __( 'None', 'genesis-customizer' ),
+			'all'     => __( 'Desktop and Mobile', 'genesis-customizer' ),
+			'desktop' => __( 'Desktop', 'genesis-customizer' ),
+			'mobile'  => __( 'Mobile', 'genesis-customizer' ),
+			''        => __( 'None', 'genesis-customizer' ),
 		],
 	],
 	[

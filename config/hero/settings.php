@@ -7,9 +7,7 @@ return [
 		'type'     => 'multicheck',
 		'settings' => 'enable',
 		'label'    => __( 'Enable on', 'genesis-customizer' ),
-		'default'  => [
-			'page',
-		],
+		'default'  => [],
 		'choices'  => [
 			'archive' => __( 'Blog/Archives', 'genesis-customizer' ),
 			'page'    => __( 'Single Pages', 'genesis-customizer' ),
