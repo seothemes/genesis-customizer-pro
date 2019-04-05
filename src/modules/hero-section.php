@@ -133,6 +133,8 @@ function hero_setup() {
 	add_filter( 'woocommerce_show_page_title', '__return_null' );
 	add_filter( 'genesis_search_title_output', '__return_false' );
 
+	add_action( 'genesis_before_hero-section_wrap', 'the_custom_header_markup' );
+
 	add_action( 'genesis_customizer_hero_section', 'genesis_do_posts_page_heading' );
 	add_action( 'genesis_customizer_hero_section', 'genesis_do_date_archive_title' );
 	add_action( 'genesis_customizer_hero_section', 'genesis_do_taxonomy_title_description' );
@@ -317,8 +319,6 @@ function hero_display() {
 		'context' => 'hero-section',
 	] );
 
-	the_custom_header_markup();
-
 	genesis_structural_wrap( 'hero-section', 'open' );
 
 	do_action( 'genesis_customizer_hero_section' );
@@ -331,7 +331,6 @@ function hero_display() {
 	] );
 }
 
-
 add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\other_hero_images', 15, 1 );
 /**
  * Description of expected behavior.
@@ -341,10 +340,6 @@ add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\other_hero_images',
  * @return array
  */
 function other_hero_images( $sections ) {
-	if ( ! _is_pro_active() ) {
-		return $sections;
-	}
-
 	$other_pages = [
 		'search' => __( 'Search', 'genesis-customizer' ),
 		'404'    => __( 'Error / 404', 'genesis-customizer' ),
@@ -376,10 +371,6 @@ add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\archive_hero_images
  * @return array
  */
 function archive_hero_images( $sections ) {
-	if ( ! _is_pro_active() ) {
-		return $sections;
-	}
-
 	$post_types = \Kirki_Helper::get_post_types();
 
 	foreach ( $post_types as $post_type => $title ) {
@@ -420,10 +411,6 @@ add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\term_hero_images', 
  * @return array
  */
 function term_hero_images( $sections ) {
-	if ( ! _is_pro_active() ) {
-		return $sections;
-	}
-
 	$taxonomies   = \Kirki_Helper::get_taxonomies();
 	$new_sections = [];
 

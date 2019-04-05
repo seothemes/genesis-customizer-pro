@@ -4,8 +4,6 @@ namespace GenesisCustomizer;
 
 // Enable non module configs.
 add_filter( 'genesis-customizer_general_breakpoints_config', '__return_true' );
-add_filter( 'genesis-customizer_base_body_config', '__return_true' );
-add_filter( 'genesis-customizer_base_headings_config', '__return_true' );
 add_filter( 'genesis-customizer_header_primary_config', '__return_true' );
 add_filter( 'genesis-customizer_menus_mobile_config', '__return_true' );
 
@@ -33,35 +31,6 @@ function enabled_modules( $defaults ) {
 	}
 
 	return $defaults;
-}
-
-add_action( 'genesis_setup', __NAMESPACE__ . '\load_pro_updater' );
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
- * @return object
- */
-function load_pro_updater() {
-	if ( ! class_exists( 'EDD_SL_Plugin_Updater' ) ) {
-		require_once _get_pro_path() . 'src/classes/class-edd-sl-plugin-updater.php';
-	}
-
-	$license_key = trim( get_option( _get_pro_handle() . '_license_key' ) );
-
-	return new \EDD_SL_Plugin_Updater(
-		_get_store_url(),
-		_get_pro_path() . _get_pro_handle() . '.php',
-		[
-			'version'     => _get_pro_version(),
-			'license'     => $license_key,
-			'item_id'     => _get_product_id(),
-			'author'      => _get_author(),
-			'url'         => home_url(),
-			'wp_override' => true,
-		]
-	);
 }
 
 add_filter( 'genesis_customizer_config', __NAMESPACE__ . '\load_pro_config' );

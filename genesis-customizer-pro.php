@@ -3,7 +3,7 @@
  * Genesis Customizer Pro
  *
  * Plugin Name: Genesis Customizer Pro
- * Version:     0.1.1
+ * Version:     0.1.2
  * Text Domain: genesis-customizer-pro
  * Plugin URI:  https://genesiscustomizer.com/
  * Description: Pro add-on for the Genesis Customizer theme.
@@ -20,6 +20,8 @@
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-3.0-or-later
  */
+
+//return;
 
 // Check compatibility.
 require_once __DIR__ . '/src/bootstrap/compat.php';

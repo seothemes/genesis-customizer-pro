@@ -29,6 +29,27 @@ function above_header() {
 	] );
 }
 
+add_action( 'genesis_before_title_area', __NAMESPACE__ . '\header_left', 5 );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function header_left() {
+	$enabled = _get_value( 'header_left_enable' );
+
+	if ( 'hide' === $enabled ) {
+		return;
+	}
+
+	genesis_widget_area( 'header-left-widget', [
+		'before' => '<div class="header-left widget-area ' . $enabled . '">',
+		'after'  => '</div>',
+	] );
+}
+
 add_action( 'genesis_before_content_sidebar_wrap', __NAMESPACE__ . '\below_header' );
 /**
  * Description of expected behavior.
@@ -50,7 +71,7 @@ function below_header() {
 	] );
 }
 
-add_action( 'genesis_footer', __NAMESPACE__ . '\above_footer', 11 );
+add_action( 'genesis_footer', __NAMESPACE__ . '\above_footer', 10 );
 /**
  * Display the Above Footer widget area.
  *
@@ -97,7 +118,7 @@ function display_mobile_menu_widget_area( $menu, $args ) {
 
 	ob_start();
 	genesis_widget_area( 'mobile-menu', [
-		'before' => '<li class="menu-item mobile-menu widget-area">',
+		'before' => '<li class="menu-item mobile-menu widget-area hide-desktop">',
 		'after'  => '</li>',
 	] );
 	$widget = ob_get_clean();

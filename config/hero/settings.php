@@ -146,7 +146,7 @@ return [
 		],
 		'output'   => [
 			[
-				'element'  => '.hero-section .wrap',
+				'element'  => '.hero-section > .wrap',
 				'property' => 'max-width',
 				'units'    => 'px',
 			],
@@ -164,12 +164,12 @@ return [
 		],
 		'output'   => [
 			[
-				'element'  => '.hero-section',
+				'element'  => '.hero-section > .wrap',
 				'property' => 'padding-top',
 				'units'    => 'px',
 			],
 			[
-				'element'  => '.hero-section',
+				'element'  => '.hero-section > .wrap',
 				'property' => 'padding-bottom',
 				'units'    => 'px',
 			],
@@ -187,13 +187,13 @@ return [
 		],
 		'output'   => [
 			[
-				'element'     => '.hero-section',
+				'element'     => '.hero-section > .wrap',
 				'property'    => 'padding-top',
 				'units'       => 'px',
 				'media_query' => _get_media_query(),
 			],
 			[
-				'element'     => '.hero-section',
+				'element'     => '.hero-section > .wrap',
 				'property'    => 'padding-bottom',
 				'units'       => 'px',
 				'media_query' => _get_media_query(),

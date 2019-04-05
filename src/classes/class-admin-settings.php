@@ -65,9 +65,9 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 	 * @since 1.0.0
 	 */
 	function sanitization_filters() {
-
 		genesis_add_option_filter( 'no_html', $this->settings_field, [
 			'license',
+
 		] );
 	}
 
@@ -158,7 +158,7 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 			<?php if ( false !== $license ) : ?>
                 <tr valign="top">
                     <th scope="row" valign="top">
-						<?php _e( 'Activate License' ); ?>
+						<?php _e( 'Activate license' ); ?>
                     </th>
                     <td>
 						<?php if ( $status !== false && $status == 'valid' ) { ?>
@@ -169,6 +169,7 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
                                    value="<?php esc_html_e( 'Deactivate License', 'genesis-customizer' ); ?>"/>
 						<?php } else {
 							wp_nonce_field( $handle, $handle ); ?>
+                            <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php esc_html_e( 'Save License', 'genesis-customizer' ) ?>">
                             <input type="submit" class="button-secondary"
                                    name="<?php echo $handle; ?>_license_activate"
                                    value="<?php esc_attr_e( 'Activate License', 'genesis-customizer' ); ?>"/>

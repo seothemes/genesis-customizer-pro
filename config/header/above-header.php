@@ -30,13 +30,6 @@ return [
 		'type'     => 'custom',
 		'settings' => 'divider-1',
 		'default'  => '<hr>',
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
-			],
-		],
 	],
 	[
 		'type'        => 'radio-image',
@@ -56,25 +49,11 @@ return [
 				'property' => 'justify-content',
 			],
 		],
-		'required'    => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
-			],
-		],
 	],
 	[
 		'type'     => 'custom',
 		'settings' => 'divider-2',
 		'default'  => '<hr>',
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
-			],
-		],
 	],
 	[
 		'type'     => 'multicolor',
@@ -110,15 +89,8 @@ return [
 			],
 			[
 				'choice'   => 'links-hover',
-				'element'  => '.above-header a:hover, .footer-widgets a:focus',
+				'element'  => '.above-header a:hover, .above-header a:focus',
 				'property' => 'color',
-			],
-		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
 			],
 		],
 	],
@@ -128,37 +100,18 @@ return [
 		'default'  => '<hr>',
 	],
 	[
-		'type'     => 'dimensions',
+		'type'     => 'typography',
 		'settings' => 'typography',
 		'label'    => __( 'Typography', 'genesis-customizer' ),
 		'default'  => [
-			'mobile'  => _get_size( 's' ),
-			'desktop' => '',
-		],
-		'choices'  => [
-			'labels' => [
-				'mobile'  => __( 'Font Size Mobile', 'genesis-customizer' ),
-				'desktop' => __( 'Font Size Desktop', 'genesis-customizer' ),
-			],
+			'font-family' => '',
+			'font-size'   => _get_size( 'xs' ),
+			'variant'     => 'bolder',
+			'line-height' => '1',
 		],
 		'output'   => [
 			[
-				'choice'   => 'mobile',
-				'element'  => '.above-header, .above-header a',
-				'property' => 'font-size',
-			],
-			[
-				'choice'      => 'desktop',
-				'element'     => '.above-header, .above-header a',
-				'property'    => 'font-size',
-				'media_query' => _get_media_query(),
-			],
-		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
+				'element' => '.above-header',
 			],
 		],
 	],
@@ -182,13 +135,6 @@ return [
 				'element'  => '.above-header',
 				'property' => 'height',
 				'units'    => 'px',
-			],
-		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
 			],
 		],
 	],

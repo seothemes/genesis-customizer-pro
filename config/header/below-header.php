@@ -30,13 +30,6 @@ return [
 		'type'     => 'custom',
 		'settings' => 'divider-1',
 		'default'  => '<hr>',
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
-			],
-		],
 	],
 	[
 		'type'        => 'radio-image',
@@ -56,25 +49,11 @@ return [
 				'property' => 'justify-content',
 			],
 		],
-		'required'    => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
-			],
-		],
 	],
 	[
 		'type'     => 'custom',
 		'settings' => 'divider-2',
 		'default'  => '<hr>',
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
-			],
-		],
 	],
 	[
 		'type'     => 'radio-buttonset',
@@ -88,15 +67,8 @@ return [
 		],
 		'output'   => [
 			[
-				'element'       => '.below-header',
-				'property'      => 'text-align',
-			],
-		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
+				'element'  => '.below-header',
+				'property' => 'text-align',
 			],
 		],
 	],
@@ -117,11 +89,11 @@ return [
 			'links-hover' => __( 'Links Hover', 'genesis-customizer' ),
 		],
 		'default'  => [
-			'background'  => '',
-			'headings'    => '',
-			'text'        => '',
-			'links'       => '',
-			'links-hover' => '',
+			'background'  => _get_color( 'background' ),
+			'headings'    => _get_color( 'heading' ),
+			'text'        => _get_color( 'text' ),
+			'links'       => _get_color( 'accent' ),
+			'links-hover' => _get_color( 'accent' ),
 		],
 		'output'   => [
 			[
@@ -132,36 +104,29 @@ return [
 			[
 				'choice'   => 'headings',
 				'element'  => [
-					'.below-header h1',
-					'.below-header h2',
-					'.below-header h3',
-					'.below-header h4',
-					'.below-header h5',
-					'.below-header h6',
+					'.below-header .wrap h1',
+					'.below-header .wrap h2',
+					'.below-header .wrap h3',
+					'.below-header .wrap h4',
+					'.below-header .wrap h5',
+					'.below-header .wrap h6',
 				],
 				'property' => 'color',
 			],
 			[
 				'choice'   => 'text',
-				'element'  => '.below-header',
+				'element'  => '.below-header .wrap',
 				'property' => 'color',
 			],
 			[
 				'choice'   => 'links',
-				'element'  => '.below-header a',
+				'element'  => '.below-header .wrap a',
 				'property' => 'color',
 			],
 			[
 				'choice'   => 'links-hover',
-				'element'  => '.below-header a:hover, .footer-widgets a:focus',
+				'element'  => '.below-header .wrap a:hover, .below-header .wrap a:focus',
 				'property' => 'color',
-			],
-		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
 			],
 		],
 	],
@@ -197,13 +162,6 @@ return [
 				'media_query' => _get_media_query(),
 			],
 		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
-			],
-		],
 	],
 	[
 		'type'     => 'custom',
@@ -225,13 +183,6 @@ return [
 				'element'       => '.below-header',
 				'property'      => 'padding',
 				'value_pattern' => '$px 0',
-			],
-		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => 'none',
-				'operator' => '!==',
 			],
 		],
 	],

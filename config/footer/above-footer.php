@@ -122,13 +122,6 @@ return [
 			'max'  => 360,
 			'step' => 1,
 		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => true,
-				'operator' => '===',
-			],
-		],
 	],
 	[
 		'type'     => 'custom',
@@ -155,13 +148,6 @@ return [
 				'element'  => '.above-footer',
 				'property' => 'padding-bottom',
 				'units'    => 'px',
-			],
-		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => true,
-				'operator' => '===',
 			],
 		],
 	],
@@ -196,13 +182,6 @@ return [
 				'property' => 'border-bottom-width',
 			],
 		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => true,
-				'operator' => '===',
-			],
-		],
 	],
 	[
 		'type'     => 'custom',
@@ -223,13 +202,6 @@ return [
 		'output'   => [
 			[
 				'element' => '.above-footer',
-			],
-		],
-		'required' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => true,
-				'operator' => '===',
 			],
 		],
 	],

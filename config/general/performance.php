@@ -17,4 +17,9 @@ return [
 		'tooltip'  => esc_html__( 'No, not Donald. Style trump means to load the child theme stylesheet at a later priority to override plugin styles.', 'genesis-customizer' ),
 		'default'  => true,
 	],
+	[
+		'type'     => 'custom',
+		'settings' => 'spacer-938732',
+		'default'  => '<div class="clearfix" style="padding: 100px"></div>',
+	],
 ];
