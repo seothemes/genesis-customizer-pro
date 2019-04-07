@@ -80,11 +80,27 @@ return [
 		'type'     => 'custom',
 		'settings' => 'tip-2',
 		'default'  => sprintf(
-			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p>',
+			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
 			esc_html__( 'Tip:', 'genesis-customizer' ),
 			esc_html__( 'Add widgets to the mega menu widget area from the', 'genesis-customizer' ),
 			esc_attr( '"sidebar-widgets-mega-menu"' ),
 			esc_html__( 'Mega Menu Widgets Section', 'genesis-customizer' )
 		),
+	],
+	[
+		'type'        => 'background',
+		'settings'    => 'background-image',
+		'label'       => esc_html__( 'Background Image', 'genesis-customizer' ),
+		'default'     => [
+			'background-image'    => '',
+			'background-repeat'   => 'repeat',
+			'background-position' => 'center center',
+			'background-size'     => 'cover',
+		],
+		'output'      => [
+			[
+				'element' => '.mega-menu',
+			],
+		],
 	],
 ];

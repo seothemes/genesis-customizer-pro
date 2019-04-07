@@ -62,178 +62,6 @@ return [
 			'nav-secondary-links-hover' => _get_color( 'accent' ),
 		],
 		'output'   => [
-			/**
-			 * Desktop
-			 */
-			[
-				'choice'      => 'background',
-				'element'     => '.has-transparent-header-desktop .primary-header',
-				'property'    => 'background-color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'site-title',
-				'element'     => '.has-transparent-header-desktop .title-area .site-title a',
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'site-description',
-				'element'     => '.has-transparent-header-desktop .site-description',
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'text',
-				'element'     => '.has-transparent-header-desktop .primary-header',
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'text',
-				'element'     => '.has-transparent-header-desktop .header-search-toggle svg',
-				'property'    => 'fill',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'links',
-				'element'     => '.has-transparent-header-desktop .site-header a',
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'links-hover',
-				'element'     => [
-					'.has-transparent-header-desktop .site-header a:hover',
-					'.has-transparent-header-desktop .site-header a:focus',
-					'.has-transparent-header-desktop .current-menu-item > a',
-				],
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'above-header-background',
-				'element'     => '.has-transparent-header-desktop .above-header',
-				'property'    => 'background-color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'above-header-text',
-				'element'     => '.has-transparent-header-desktop .above-header',
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'nav-secondary-background',
-				'element'     => '.has-transparent-header-desktop .nav-secondary',
-				'property'    => 'background-color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'nav-secondary-links',
-				'element'     => '.has-transparent-header-desktop .nav-secondary a',
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'nav-secondary-links-hover',
-				'element'     => [
-					'.has-transparent-header-desktop .nav-secondary a:hover',
-					'.has-transparent-header-desktop .nav-secondary a:focus',
-					'.has-transparent-header-desktop .nav-secondary .current-menu-item > a',
-				],
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			/**
-			 * Mobile
-			 */
-			[
-				'choice'      => 'background',
-				'element'     => '.has-transparent-header-mobile .primary-header',
-				'property'    => 'background-color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'site-title',
-				'element'     => '.has-transparent-header-mobile .title-area .site-title a',
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'site-description',
-				'element'     => '.has-transparent-header-mobile .site-description',
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'text',
-				'element'     => '.has-transparent-header-mobile .primary-header',
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'text',
-				'element'     => '.has-transparent-header-mobile .header-search-toggle svg',
-				'property'    => 'fill',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'links',
-				'element'     => '.has-transparent-header-mobile .site-header a',
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'links-hover',
-				'element'     => [
-					'.has-transparent-header-mobile .site-header a:hover',
-					'.has-transparent-header-mobile .site-header a:focus',
-					'.has-transparent-header-mobile .current-menu-item > a',
-				],
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'above-header-background',
-				'element'     => '.has-transparent-header-mobile .above-header',
-				'property'    => 'background-color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'above-header-text',
-				'element'     => '.has-transparent-header-mobile .above-header',
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'nav-secondary-background',
-				'element'     => '.has-transparent-header-mobile .nav-secondary',
-				'property'    => 'background-color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'nav-secondary-links',
-				'element'     => '.has-transparent-header-mobile .nav-secondary a',
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'nav-secondary-links-hover',
-				'element'     => [
-					'.has-transparent-header-desktop .nav-secondary a:hover',
-					'.has-transparent-header-desktop .nav-secondary a:focus',
-					'.has-transparent-header-desktop .nav-secondary .current-menu-item > a',
-				],
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			/**
-			 * Both
-			 */
-			/**
-			 * Desktop
-			 */
 			[
 				'choice'   => 'background',
 				'element'  => '.has-transparent-header .primary-header',
@@ -241,7 +69,7 @@ return [
 			],
 			[
 				'choice'   => 'site-title',
-				'element'  => '.has-transparent-header .title-area .site-title a',
+				'element'  => '.has-transparent-header .site-title a',
 				'property' => 'color',
 			],
 			[
@@ -255,7 +83,7 @@ return [
 				'property' => 'color',
 			],
 			[
-				'choice'   => 'text',
+				'choice'   => 'links',
 				'element'  => '.has-transparent-header .header-search-toggle svg',
 				'property' => 'fill',
 			],
@@ -270,6 +98,8 @@ return [
 					'.has-transparent-header .site-header a:hover',
 					'.has-transparent-header .site-header a:focus',
 					'.has-transparent-header .current-menu-item > a',
+					'.has-transparent-header .header-search-toggle:hover svg',
+					'.has-transparent-header .header-search-toggle:focus svg',
 				],
 				'property' => 'color',
 			],

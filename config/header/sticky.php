@@ -29,140 +29,56 @@ return [
 			'site-title'       => __( 'Site Title', 'genesis-customizer' ),
 			'site-description' => __( 'Site Description', 'genesis-customizer' ),
 			'text'             => __( 'Text', 'genesis-customizer' ),
-			'menu-links'       => __( 'Links', 'genesis-customizer' ),
-			'menu-links-hover' => __( 'Links Hover', 'genesis-customizer' ),
+			'links'            => __( 'Links', 'genesis-customizer' ),
+			'links-hover'      => __( 'Links Hover', 'genesis-customizer' ),
 		],
 		'default'  => [
 			'background'       => _get_color( 'white' ),
 			'site-title'       => _get_color( 'heading' ),
 			'site-description' => _get_color( 'text' ),
 			'text'             => _get_color( 'text' ),
-			'menu-links'       => _get_color( 'text' ),
-			'menu-links-hover' => _get_color( 'accent' ),
+			'links'            => _get_color( 'text' ),
+			'links-hover'      => _get_color( 'accent' ),
 		],
 		'output'   => [
-			/**
-			 * Desktop
-			 */
-			[
-				'choice'      => 'background',
-				'element'     => '.has-sticky-header-desktop .shrink .primary-header',
-				'property'    => 'background-color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'site-title',
-				'element'     => '.has-sticky-header-desktop .shrink .site-title a',
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'site-description',
-				'element'     => '.has-sticky-header-desktop .shrink .site-description',
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'text',
-				'element'     => '.has-sticky-header-desktop .shrink .primary-header',
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'menu-links',
-				'element'     => '.has-sticky-header-desktop .shrink .menu-item a',
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-			[
-				'choice'      => 'menu-links-hover',
-				'element'     => [
-					'.has-sticky-header-desktop .shrink .menu-item a:hover',
-					'.has-sticky-header-desktop .shrink .menu-item a:focus',
-					'.shrink .menu-primary .current-menu-item > a',
-				],
-				'property'    => 'color',
-				'media_query' => _get_media_query(),
-			],
-
-			/**
-			 * Mobile
-			 */
-			[
-				'choice'      => 'background',
-				'element'     => '.has-sticky-header-mobile .shrink .primary-header',
-				'property'    => 'background-color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'site-title',
-				'element'     => '.has-sticky-header-mobile .shrink .site-title a',
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'site-description',
-				'element'     => '.has-sticky-header-mobile .shrink .site-description',
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'text',
-				'element'     => '.has-sticky-header-mobile .shrink .primary-header',
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'menu-links',
-				'element'     => '.has-sticky-header-mobile .shrink a',
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-			[
-				'choice'      => 'menu-links-hover',
-				'element'     => [
-					'.has-sticky-header-mobile .shrink a:hover',
-					'.has-sticky-header-mobile .shrink a:focus',
-					'.shrink .menu-primary .current-menu-item > a',
-				],
-				'property'    => 'color',
-				'media_query' => _get_media_query( 'max' ),
-			],
-
-			/**
-			 * Both
-			 */
 			[
 				'choice'   => 'background',
-				'element'  => '.has-sticky-header .shrink .primary-header',
+				'element'  => '.has-sticky-header .site-header.shrink .primary-header',
 				'property' => 'background-color',
 			],
 			[
 				'choice'   => 'site-title',
-				'element'  => '.has-sticky-header .shrink .site-title a',
+				'element'  => '.has-sticky-header .site-header.shrink .site-title a',
 				'property' => 'color',
 			],
 			[
 				'choice'   => 'site-description',
-				'element'  => '.has-sticky-header .shrink .site-description',
+				'element'  => '.has-sticky-header .site-header.shrink .site-description',
 				'property' => 'color',
 			],
 			[
 				'choice'   => 'text',
-				'element'  => '.has-sticky-header .shrink .primary-header',
+				'element'  => '.has-sticky-header .site-header.shrink .primary-header',
 				'property' => 'color',
 			],
 			[
-				'choice'   => 'menu-links',
-				'element'  => '.has-sticky-header .shrink a',
+				'choice'   => 'links',
+				'element'  => '.has-sticky-header .site-header.shrink .header-search-toggle svg',
+				'property' => 'fill',
+			],
+			[
+				'choice'   => 'links',
+				'element'  => '.has-sticky-header .site-header.shrink a',
 				'property' => 'color',
 			],
 			[
-				'choice'   => 'menu-links-hover',
+				'choice'   => 'links-hover',
 				'element'  => [
-					'.has-sticky-header .shrink a:hover',
-					'.has-sticky-header .shrink a:focus',
+					'.has-sticky-header .site-header.shrink a:hover',
+					'.has-sticky-header .site-header.shrink a:focus',
 					'.shrink .menu-primary .current-menu-item > a',
+					'.has-sticky-header .site-header.shrink .header-search-toggle:hover svg',
+					'.has-sticky-header .site-header.shrink .header-search-toggle:focus svg',
 				],
 				'property' => 'color',
 			],

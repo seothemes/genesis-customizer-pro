@@ -186,4 +186,25 @@ return [
 			],
 		],
 	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider-827',
+		'default'  => '<hr>',
+	],
+	[
+		'type'        => 'background',
+		'settings'    => 'background-image',
+		'label'       => esc_html__( 'Background Image', 'genesis-customizer' ),
+		'default'     => [
+			'background-image'    => '',
+			'background-repeat'   => 'repeat',
+			'background-position' => 'center center',
+			'background-size'     => 'cover',
+		],
+		'output'      => [
+			[
+				'element' => '.below-header',
+			],
+		],
+	],
 ];

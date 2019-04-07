@@ -204,17 +204,16 @@ return [
 		],
 	],
 	[
-		'type'      => 'slider',
-		'settings'  => 'search-toggle-padding',
-		'label'     => __( 'Search Toggle Padding', 'genesis-customizer' ),
-		'transport' => 'refresh',
-		'default'   => '0',
-		'choices'   => [
+		'type'     => 'slider',
+		'settings' => 'search-toggle-padding',
+		'label'    => __( 'Search Toggle Padding', 'genesis-customizer' ),
+		'default'  => '0',
+		'choices'  => [
 			'min'  => 0,
 			'max'  => 40,
 			'step' => 1,
 		],
-		'output'    => [
+		'output'   => [
 			[
 				'element'  => 'button.header-search-toggle',
 				'property' => 'padding',
@@ -234,14 +233,28 @@ return [
 		],
 		'output'   => [
 			[
-				'element'  => '.header-search-toggle.left',
-				'property' => 'margin-right',
-				'units'    => 'px',
+				'element'     => '.header-search-toggle.left',
+				'property'    => 'margin-left',
+				'units'       => 'px',
+				'media_query' => _get_media_query('max'),
 			],
 			[
-				'element'  => '.header-search-toggle.right',
-				'property' => 'margin-left',
-				'units'    => 'px',
+				'element'     => '.header-search-toggle.right',
+				'property'    => 'margin-right',
+				'units'       => 'px',
+				'media_query' => _get_media_query('max'),
+			],
+			[
+				'element'     => '.header-search-toggle.left',
+				'property'    => 'margin-right',
+				'units'       => 'px',
+				'media_query' => _get_media_query(),
+			],
+			[
+				'element'     => '.header-search-toggle.right',
+				'property'    => 'margin-left',
+				'units'       => 'px',
+				'media_query' => _get_media_query(),
 			],
 		],
 	],
