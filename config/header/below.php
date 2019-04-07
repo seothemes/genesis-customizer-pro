@@ -98,7 +98,7 @@ return [
 		'output'   => [
 			[
 				'choice'   => 'background',
-				'element'  => '.below-header',
+				'element'  => '.below-header:before',
 				'property' => 'background-color',
 			],
 			[

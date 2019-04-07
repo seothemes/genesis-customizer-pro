@@ -86,21 +86,25 @@ function add_pro_sections( $defaults ) {
 			'typekit'     => __( 'Typekit', 'genesis-customizer' ),
 		],
 		'header'      => [
-			'left'         => __( 'Header Left', 'genesis-customizer' ),
-			'above-header' => __( 'Above Header', 'genesis-customizer' ),
-			'below-header' => __( 'Below Header', 'genesis-customizer' ),
-			'transparent'  => __( 'Transparent Header', 'genesis-customizer' ),
-			'sticky'       => __( 'Sticky Header', 'genesis-customizer' ),
-			'search'       => __( 'Search', 'genesis-customizer' ),
+			'left'        => __( 'Header Left', 'genesis-customizer' ),
+			'above'       => __( 'Above Header', 'genesis-customizer' ),
+			'below'       => __( 'Below Header', 'genesis-customizer' ),
+			'transparent' => __( 'Transparent Header', 'genesis-customizer' ),
+			'sticky'      => __( 'Sticky Header', 'genesis-customizer' ),
+			'search'      => __( 'Search', 'genesis-customizer' ),
 		],
 		'menus'       => [
 			'mega' => __( 'Mega Menu', 'genesis-customizer' ),
+		],
+		'content'     => [
+			'above' => __( 'Above Content', 'genesis-customizer' ),
+			'below' => __( 'Below Content', 'genesis-customizer' ),
 		],
 		'archive'     => [
 			'blog-layout' => __( 'Blog Layout', 'genesis-customizer' ),
 		],
 		'footer'      => [
-			'above-footer'  => __( 'Above Footer', 'genesis-customizer' ),
+			'above'         => __( 'Above Footer', 'genesis-customizer' ),
 			'scroll-to-top' => __( 'Scroll to Top', 'genesis-customizer' ),
 		],
 		'code'        => [

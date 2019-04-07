@@ -3,10 +3,12 @@
 namespace GenesisCustomizer;
 
 // Enable config.
-add_filter( 'genesis-customizer_header_above-header_config', '__return_true' );
+add_filter( 'genesis-customizer_header_above_config', '__return_true' );
 add_filter( 'genesis-customizer_header_left_config', '__return_true' );
-add_filter( 'genesis-customizer_header_below-header_config', '__return_true' );
-add_filter( 'genesis-customizer_footer_above-footer_config', '__return_true' );
+add_filter( 'genesis-customizer_header_below_config', '__return_true' );
+add_filter( 'genesis-customizer_footer_above_config', '__return_true' );
+add_filter( 'genesis-customizer_content_above_config', '__return_true' );
+add_filter( 'genesis-customizer_content_below_config', '__return_true' );
 
 add_action( 'genesis_before_header_wrap', __NAMESPACE__ . '\above_header' );
 /**
@@ -17,7 +19,7 @@ add_action( 'genesis_before_header_wrap', __NAMESPACE__ . '\above_header' );
  * @return void
  */
 function above_header() {
-	$enabled = _get_value( 'header_above-header_enabled' );
+	$enabled = _get_value( 'header_above_enabled' );
 
 	if ( 'hide' === $enabled ) {
 		return;
@@ -59,7 +61,7 @@ add_action( 'genesis_before_content_sidebar_wrap', __NAMESPACE__ . '\below_heade
  * @return void
  */
 function below_header() {
-	$enabled = _get_value( 'header_below-header_enabled' );
+	$enabled = _get_value( 'header_below_enabled' );
 
 	if ( 'hide' === $enabled ) {
 		return;
@@ -71,7 +73,49 @@ function below_header() {
 	] );
 }
 
-add_action( 'genesis_footer', __NAMESPACE__ . '\above_footer', 10 );
+add_action( 'genesis_before_content_sidebar_wrap', __NAMESPACE__ . '\above_content', 15 );
+/**
+ * Display the Above Footer widget area.
+ *
+ * @since 1.1.0
+ *
+ * @return void
+ */
+function above_content() {
+	$enabled = _get_value( 'content_above_enabled' );
+
+	if ( ! $enabled ) {
+		return;
+	}
+
+	genesis_widget_area( 'above-content', [
+		'before' => '<div class="above-content widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+	] );
+}
+
+add_action( 'genesis_after_content_sidebar_wrap', __NAMESPACE__ . '\below_content' );
+/**
+ * Display the Above Footer widget area.
+ *
+ * @since 1.1.0
+ *
+ * @return void
+ */
+function below_content() {
+	$enabled = _get_value( 'content_below_enabled' );
+
+	if ( ! $enabled ) {
+		return;
+	}
+
+	genesis_widget_area( 'below-content', [
+		'before' => '<div class="below-content widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+	] );
+}
+
+add_action( 'genesis_footer', __NAMESPACE__ . '\above_footer' );
 /**
  * Display the Above Footer widget area.
  *
@@ -80,7 +124,7 @@ add_action( 'genesis_footer', __NAMESPACE__ . '\above_footer', 10 );
  * @return void
  */
 function above_footer() {
-	$enabled = _get_value( 'footer_above-footer_enabled' );
+	$enabled = _get_value( 'footer_above_enabled' );
 
 	if ( ! $enabled ) {
 		return;
