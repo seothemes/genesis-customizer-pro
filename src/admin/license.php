@@ -2,7 +2,7 @@
 
 namespace GenesisCustomizer;
 
-add_action( 'genesis_setup', __NAMESPACE__ . '\load_pro_updater' );
+add_action( 'admin_init', __NAMESPACE__ . '\load_pro_updater' );
 /**
  * Description of expected behavior.
  *
