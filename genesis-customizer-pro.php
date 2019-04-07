@@ -21,8 +21,6 @@
  * @license   GPL-3.0-or-later
  */
 
-//return;
-
 // Check compatibility.
 require_once __DIR__ . '/src/bootstrap/compat.php';
 
