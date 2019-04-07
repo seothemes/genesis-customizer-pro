@@ -15,14 +15,12 @@ function load_pro_updater() {
 		require_once _get_pro_path() . 'src/classes/class-edd-sl-plugin-updater.php';
 	}
 
-	$license_key = trim( get_option( _get_pro_handle() . '_license_key' ) );
-
 	return new \EDD_SL_Plugin_Updater(
 		_get_store_url(),
 		_get_pro_path() . _get_pro_handle() . '.php',
 		[
 			'version'     => _get_pro_version(),
-			'license'     => $license_key,
+			'license'     => _get_license_key(),
 			'item_id'     => _get_product_id(),
 			'author'      => _get_author(),
 			'url'         => home_url(),

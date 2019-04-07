@@ -145,6 +145,8 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 		$license = $this->get_field_value( 'license' );
 		$status  = genesis_get_option( 'status', 'genesis-customizer-settings' );
 
+
+
 		?>
         <table class="form-table">
             <tr valign="top">

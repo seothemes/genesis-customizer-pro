@@ -9,7 +9,7 @@ namespace GenesisCustomizer;
  *
  * @param $header
  *
- * @return array|null
+ * @return string|array|null
  */
 function _get_pro_data( $header = '' ) {
 	static $data = null;
@@ -96,7 +96,7 @@ function _get_pro_version() {
  *
  * @since 1.0.0
  *
- * @return void
+ * @return string
  */
 function _get_store_url() {
 	return _get_pro_data( 'PluginURI' );
@@ -111,6 +111,17 @@ function _get_store_url() {
  */
 function _get_product_id() {
 	return _get_pro_data( 'ProductID' );
+}
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function _get_license_key() {
+	return trim( genesis_get_option( 'license', 'genesis-customizer-settings' ) );
 }
 
 /**
