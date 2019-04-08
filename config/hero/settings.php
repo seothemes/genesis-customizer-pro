@@ -21,6 +21,12 @@ return [
 	],
 	[
 		'type'     => 'checkbox',
+		'settings' => 'featured-image',
+		'label'    => __( 'Use post/page featured image if available', 'genesis-customizer' ),
+		'default'  => true,
+	],
+	[
+		'type'     => 'checkbox',
 		'settings' => 'breadcrumbs',
 		'label'    => __( 'Move breadcrumbs inside hero section', 'genesis-customizer' ),
 		'default'  => false,
@@ -199,5 +205,22 @@ return [
 				'media_query' => _get_media_query(),
 			],
 		],
+	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider-3873',
+		'default'  => '<hr>',
+	],
+	[
+		'type'     => 'text',
+		'settings' => 'latest-posts-title',
+		'label'    => __( 'Latest Posts Title', 'genesis-customizer' ),
+		'default'  => __( 'Latest Posts', 'genesis-customizer' ),
+	],
+	[
+		'type'     => 'text',
+		'settings' => 'latest-posts-subtitle',
+		'label'    => __( 'Latest Posts Subtitle', 'genesis-customizer' ),
+		'default'  => __( 'Showing the latest posts', 'genesis-customizer' ),
 	],
 ];

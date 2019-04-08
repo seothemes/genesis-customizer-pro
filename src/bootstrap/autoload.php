@@ -11,6 +11,8 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\autoload_pro_files' );
  * @return void
  */
 function autoload_pro_files() {
+
+	// Modules.
 	$modules = apply_filters( 'genesis_customizer_modules', _get_pro_modules() );
 
 	foreach ( $modules as $module => $name ) {
@@ -19,6 +21,7 @@ function autoload_pro_files() {
 		require_once $file_name;
 	}
 
+	// Admin.
 	if ( is_admin() ) {
 		foreach ( glob( _get_pro_path() . 'src/admin/*.php' ) as $file_name ) {
 			require_once $file_name;
