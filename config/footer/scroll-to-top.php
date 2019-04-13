@@ -66,11 +66,6 @@ return [
 			'html'   => __( 'Custom HTML', 'genesis-customizer' ),
 		],
 		'active_callback' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => true,
-				'operator' => '===',
-			],
 		],
 	],
 	[
@@ -79,11 +74,6 @@ return [
 		'label'           => __( 'Text', 'genesis-customizer' ),
 		'default'         => __( 'Scroll to top', 'genesis-customizer' ),
 		'active_callback' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => true,
-				'operator' => '===',
-			],
 			[
 				'setting'  => _get_setting( 'style' ),
 				'value'    => 'text',
@@ -97,11 +87,6 @@ return [
 		'label'           => __( 'Custom HTML', 'genesis-customizer' ),
 		'default'         => '<a href="#top">' . __( 'Scroll to top', 'genesis-customizer' ) . '</a>',
 		'active_callback' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => true,
-				'operator' => '===',
-			],
 			[
 				'setting'  => _get_setting( 'style' ),
 				'value'    => 'html',
@@ -133,11 +118,6 @@ return [
 		],
 		'active_callback' => [
 			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => true,
-				'operator' => '===',
-			],
-			[
 				'setting'  => _get_setting( 'style' ),
 				'value'    => 'button',
 				'operator' => '===',
@@ -162,11 +142,6 @@ return [
 			],
 		],
 		'active_callback' => [
-			[
-				'setting'  => _get_setting( 'enabled' ),
-				'value'    => true,
-				'operator' => '===',
-			],
 			[
 				'setting'  => _get_setting( 'style' ),
 				'value'    => 'button',

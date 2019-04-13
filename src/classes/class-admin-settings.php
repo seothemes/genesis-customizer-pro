@@ -67,7 +67,6 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 	function sanitization_filters() {
 		genesis_add_option_filter( 'no_html', $this->settings_field, [
 			'license',
-
 		] );
 	}
 
