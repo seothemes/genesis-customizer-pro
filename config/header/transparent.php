@@ -97,7 +97,7 @@ return [
 				'element'  => [
 					'.has-transparent-header .site-header a:hover',
 					'.has-transparent-header .site-header a:focus',
-					'.has-transparent-header .current-menu-item > a',
+					'.has-transparent-header .site-header .current-menu-item > a',
 					'.has-transparent-header .header-search-toggle:hover svg',
 					'.has-transparent-header .header-search-toggle:focus svg',
 				],
