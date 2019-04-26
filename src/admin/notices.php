@@ -12,6 +12,7 @@ add_action( 'admin_notices', __NAMESPACE__ . '\license_notice' );
  */
 function license_notice() {
 	$status = genesis_get_option( 'status', 'genesis-customizer-settings' );
+
 	if ( $status ) {
 		return;
 	}

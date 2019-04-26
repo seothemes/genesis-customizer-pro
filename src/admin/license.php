@@ -137,7 +137,7 @@ function license_admin_notices() {
                 </div>
 				<?php
 				break;
-				
+
 			case 'true':
 				?>
                 <div class="success">

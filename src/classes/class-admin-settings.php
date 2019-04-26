@@ -3,22 +3,16 @@
 namespace GenesisCustomizer;
 
 /**
- * Registers a new admin page, providing content and corresponding menu item
- * for the Child Theme Settings page.
+ * Class Admin_Settings
  *
- * @package    BE Genesis Child
- * @subpackage Admin
- *
- * @since      1.0.0
+ * @package GenesisCustomizer
  */
 class Admin_Settings extends \Genesis_Admin_Boxes {
 
 	/**
-	 * Create an admin menu item and settings page.
-	 *
-	 * @since 1.0.0
+	 * Admin_Settings constructor.
 	 */
-	function __construct() {
+	public function __construct() {
 
 		// Specify a unique page ID.
 		$page_id = _get_handle();
@@ -35,14 +29,13 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 		// Set up page options. These are optional, so only uncomment if you want to change the defaults
 		$page_ops = [
 			'screen_icon'       => 'options-general',
-			'save_button_text'  => 'Save Settings',
-			'reset_button_text' => 'Reset Settings',
-			'save_notice_text'  => 'Settings saved.',
-			'reset_notice_text' => 'Settings reset.',
+			'save_button_text'  => __( 'Save Settings', 'genesis-customizer' ),
+			'reset_button_text' => __( 'Reset Settings', 'genesis-customizer' ),
+			'save_notice_text'  => __( 'Settings saved.', 'genesis-customizer' ),
+			'reset_notice_text' => __( 'Settings reset.', 'genesis-customizer' ),
 		];
 
 		// Give it a unique settings field.
-		// You'll access them from genesis_get_option( 'option_name', 'child-settings' );
 		$settings_field = _get_handle() . '-settings';
 
 		// Set the default values
@@ -64,7 +57,7 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 	 *
 	 * @since 1.0.0
 	 */
-	function sanitization_filters() {
+	public function sanitization_filters() {
 		genesis_add_option_filter( 'no_html', $this->settings_field, [
 			'license',
 		] );
@@ -79,8 +72,9 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 	 *
 	 * @return mixed
 	 */
-	function sanitize_pro_license( $new ) {
+	public function sanitize_pro_license( $new ) {
 		$old = get_option( _get_pro_handle() . '_license_key' );
+
 		if ( $old && $old !== $new ) {
 			delete_option( _get_pro_handle() . '_license_status' );
 		}
@@ -95,7 +89,7 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 	 *
 	 * @return void
 	 */
-	function help() {
+	public function help() {
 		$screen = get_current_screen();
 		$screen->add_help_tab( [
 			'id'      => _get_handle(),
@@ -111,9 +105,8 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 	 *
 	 * @return void
 	 */
-	function metaboxes() {
-
-		add_meta_box(
+	public function metaboxes() {
+		\add_meta_box(
 			'license',
 			__( 'License Key', 'genesis-customizer' ),
 			[ $this, 'license_fields', ],
@@ -122,7 +115,7 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 			'high'
 		);
 
-		add_meta_box(
+		\add_meta_box(
 			'modules',
 			__( 'Modules', 'genesis-customizer' ),
 			[ $this, 'module_fields', ],
@@ -139,12 +132,10 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 	 *
 	 * @return void
 	 */
-	function license_fields() {
+	public function license_fields() {
 		$handle  = _get_handle();
 		$license = $this->get_field_value( 'license' );
-		$status  = genesis_get_option( 'status', 'genesis-customizer-settings' );
-
-
+		$status  = $this->get_field_value( 'status' );
 
 		?>
         <table class="form-table">
@@ -162,7 +153,7 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 						<?php _e( 'Activate license' ); ?>
                     </th>
                     <td>
-						<?php if ( $status !== false && $status == 'valid' ) { ?>
+						<?php if ( $status === 'valid' ) { ?>
                             <b style="display:inline-block;padding:6px 6px 6px 0;color:green;"><?php _e( 'active' ); ?></b>
 							<?php wp_nonce_field( $handle, $handle ); ?>
                             <input type="submit" class="button-secondary"
@@ -189,7 +180,7 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 	 *
 	 * @return void
 	 */
-	function module_fields() {
+	public function module_fields() {
 		$modules = _get_pro_modules();
 
 		?>
@@ -198,7 +189,8 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
                 <th style="font-weight: normal;">
                     <input type="button" class="button primary" name="select-all" id="select-all" value="Select All"/>
                     &nbsp;
-                    <input type="button" class="button primary" name="deselect-all" id="deselect-all" value="Deselect All"/></th>
+                    <input type="button" class="button primary" name="deselect-all" id="deselect-all" value="Deselect All"/>
+                </th>
             </tr>
 			<?php foreach ( $modules as $module => $title ) : ?>
 				<?php $checked = $this->get_field_value( $module ); ?>
@@ -213,6 +205,5 @@ class Admin_Settings extends \Genesis_Admin_Boxes {
 
 		<?php
 	}
-
 }
 

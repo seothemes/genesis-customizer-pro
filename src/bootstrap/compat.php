@@ -26,19 +26,22 @@ add_action( 'admin_notices', __NAMESPACE__ . '\pro_deactivation_notice' );
  *
  * @since 1.0.0
  *
- * @return void
+ * @return string
  */
 function pro_deactivation_notice() {
 	if ( ! pro_is_compatible() ) {
-		return printf(
-			'<div class="notice notice-error"><p><b>%s</b> %s</p></div>',
-			__( 'Genesis Customizer Pro', 'genesis-customizer-pro' ),
-			__( 'requires the Genesis Customizer plugin to run and has been deactivated.', 'genesis-customizer-pro' )
-		);
-
 		if ( isset( $_GET['activate'] ) ) {
 			unset( $_GET['activate'] );
 		}
+
+		return printf(
+			'<div class="notice notice-error"><p><b>%s</b> %s</p></div>',
+			_get_pro_name(),
+			__( 'requires the Genesis Customizer plugin to run and has been deactivated.', 'genesis-customizer-pro' )
+		);
+
+	} else {
+		return '';
 	}
 }
 
