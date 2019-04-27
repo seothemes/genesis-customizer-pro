@@ -31,7 +31,7 @@ return [
 		'type'     => 'custom',
 		'settings' => 'tip-3981',
 		'default'  => sprintf(
-			'<hr><p><strong>%s</strong> %s <a href="%s">%s</a></p><hr>',
+			'<hr><p><strong>%s</strong> %s <a href="%s" target="_blank">%s</a></p><hr>',
 			esc_html__( 'Tip: ', 'genesis-customizer' ),
 			esc_html__( 'The Blog page layout can be changed from the ', 'genesis-customizer' ),
 			admin_url( 'post.php?post=' . get_option( 'page_for_posts' ) . '&action=edit' ),
