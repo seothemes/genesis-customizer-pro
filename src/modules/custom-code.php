@@ -3,8 +3,8 @@
 namespace GenesisCustomizer;
 
 // Enable config.
-add_filter('genesis-customizer_code_css_config', '__return_true' );
-add_filter('genesis-customizer_code_js_config', '__return_true' );
+add_filter( 'genesis-customizer_code_css_config', '__return_true' );
+add_filter( 'genesis-customizer_code_js_config', '__return_true' );
 
 add_action( 'wp_ajax_dynamic_css', __NAMESPACE__ . '\dynamic_css' );
 add_action( 'wp_ajax_nopriv_dynamic_css', __NAMESPACE__ . '\dynamic_css' );
@@ -38,7 +38,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\responsive_css_output' );
  * @return void
  */
 function responsive_css_output() {
-	$handle  = _get_handle() . '-responsive-css';
+	$handle = _get_handle() . '-responsive-css';
 
 	if ( is_customize_preview() ) {
 		$css = generate_css();
@@ -65,7 +65,7 @@ function responsive_css_output() {
  * @return mixed|string
  */
 function generate_css() {
-	$breakpoint = _get_value( 'general_breakpoints_global' ) . 'px';
+	$breakpoint = _get_option( 'breakpoint' ) . 'px';
 	$all        = _get_value( 'code_css_all' );
 	$mobile     = _get_value( 'code_css_mobile' );
 	$desktop    = _get_value( 'code_css_desktop' );
@@ -122,20 +122,20 @@ function inline_js() {
 
 	if ( '' !== $jquery ) {
 		?>
-		<script type="text/javascript">
+        <script type="text/javascript">
             jQuery(function ($) {
                 "use strict";
 				<?php echo $jquery . "\n"; ?>
             });
-		</script>
+        </script>
 		<?php
 	}
 
 	if ( '' !== $vanilla ) {
 		?>
-		<script type="text/javascript">
+        <script type="text/javascript">
 			<?php echo $vanilla . "\n"; ?>
-		</script>
+        </script>
 		<?php
 	}
 }

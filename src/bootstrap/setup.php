@@ -3,7 +3,6 @@
 namespace GenesisCustomizer;
 
 // Enable non module configs.
-add_filter( 'genesis-customizer_general_breakpoints_config', '__return_true' );
 add_filter( 'genesis-customizer_header_primary_config', '__return_true' );
 add_filter( 'genesis-customizer_menus_mobile_config', '__return_true' );
 
@@ -32,14 +31,14 @@ add_filter( 'genesis_customizer_modules', __NAMESPACE__ . '\enabled_modules' );
  * @return array
  */
 function enabled_modules( $defaults ) {
-	$options = get_option( 'genesis-customizer-settings', [] );
+	$options = _get_option( 'modules', [] );
 
 	if ( ! is_array( $options ) ) {
 		return $defaults;
 	}
 
 	foreach ( $defaults as $default => $name ) {
-		if ( ! array_key_exists( $default, $options ) ) {
+		if ( ! in_array( $default, $options ) ) {
 			unset( $defaults[ $default ] );
 		}
 	}
@@ -93,12 +92,6 @@ add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\add_pro_sections' )
  */
 function add_pro_sections( $defaults ) {
 	$modules = [
-		'general'     => [
-			'license'     => __( 'License', 'genesis-customizer' ),
-			'performance' => __( 'Performance', 'genesis-customizer' ),
-			'breakpoints' => __( 'Breakpoints', 'genesis-customizer' ),
-			'typekit'     => __( 'Typekit', 'genesis-customizer' ),
-		],
 		'header'      => [
 			'left'        => __( 'Header Left', 'genesis-customizer' ),
 			'above'       => __( 'Above Header', 'genesis-customizer' ),
@@ -150,7 +143,26 @@ function activation_hook() {
 		$new[ $module ] = 1;
 	}
 
-	$new['status'] = 'invalid';
+	update_option( 'genesis-customizer-modules', $new );
+}
 
-	genesis_update_settings( $new, _get_handle() . '-settings' );
+add_action( 'genesis_setup', __NAMESPACE__ . '\load_child_theme_css', 15 );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function load_child_theme_css() {
+	$load  = _get_option( 'child-theme-css' );
+	$trump = _get_option( 'style-trump' );
+
+	if ( ! $load || $trump ) {
+		remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+	}
+
+	if ( $trump ) {
+		add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 999 );
+	}
 }

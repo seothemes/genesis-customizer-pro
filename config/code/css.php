@@ -16,13 +16,14 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'tip-1',
+		'settings' => 'tip',
 		'default'  => sprintf(
-			'<p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
+			'<p><strong>%s</strong> %s <a href="%s" target="_blank">%s</a> %s</p><hr>',
 			esc_html__( 'Tip: ', 'genesis-customizer' ),
-			esc_html__( 'The responsive breakpoint setting can be changed from the  ', 'genesis-customizer' ),
-			esc_attr( '"genesis-customizer_general_breakpoints"' ),
-			esc_html__( 'Breakpoints Section', 'genesis-customizer' )
+			esc_html__( 'The responsive breakpoint setting can be changed from the ', 'genesis-customizer' ),
+			admin_url( 'admin.php?page=genesis-customizer&tab=general' ),
+			esc_html__( 'General Settings', 'genesis-customizer' ),
+			esc_html__( 'page', 'genesis-customizer' )
 		),
 	],
 	[
@@ -41,10 +42,10 @@ return [
 		],
 	],
 	[
-		'type'        => 'code',
-		'settings'    => 'mobile',
-		'default'     => '',
-		'choices'     => [
+		'type'            => 'code',
+		'settings'        => 'mobile',
+		'default'         => '',
+		'choices'         => [
 			'language' => 'css',
 		],
 		'active_callback' => [
@@ -56,10 +57,10 @@ return [
 		],
 	],
 	[
-		'type'        => 'code',
-		'settings'    => 'desktop',
-		'default'     => '',
-		'choices'     => [
+		'type'            => 'code',
+		'settings'        => 'desktop',
+		'default'         => '',
+		'choices'         => [
 			'language' => 'css',
 		],
 		'active_callback' => [

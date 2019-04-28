@@ -11,16 +11,12 @@ add_action( 'admin_init', __NAMESPACE__ . '\load_pro_updater' );
  * @return object
  */
 function load_pro_updater() {
-	if ( ! class_exists( 'EDD_SL_Plugin_Updater' ) ) {
-		require_once _get_pro_path() . 'src/classes/class-edd-sl-plugin-updater.php';
-	}
-
 	return new \EDD_SL_Plugin_Updater(
 		_get_store_url(),
 		_get_pro_path() . _get_pro_handle() . '.php',
 		[
 			'version'     => _get_pro_version(),
-			'license'     => _get_license_key(),
+			'license'     => _get_license(),
 			'item_id'     => _get_product_id(),
 			'author'      => _get_author(),
 			'url'         => home_url(),
@@ -45,14 +41,16 @@ function activate_pro_license() {
 			return;
 		}
 
-		$license    = trim( genesis_get_option( 'license', 'genesis-customizer-settings' ) );
+		$license = _get_license();
+
 		$api_params = [
 			'edd_action' => 'activate_license',
 			'license'    => $license,
 			'item_id'    => _get_product_id(),
 			'url'        => home_url(),
 		];
-		$response   = wp_remote_post(
+
+		$response = wp_remote_post(
 			_get_store_url(),
 			[
 				'timeout'   => 15,
@@ -99,7 +97,7 @@ function activate_pro_license() {
 
 		// Check if anything passed on a message constituting a failure
 		if ( ! empty( $message ) ) {
-			$base_url = admin_url( 'admin.php?page=' . $handle );
+			$base_url = admin_url( 'admin.php?page=' . $handle . '&tab=license' );
 			$redirect = add_query_arg( [
 				'sl_activation' => 'false',
 				'message'       => urlencode( $message ),
@@ -109,13 +107,50 @@ function activate_pro_license() {
 		}
 
 		// $license_data->license will be either "valid" or "invalid"
-		$options           = get_option( $handle . '-settings' );
-		$options['status'] = $license_data->license;
-		update_option( $handle . '-settings', $options );
+		update_option( $handle . '-license-status', $license_data->license );
 
-		wp_redirect( admin_url( 'admin.php?page=' . $handle ) );
+		wp_redirect( admin_url( 'admin.php?page=genesis-customizer&tab=license' ) );
 		exit();
 	}
+}
+
+add_action( 'admin_init', __NAMESPACE__ . '\deactivate_pro_license' );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function deactivate_pro_license() {
+	$handle = _get_handle();
+
+	if ( isset( $_POST[ $handle . '_license_deactivate' ] ) ) {
+		if ( ! check_admin_referer( $handle, $handle ) ) {
+			return;
+		}
+
+		update_option( $handle . '-license-status', '' );
+	}
+}
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @param $new
+ *
+ * @return mixed
+ */
+function sanitize_pro_license( $new ) {
+	$old = _get_option( 'license-key' );
+
+	if ( $old && $old != $new ) {
+		delete_option( 'genesis-customizer-license-status' );
+	}
+
+	return $new;
 }
 
 add_action( 'admin_notices', __NAMESPACE__ . '\license_admin_notices' );

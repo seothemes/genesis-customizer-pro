@@ -11,9 +11,7 @@ add_action( 'admin_notices', __NAMESPACE__ . '\license_notice' );
  * @return void
  */
 function license_notice() {
-	$status = genesis_get_option( 'status', 'genesis-customizer-settings' );
-
-	if ( $status ) {
+	if ( 'valid' === _get_license( 'status' ) ) {
 		return;
 	}
 
@@ -22,7 +20,7 @@ function license_notice() {
 		esc_html__( 'Please activate your', 'genesis-customizer' ),
 		esc_html__( 'Genesis Customizer Pro', 'genesis-customizer' ),
 		esc_html__( 'license to enable automatic updates.', 'genesis-customizer' ),
-		admin_url( 'admin.php?page=genesis-customizer' ),
+		admin_url( 'admin.php?page=genesis-customizer&tab=license' ),
 		esc_html__( 'License settings', 'genesis-customizer' )
 	);
 }

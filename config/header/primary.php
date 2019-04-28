@@ -19,7 +19,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-98230',
+		'settings' => 'divider',
 		'default'  => '<hr>',
 		'priority' => 2,
 	],
@@ -98,7 +98,7 @@ return [
 	],
 	[
 		'type'            => 'custom',
-		'settings'        => 'tip-3398',
+		'settings'        => 'tip',
 		'priority'        => 6,
 		'default'         => sprintf(
 			'<hr><p><strong>%s</strong>%s<a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',

@@ -118,10 +118,12 @@ function _get_product_id() {
  *
  * @since 1.0.0
  *
+ * @param string $key_or_status Return the license key or status.
+ *
  * @return string
  */
-function _get_license_key() {
-	return trim( genesis_get_option( 'license', 'genesis-customizer-settings' ) );
+function _get_license( $key_or_status = 'key' ) {
+	return trim( get_option( "genesis-customizer-license-$key_or_status" ) );
 }
 
 /**
@@ -135,8 +137,9 @@ function _get_pro_modules() {
 	$modules = [];
 
 	foreach ( glob( _get_pro_path() . 'src/modules/*.php' ) as $module ) {
-		$id             = basename( $module, '.php' );
-		$title          = ucwords( str_replace( '-', ' ', $id ) );
+		$id    = basename( $module, '.php' );
+		$title = ucwords( str_replace( '-', ' ', $id ) );
+
 		$modules[ $id ] = $title;
 	}
 

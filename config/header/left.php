@@ -18,11 +18,11 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'tip-1',
+		'settings' => 'tip',
 		'default'  => sprintf(
 			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
-			esc_html__( 'Tip: ', 'genesis-customizer' ),
-			esc_html__( 'Edit the  ', 'genesis-customizer' ),
+			esc_html__( 'Quick Link: ', 'genesis-customizer' ),
+			esc_html__( 'Edit ', 'genesis-customizer' ),
 			esc_attr( '"sidebar-widgets-header-left-widget"' ),
 			esc_html__( 'Header Left Widgets', 'genesis-customizer' )
 		),
@@ -54,7 +54,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-939831',
+		'settings' => 'divider',
 		'default'  => '<hr>',
 	],
 	[
@@ -82,8 +82,8 @@ return [
 	],
 	[
 		'type'     => 'slider',
-		'settings' => 'horizontal-spacing',
-		'label'    => __( 'Horizontal Spacing', 'genesis-customizer' ),
+		'settings' => 'spacing-left',
+		'label'    => __( 'Spacing Left', 'genesis-customizer' ),
 		'default'  => '20',
 		'choices'  => [
 			'min'  => 0,
@@ -96,6 +96,19 @@ return [
 				'property' => 'padding-left',
 				'units'    => 'px',
 			],
+		],
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'spacing-right',
+		'label'    => __( 'Spacing Right', 'genesis-customizer' ),
+		'default'  => '20',
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 200,
+			'step' => 1,
+		],
+		'output'   => [
 			[
 				'element'  => '.header-left',
 				'property' => 'padding-right',

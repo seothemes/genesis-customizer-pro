@@ -29,7 +29,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'tip-3981',
+		'settings' => 'tip',
 		'default'  => sprintf(
 			'<hr><p><strong>%s</strong> %s <a href="%s" target="_blank">%s</a></p><hr>',
 			esc_html__( 'Tip: ', 'genesis-customizer' ),
@@ -43,7 +43,7 @@ return [
 	],
 	[
 		'type'            => 'custom',
-		'settings'        => 'tip-2793',
+		'settings'        => 'tip',
 		'default'         => sprintf(
 			'<hr><p><strong>%s</strong> %s <a href="%s">%s</a>%s</p><hr>',
 			esc_html__( 'Tip: ', 'genesis-customizer' ),
@@ -78,7 +78,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'tip-8731',
+		'settings' => 'tip',
 		'default'  => sprintf(
 			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.control( %s ).focus();">%s</a></p><hr>',
 			esc_html__( 'Tip: ', 'genesis-customizer' ),

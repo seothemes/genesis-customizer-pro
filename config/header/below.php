@@ -5,7 +5,7 @@ namespace GenesisCustomizer;
 return [
 	[
 		'type'     => 'custom',
-		'settings' => 'tip-1',
+		'settings' => 'tip',
 		'default'  => sprintf(
 			'<p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
 			esc_html__( 'Tip: ', 'genesis-customizer' ),
@@ -28,7 +28,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-1',
+		'settings' => 'divider',
 		'default'  => '<hr>',
 	],
 	[
@@ -52,7 +52,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-2',
+		'settings' => 'divider',
 		'default'  => '<hr>',
 	],
 	[
@@ -74,7 +74,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-9832',
+		'settings' => 'divider',
 		'default'  => '<hr>',
 	],
 	[
@@ -132,7 +132,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-3',
+		'settings' => 'divider',
 		'default'  => '<hr>',
 	],
 	[
@@ -165,7 +165,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-4',
+		'settings' => 'divider',
 		'default'  => '<hr>',
 	],
 	[
@@ -188,7 +188,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-827',
+		'settings' => 'divider',
 		'default'  => '<hr>',
 	],
 	[
