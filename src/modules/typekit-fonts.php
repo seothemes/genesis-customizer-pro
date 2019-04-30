@@ -31,7 +31,7 @@ function add_typekit_group( $custom ) {
 		$variants[ $font['slug'] ] = $font['weights'];
 	}
 
-	$custom['families']['custom_fonts'] = [
+	$custom['families']['typekit'] = [
 		'text'     => esc_attr__( 'Typekit', 'genesis-customizer' ),
 		'children' => $children,
 	];
@@ -39,24 +39,4 @@ function add_typekit_group( $custom ) {
 	$custom['variants'] = $variants;
 
 	return $custom;
-}
-
-add_filter( 'genesis_customizer_field', __NAMESPACE__ . '\add_font_choices', 10, 2 );
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
- * @param $field
- *
- * @return mixed
- */
-function add_font_choices( $field ) {
-	if ( $field['type'] === 'typography' ) {
-		$field['choices'] = [
-			'fonts' => apply_filters( 'genesis_customizer_font_choices', [] ),
-		];
-	}
-
-	return $field;
 }

@@ -20,7 +20,17 @@ function pro_merlin_local_import_files( $demos ) {
 		'local_import_customizer_file' => _get_pro_path() . 'assets/demo/business-pro/customizer.dat',
 		'import_preview_image_url'     => 'https://genesiscustomizer.test/wp-content/uploads/2019/03/mockup-1024x597.png',
 		'import_notice'                => __( 'A special note for this import.', 'genesis-customizer' ),
-		'preview_url'                  => 'https://genesiscustomizer.com',
+		'preview_url'                  => 'https://demo.genesiscustomizer.com/business-pro',
+	];
+
+	$demos[] = [
+		'import_file_name'             => 'Ghost',
+		'local_import_file'            => _get_pro_path() . 'assets/demo/ghost/content.xml',
+		'local_import_widget_file'     => _get_pro_path() . 'assets/demo/ghost/widgets.wie',
+		'local_import_customizer_file' => _get_pro_path() . 'assets/demo/ghost/customizer.dat',
+		'import_preview_image_url'     => 'https://genesiscustomizer.test/wp-content/uploads/2019/03/mockup-1024x597.png',
+		'import_notice'                => __( 'A special note for this import.', 'genesis-customizer' ),
+		'preview_url'                  => 'https://demo.genesiscustomizer.com/ghost',
 	];
 
 	return $demos;
