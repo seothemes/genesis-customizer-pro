@@ -112,6 +112,7 @@ function add_pro_sections( $defaults ) {
 		],
 		'footer'      => [
 			'above'         => __( 'Above Footer', 'genesis-customizer' ),
+			'below'         => __( 'Below Footer', 'genesis-customizer' ),
 			'scroll-to-top' => __( 'Scroll to Top', 'genesis-customizer' ),
 		],
 		'code'        => [

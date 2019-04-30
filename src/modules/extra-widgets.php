@@ -7,6 +7,7 @@ add_filter( 'genesis-customizer_header_above_config', '__return_true' );
 add_filter( 'genesis-customizer_header_left_config', '__return_true' );
 add_filter( 'genesis-customizer_header_below_config', '__return_true' );
 add_filter( 'genesis-customizer_footer_above_config', '__return_true' );
+add_filter( 'genesis-customizer_footer_below_config', '__return_true' );
 add_filter( 'genesis-customizer_content_above_config', '__return_true' );
 add_filter( 'genesis-customizer_content_below_config', '__return_true' );
 
@@ -132,6 +133,27 @@ function above_footer() {
 
 	genesis_widget_area( 'above-footer', [
 		'before' => '<div class="above-footer widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+	] );
+}
+
+add_action( 'genesis_footer', __NAMESPACE__ . '\below_footer', 12 );
+/**
+ * Display the Above Footer widget area.
+ *
+ * @since 1.1.0
+ *
+ * @return void
+ */
+function below_footer() {
+	$enabled = _get_value( 'footer_below_enabled' );
+
+	if ( ! $enabled ) {
+		return;
+	}
+
+	genesis_widget_area( 'below-footer', [
+		'before' => '<div class="below-footer widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
 	] );
 }

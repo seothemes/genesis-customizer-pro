@@ -6,7 +6,7 @@ return [
 	[
 		'type'     => 'checkbox',
 		'settings' => 'enabled',
-		'label'    => __( 'Display Above Footer section', 'genesis-customizer' ),
+		'label'    => __( 'Display Below Footer section', 'genesis-customizer' ),
 		'default'  => true,
 	],
 	[
@@ -28,7 +28,7 @@ return [
 		],
 		'output'      => [
 			[
-				'element'  => '.above-footer .wrap',
+				'element'  => '.below-footer .wrap',
 				'property' => 'justify-content',
 			],
 		],
@@ -43,6 +43,7 @@ return [
 		'settings' => 'colors',
 		'label'    => __( 'Colors', 'genesis-customizer' ),
 		'choices'  => [
+			'background'  => __( 'Background', 'genesis-customizer' ),
 			'text'        => __( 'Text', 'genesis-customizer' ),
 			'headings'    => __( 'Headings', 'genesis-customizer' ),
 			'links'       => __( 'Links', 'genesis-customizer' ),
@@ -50,6 +51,7 @@ return [
 			'border'      => __( 'Border', 'genesis-customizer' ),
 		],
 		'default'  => [
+			'background'  => '',
 			'text'        => '',
 			'headings'    => '',
 			'links'       => '',
@@ -58,62 +60,42 @@ return [
 		],
 		'output'   => [
 			[
+				'choice'   => 'background',
+				'element'  => '.below-footer',
+				'property' => 'background-color',
+			],
+			[
 				'choice'   => 'text',
-				'element'  => '.above-footer',
+				'element'  => '.below-footer',
 				'property' => 'color',
 			],
 			[
 				'choice'   => 'headings',
 				'element'  => [
-					'.above-footer h1',
-					'.above-footer h2',
-					'.above-footer h3',
-					'.above-footer h4',
-					'.above-footer h5',
-					'.above-footer h6',
+					'.below-footer h1',
+					'.below-footer h2',
+					'.below-footer h3',
+					'.below-footer h4',
+					'.below-footer h5',
+					'.below-footer h6',
 				],
 				'property' => 'color',
 			],
 			[
 				'choice'   => 'links',
-				'element'  => '.above-footer a',
+				'element'  => '.below-footer a',
 				'property' => 'color',
 			],
 			[
 				'choice'   => 'links-hover',
-				'element'  => '.above-footer a:hover, .above-footer a:focus',
+				'element'  => '.below-footer a:hover, .below-footer a:focus',
 				'property' => 'color',
 			],
 			[
 				'choice'   => 'border',
-				'element'  => '.above-footer',
+				'element'  => '.below-footer',
 				'property' => 'border-color',
 			],
-		],
-	],
-	[
-		'type'      => 'multicolor',
-		'settings'  => 'gradient',
-		'label'     => __( 'Gradient Overlay', 'genesis-customizer' ),
-		'transport' => 'refresh',
-		'choices'   => [
-			'left'  => __( 'Background Left', 'genesis-customizer' ),
-			'right' => __( 'Background Right', 'genesis-customizer' ),
-		],
-		'default'   => [
-			'left'  => '',
-			'right' => '',
-		],
-	],
-	[
-		'type'     => 'slider',
-		'settings' => 'angle',
-		'label'    => __( 'Gradient Angle', 'genesis-customizer' ),
-		'default'  => '135',
-		'choices'  => [
-			'min'  => 0,
-			'max'  => 360,
-			'step' => 1,
 		],
 	],
 	[
@@ -133,12 +115,12 @@ return [
 		],
 		'output'   => [
 			[
-				'element'  => '.above-footer',
+				'element'  => '.below-footer',
 				'property' => 'padding-top',
 				'units'    => 'px',
 			],
 			[
-				'element'  => '.above-footer',
+				'element'  => '.below-footer',
 				'property' => 'padding-bottom',
 				'units'    => 'px',
 			],
@@ -166,35 +148,13 @@ return [
 		'output'   => [
 			[
 				'choice'   => 'border-top-width',
-				'element'  => '.above-footer',
+				'element'  => '.below-footer',
 				'property' => 'border-top-width',
 			],
 			[
-				'choice'  => 'border-bottom-width',
-				'element' => '.above-footer',
+				'choice'   => 'border-bottom-width',
+				'element'  => '.below-footer',
 				'property' => 'border-bottom-width',
-			],
-		],
-	],
-	[
-		'type'     => 'custom',
-		'settings' => 'divider',
-		'default'  => '<hr>',
-	],
-	[
-		'type'     => 'background',
-		'settings' => 'background',
-		'label'    => __( 'Background Image', 'genesis-customizer' ),
-		'default'  => [
-			'background-image'      => '',
-			'background-repeat'     => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'cover',
-			'background-attachment' => '',
-		],
-		'output'   => [
-			[
-				'element' => '.above-footer',
 			],
 		],
 	],
