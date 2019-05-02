@@ -340,7 +340,17 @@ function hero_display() {
 
 	genesis_structural_wrap( 'hero-section', 'open' );
 
+	genesis_markup( [
+		'open'    => '<div %s>',
+		'context' => 'hero-inner',
+	] );
+
 	do_action( 'genesis_customizer_hero_section' );
+
+	genesis_markup( [
+		'close'   => '</div>',
+		'context' => 'hero-inner',
+	] );
 
 	genesis_structural_wrap( 'hero-section', 'close' );
 

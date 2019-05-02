@@ -53,5 +53,5 @@ function pro_deactivation_notice() {
  * @return bool
  */
 function pro_is_compatible() {
-	return function_exists( __NAMESPACE__ . '\autoload' );
+	return function_exists( __NAMESPACE__ . '\autoload_files' ) && class_exists( 'Kirki' );
 }

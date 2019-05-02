@@ -11,7 +11,7 @@ add_action( 'admin_init', __NAMESPACE__ . '\load_pro_updater' );
  * @return object
  */
 function load_pro_updater() {
-	return new \EDD_SL_Plugin_Updater(
+	return new EDD_SL_Plugin_Updater(
 		_get_store_url(),
 		_get_pro_path() . _get_pro_handle() . '.php',
 		[

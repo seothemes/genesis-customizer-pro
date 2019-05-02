@@ -65,26 +65,28 @@ return [
 		'default'  => '<hr>',
 	],
 	[
-		'type'      => 'multicolor',
-		'settings'  => 'colors',
-		'label'     => __( 'Colors', 'genesis-customizer' ),
-		'choices'   => [
-			'text'        => __( 'Text', 'genesis-customizer' ),
-			'headings'    => __( 'Headings', 'genesis-customizer' ),
-			'links'       => __( 'Links', 'genesis-customizer' ),
-			'links-hover' => __( 'Links Hover', 'genesis-customizer' ),
+		'type'     => 'multicolor',
+		'settings' => 'colors',
+		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'choices'  => [
+			'text'          => __( 'Text', 'genesis-customizer' ),
+			'headings'      => __( 'Headings', 'genesis-customizer' ),
+			'links'         => __( 'Links', 'genesis-customizer' ),
+			'links-hover'   => __( 'Links Hover', 'genesis-customizer' ),
+			'inner-section' => __( 'Inner Section', 'genesis-customizer' ),
 		],
-		'default'   => [
-			'text'        => _get_color( 'white' ),
-			'headings'    => _get_color( 'white' ),
-			'links'       => _get_color( 'white' ),
-			'links-hover' => '',
+		'default'  => [
+			'text'          => _get_color( 'white' ),
+			'headings'      => _get_color( 'white' ),
+			'links'         => _get_color( 'white' ),
+			'links-hover'   => '',
+			'inner-section' => '',
 		],
-		'output'    => [
+		'output'   => [
 			[
 				'choice'   => 'text',
 				'element'  => '.hero-section',
-				'property' => 'color'
+				'property' => 'color',
 			],
 			[
 				'choice'   => 'headings',
@@ -96,17 +98,22 @@ return [
 					'.hero-section h5',
 					'.hero-section h6',
 				],
-				'property' => 'color'
+				'property' => 'color',
 			],
 			[
 				'choice'   => 'links',
 				'element'  => '.hero-section a',
-				'property' => 'color'
+				'property' => 'color',
 			],
 			[
 				'choice'   => 'links-hover',
 				'element'  => '.hero-section a:hover, .hero-section a:focus',
-				'property' => 'color'
+				'property' => 'color',
+			],
+			[
+				'choice'   => 'inner-section',
+				'element'  => '.hero-inner',
+				'property' => 'background-color',
 			],
 		],
 	],
@@ -116,12 +123,12 @@ return [
 		'label'     => __( 'Gradient Overlay', 'genesis-customizer' ),
 		'transport' => 'refresh',
 		'choices'   => [
-			'left'        => __( 'Background Left', 'genesis-customizer' ),
-			'right'       => __( 'Background Right', 'genesis-customizer' ),
+			'left'  => __( 'Background Left', 'genesis-customizer' ),
+			'right' => __( 'Background Right', 'genesis-customizer' ),
 		],
 		'default'   => [
-			'left'        => _get_color( 'overlay' ),
-			'right'       => _get_color( 'overlay' ),
+			'left'  => _get_color( 'overlay' ),
+			'right' => _get_color( 'overlay' ),
 		],
 	],
 	[
@@ -203,6 +210,104 @@ return [
 				'property'    => 'padding-bottom',
 				'units'       => 'px',
 				'media_query' => _get_media_query(),
+			],
+		],
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'spacing-inner-vertical',
+		'label'    => __( 'Inner Section Vertical Spacing', 'genesis-customizer' ),
+		'default'  => '0',
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 500,
+			'step' => 1,
+		],
+		'output'   => [
+			[
+				'element'  => '.hero-inner',
+				'property' => 'padding-top',
+				'units'    => 'px',
+			],
+			[
+				'element'  => '.hero-inner',
+				'property' => 'padding-bottom',
+				'units'    => 'px',
+			],
+		],
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'spacing-inner-horizontal',
+		'label'    => __( 'Inner Section Horizontal Spacing', 'genesis-customizer' ),
+		'default'  => '0',
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 500,
+			'step' => 1,
+		],
+		'output'   => [
+			[
+				'element'  => '.hero-inner',
+				'property' => 'padding-left',
+				'units'    => 'px',
+			],
+			[
+				'element'  => '.hero-inner',
+				'property' => 'padding-right',
+				'units'    => 'px',
+			],
+		],
+	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider',
+		'default'  => '<hr>',
+	],
+	[
+		'type'     => 'radio-buttonset',
+		'settings' => 'alignment',
+		'label'    => __( 'Alignment', 'genesis-customizer' ),
+		'default'  => 'center',
+		'choices'  => [
+			'flex-start' => _get_svg( 'alignleft' ),
+			'center'     => _get_svg( 'aligncenter' ),
+			'flex-end'   => _get_svg( 'alignright' ),
+		],
+		'output'   => [
+			[
+				'element'  => '.hero-section, .hero-inner',
+				'property' => 'justify-content',
+			],
+			[
+				'element'       => '.hero-section, .hero-inner',
+				'property'      => 'text-align',
+				'value_pattern' => 'left',
+				'exclude'       => [ 'center', 'flex-end' ],
+			],
+			[
+				'element'       => '.hero-section, .hero-inner',
+				'property'      => 'text-align',
+				'value_pattern' => 'center',
+				'exclude'       => [ 'flex-start', 'flex-end' ],
+			],
+			[
+				'element'       => '.hero-section, .hero-inner',
+				'property'      => 'text-align',
+				'value_pattern' => 'right',
+				'exclude'       => [ 'flex-start', 'center' ],
+			],
+			[
+				'element'       => '.hero-section h1:after',
+				'property'      => 'margin-left',
+				'value_pattern' => '0px',
+				'exclude'       => [ 'center', 'flex-end' ],
+			],
+			[
+				'element'       => '.hero-section h1:after',
+				'property'      => 'margin-right',
+				'value_pattern' => '0px',
+				'exclude'       => [ 'flex-start', 'center' ],
 			],
 		],
 	],
