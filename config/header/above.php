@@ -8,22 +8,22 @@ return [
 		'settings' => 'tip',
 		'default'  => sprintf(
 			'<p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
-			esc_html__( 'Tip: ', 'genesis-customizer' ),
-			esc_html__( 'This is a widget area. Add or remove widgets from the  ', 'genesis-customizer' ),
+			esc_html__( 'Tip: ', 'genesis-customizer-pro' ),
+			esc_html__( 'This is a widget area. Add or remove widgets from the  ', 'genesis-customizer-pro' ),
 			esc_attr( '"sidebar-widgets-above-header"' ),
-			esc_html__( 'Above Header Widgets Screen', 'genesis-customizer' )
+			esc_html__( 'Above Header Widgets Screen', 'genesis-customizer-pro' )
 		),
 	],
 	[
 		'type'     => 'radio',
 		'settings' => 'enabled',
-		'label'    => __( 'Enable on', 'genesis-customizer' ),
+		'label'    => __( 'Enable on', 'genesis-customizer-pro' ),
 		'default'  => 'hide-mobile',
 		'choices'  => [
-			'show'         => __( 'Desktop and Mobile', 'genesis-customizer' ),
-			'hide-mobile'  => __( 'Desktop', 'genesis-customizer' ),
-			'hide-desktop' => __( 'Mobile', 'genesis-customizer' ),
-			'hide'         => __( 'None', 'genesis-customizer' ),
+			'show'         => __( 'Desktop and Mobile', 'genesis-customizer-pro' ),
+			'hide-mobile'  => __( 'Desktop', 'genesis-customizer-pro' ),
+			'hide-desktop' => __( 'Mobile', 'genesis-customizer-pro' ),
+			'hide'         => __( 'None', 'genesis-customizer-pro' ),
 		],
 	],
 	[
@@ -34,7 +34,7 @@ return [
 	[
 		'type'        => 'radio-image',
 		'settings'    => 'layout',
-		'label'       => __( 'Layout', 'genesis-customizer' ),
+		'label'       => __( 'Layout', 'genesis-customizer-pro' ),
 		'default'     => 'space-between',
 		'collapsible' => true,
 		'choices'     => [
@@ -58,12 +58,12 @@ return [
 	[
 		'type'     => 'multicolor',
 		'settings' => 'color',
-		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'label'    => __( 'Colors', 'genesis-customizer-pro' ),
 		'choices'  => [
-			'background'  => __( 'Background', 'genesis-customizer' ),
-			'text'        => __( 'Text', 'genesis-customizer' ),
-			'links'       => __( 'Links', 'genesis-customizer' ),
-			'links-hover' => __( 'Links Hover', 'genesis-customizer' ),
+			'background'  => __( 'Background', 'genesis-customizer-pro' ),
+			'text'        => __( 'Text', 'genesis-customizer-pro' ),
+			'links'       => __( 'Links', 'genesis-customizer-pro' ),
+			'links-hover' => __( 'Links Hover', 'genesis-customizer-pro' ),
 		],
 		'default'  => [
 			'background'  => _get_color( 'heading' ),
@@ -102,7 +102,7 @@ return [
 	[
 		'type'     => 'typography',
 		'settings' => 'typography',
-		'label'    => __( 'Typography', 'genesis-customizer' ),
+		'label'    => __( 'Typography', 'genesis-customizer-pro' ),
 		'default'  => [
 			'font-family' => '',
 			'font-size'   => _get_size( 'xs' ),
@@ -123,7 +123,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'height',
-		'label'    => __( 'Height', 'genesis-customizer' ),
+		'label'    => __( 'Height', 'genesis-customizer-pro' ),
 		'default'  => '40',
 		'choices'  => [
 			'min'  => 20,

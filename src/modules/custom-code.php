@@ -1,4 +1,14 @@
 <?php
+/**
+ * Genesis Customizer Pro.
+ *
+ * This file adds the Custom Code module to Genesis Customizer Pro.
+ *
+ * @package   GenesisCustomizerPro
+ * @author    SEO Themes
+ * @copyright 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace GenesisCustomizer;
 
@@ -19,10 +29,10 @@ function dynamic_css() {
 	$nonce = $_REQUEST['wpnonce'];
 
 	if ( ! wp_verify_nonce( $nonce, 'dynamic-css-nonce' ) ) {
-		die( __( 'Invalid nonce.', 'genesis-customizer' ) );
+		die( esc_html__( 'Invalid nonce.', 'genesis-customizer-pro' ) );
 
 	} else {
-		header( "Content-type: text/css; charset: UTF-8" );
+		header( 'Content-type: text/css; charset: UTF-8' );
 		echo generate_css();
 	}
 
@@ -58,7 +68,7 @@ function responsive_css_output() {
 }
 
 /**
- * Description of expected behavior.
+ * Generates the CSS output.
  *
  * @since 1.0.0
  *
@@ -75,7 +85,6 @@ function generate_css() {
 
 	return minify( $css );
 }
-
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\custom_js_output' );
 /**
@@ -122,20 +131,20 @@ function inline_js() {
 
 	if ( '' !== $jquery ) {
 		?>
-        <script type="text/javascript">
-            jQuery(function ($) {
-                "use strict";
+		<script type="text/javascript">
+			jQuery(function ($) {
+				"use strict";
 				<?php echo $jquery . "\n"; ?>
-            });
-        </script>
+			});
+		</script>
 		<?php
 	}
 
 	if ( '' !== $vanilla ) {
 		?>
-        <script type="text/javascript">
+		<script type="text/javascript">
 			<?php echo $vanilla . "\n"; ?>
-        </script>
+		</script>
 		<?php
 	}
 }
@@ -153,10 +162,10 @@ function dynamic_js() {
 	$nonce = $_REQUEST['wpnonce'];
 
 	if ( ! wp_verify_nonce( $nonce, 'dynamic-js-nonce' ) ) {
-		die( __( 'Invalid nonce.', 'genesis-customizer' ) );
+		die( esc_html__( 'Invalid nonce.', 'genesis-customizer-pro' ) );
 
 	} else {
-		header( "Content-type: text/javascript; charset: UTF-8" );
+		header( 'Content-type: text/javascript; charset: UTF-8' );
 
 		$jquery  = _get_value( 'code_js_jquery' );
 		$vanilla = _get_value( 'code_js_vanilla' );

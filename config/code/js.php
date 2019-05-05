@@ -6,21 +6,21 @@ return [
 	[
 		'type'     => 'select',
 		'settings' => 'output',
-		'label'    => esc_html__( 'Output', 'genesis-customizer' ),
+		'label'    => esc_html__( 'Output', 'genesis-customizer-pro' ),
 		'default'  => 'inline',
 		'choices'  => [
-			'inline' => esc_html__( 'Inline', 'genesis-customizer' ),
-			'file'   => esc_html__( 'File', 'genesis-customizer' ),
+			'inline' => esc_html__( 'Inline', 'genesis-customizer-pro' ),
+			'file'   => esc_html__( 'File', 'genesis-customizer-pro' ),
 		],
 	],
 	[
 		'type'     => 'radio-buttonset',
 		'settings' => 'type',
-		'label'    => esc_html__( 'Type', 'genesis-customizer' ),
+		'label'    => esc_html__( 'Type', 'genesis-customizer-pro' ),
 		'default'  => 'jquery',
 		'choices'  => [
-			'jquery'  => esc_html__( 'jQuery', 'genesis-customizer' ),
-			'vanilla' => esc_html__( 'Vanilla', 'genesis-customizer' ),
+			'jquery'  => esc_html__( 'jQuery', 'genesis-customizer-pro' ),
+			'vanilla' => esc_html__( 'Vanilla', 'genesis-customizer-pro' ),
 		],
 	],
 	[

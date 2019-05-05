@@ -6,12 +6,12 @@ return [
 	[
 		'type'     => 'multicolor',
 		'settings' => 'colors',
-		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'label'    => __( 'Colors', 'genesis-customizer-pro' ),
 		'choices'  => [
-			'text'       => __( 'Link Text', 'genesis-customizer' ),
-			'text-hover' => __( 'Link Text Hover', 'genesis-customizer' ),
-			'background' => __( 'Button Background', 'genesis-customizer' ),
-			'icon'       => __( 'Button Icon', 'genesis-customizer' ),
+			'text'       => __( 'Link Text', 'genesis-customizer-pro' ),
+			'text-hover' => __( 'Link Text Hover', 'genesis-customizer-pro' ),
+			'background' => __( 'Button Background', 'genesis-customizer-pro' ),
+			'icon'       => __( 'Button Icon', 'genesis-customizer-pro' ),
 		],
 		'default'  => [
 			'text'       => '',
@@ -50,20 +50,20 @@ return [
 	[
 		'type'     => 'checkbox',
 		'settings' => 'enabled',
-		'label'    => __( 'Show scroll to top link', 'genesis-customizer' ),
+		'label'    => __( 'Show scroll to top link', 'genesis-customizer-pro' ),
 		'default'  => true,
 	],
 	[
 		'type'            => 'select',
 		'settings'        => 'style',
-		'label'           => __( 'Style', 'genesis-customizer' ),
+		'label'           => __( 'Style', 'genesis-customizer-pro' ),
 		'default'         => [
 			'text',
 		],
 		'choices'         => [
-			'text'   => __( 'Text Link', 'genesis-customizer' ),
-			'button' => __( 'Fixed Button', 'genesis-customizer' ),
-			'html'   => __( 'Custom HTML', 'genesis-customizer' ),
+			'text'   => __( 'Text Link', 'genesis-customizer-pro' ),
+			'button' => __( 'Fixed Button', 'genesis-customizer-pro' ),
+			'html'   => __( 'Custom HTML', 'genesis-customizer-pro' ),
 		],
 		'active_callback' => [
 		],
@@ -71,8 +71,8 @@ return [
 	[
 		'type'            => 'text',
 		'settings'        => 'text',
-		'label'           => __( 'Text', 'genesis-customizer' ),
-		'default'         => __( 'Scroll to top', 'genesis-customizer' ),
+		'label'           => __( 'Text', 'genesis-customizer-pro' ),
+		'default'         => __( 'Scroll to top', 'genesis-customizer-pro' ),
 		'active_callback' => [
 			[
 				'setting'  => _get_setting( 'style' ),
@@ -84,8 +84,8 @@ return [
 	[
 		'type'            => 'textarea',
 		'settings'        => 'html',
-		'label'           => __( 'Custom HTML', 'genesis-customizer' ),
-		'default'         => '<a href="#top">' . __( 'Scroll to top', 'genesis-customizer' ) . '</a>',
+		'label'           => __( 'Custom HTML', 'genesis-customizer-pro' ),
+		'default'         => '<a href="#top">' . __( 'Scroll to top', 'genesis-customizer-pro' ) . '</a>',
 		'active_callback' => [
 			[
 				'setting'  => _get_setting( 'style' ),
@@ -97,7 +97,7 @@ return [
 	[
 		'type'            => 'slider',
 		'settings'        => 'size',
-		'label'           => __( 'Button Size', 'genesis-customizer' ),
+		'label'           => __( 'Button Size', 'genesis-customizer-pro' ),
 		'default'         => '30',
 		'choices'         => [
 			'min'  => 0,
@@ -127,7 +127,7 @@ return [
 	[
 		'type'            => 'slider',
 		'settings'        => 'radius',
-		'label'           => __( 'Border Radius', 'genesis-customizer' ),
+		'label'           => __( 'Border Radius', 'genesis-customizer-pro' ),
 		'default'         => '4',
 		'choices'         => [
 			'min'  => 0,

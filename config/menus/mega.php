@@ -6,13 +6,13 @@ return [
 	[
 		'type'     => 'multicolor',
 		'settings' => 'colors',
-		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'label'    => __( 'Colors', 'genesis-customizer-pro' ),
 		'choices'  => [
-			'background' => __( 'Background', 'genesis-customizer' ),
-			'title'      => __( 'Title', 'genesis-customizer' ),
-			'content'    => __( 'Content', 'genesis-customizer' ),
-			'link'       => __( 'Link', 'genesis-customizer' ),
-			'link-hover' => __( 'Link Hover', 'genesis-customizer' ),
+			'background' => __( 'Background', 'genesis-customizer-pro' ),
+			'title'      => __( 'Title', 'genesis-customizer-pro' ),
+			'content'    => __( 'Content', 'genesis-customizer-pro' ),
+			'link'       => __( 'Link', 'genesis-customizer-pro' ),
+			'link-hover' => __( 'Link Hover', 'genesis-customizer-pro' ),
 		],
 		'default'  => [
 			'background' => _get_color( 'background' ),
@@ -61,7 +61,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'spacing',
-		'label'    => __( 'Spacing', 'genesis-customizer' ),
+		'label'    => __( 'Spacing', 'genesis-customizer-pro' ),
 		'default'  => _get_size( 'xl', '' ),
 		'choices'  => [
 			'min'  => 0,
@@ -81,16 +81,16 @@ return [
 		'settings' => 'tip',
 		'default'  => sprintf(
 			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
-			esc_html__( 'Tip:', 'genesis-customizer' ),
-			esc_html__( 'Add widgets to the mega menu widget area from the', 'genesis-customizer' ),
+			esc_html__( 'Tip:', 'genesis-customizer-pro' ),
+			esc_html__( 'Add widgets to the mega menu widget area from the', 'genesis-customizer-pro' ),
 			esc_attr( '"sidebar-widgets-mega-menu"' ),
-			esc_html__( 'Mega Menu Widgets Section', 'genesis-customizer' )
+			esc_html__( 'Mega Menu Widgets Section', 'genesis-customizer-pro' )
 		),
 	],
 	[
 		'type'        => 'background',
 		'settings'    => 'background-image',
-		'label'       => esc_html__( 'Background Image', 'genesis-customizer' ),
+		'label'       => esc_html__( 'Background Image', 'genesis-customizer-pro' ),
 		'default'     => [
 			'background-image'    => '',
 			'background-repeat'   => 'repeat',

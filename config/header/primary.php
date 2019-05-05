@@ -6,7 +6,7 @@ return [
 	[
 		'type'     => 'radio-image',
 		'settings' => 'layout',
-		'label'    => __( 'Desktop Layout', 'genesis-customizer' ),
+		'label'    => __( 'Desktop Layout', 'genesis-customizer-pro' ),
 		'default'  => 'has-logo-left',
 		'priority' => 1,
 		'choices'  => [
@@ -26,7 +26,7 @@ return [
 	[
 		'type'     => 'radio-image',
 		'settings' => 'mobile-layout',
-		'label'    => __( 'Mobile Layout', 'genesis-customizer' ),
+		'label'    => __( 'Mobile Layout', 'genesis-customizer-pro' ),
 		'default'  => 'has-logo-left-mobile',
 		'priority' => 3,
 		'choices'  => [
@@ -39,7 +39,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'width',
-		'label'    => __( 'Header Width', 'genesis-customizer' ),
+		'label'    => __( 'Header Width', 'genesis-customizer-pro' ),
 		'default'  => '300',
 		'priority' => 4,
 		'choices'  => [
@@ -72,7 +72,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'vertical-spacing',
-		'label'    => __( 'Vertical Spacing', 'genesis-customizer' ),
+		'label'    => __( 'Vertical Spacing', 'genesis-customizer-pro' ),
 		'default'  => _get_size( 'xl', '' ),
 		'priority' => 4,
 		'choices'  => [
@@ -102,10 +102,10 @@ return [
 		'priority'        => 6,
 		'default'         => sprintf(
 			'<hr><p><strong>%s</strong>%s<a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
-			esc_html__( 'Tip: ', 'genesis-customizer' ),
-			esc_html__( 'Transparent header colors override the Primary Header defaults. They can be customized from the ', 'genesis-customizer' ),
+			esc_html__( 'Tip: ', 'genesis-customizer-pro' ),
+			esc_html__( 'Transparent header colors override the Primary Header defaults. They can be customized from the ', 'genesis-customizer-pro' ),
 			esc_attr( '"genesis-customizer_header_transparent"' ),
-			esc_html__( 'Transparent Header Section', 'genesis-customizer' )
+			esc_html__( 'Transparent Header Section', 'genesis-customizer-pro' )
 		),
 		'active_callback' => function () {
 			return _is_module_enabled( 'transparent-header' );

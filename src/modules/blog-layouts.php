@@ -1,4 +1,14 @@
 <?php
+/**
+ * Genesis Customizer Pro.
+ *
+ * This file adds the Blog Layout module to Genesis Customizer Pro.
+ *
+ * @package   GenesisCustomizerPro
+ * @author    SEO Themes
+ * @copyright 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace GenesisCustomizer;
 
@@ -7,7 +17,7 @@ add_filter( 'genesis-customizer_archive_blog-layout_config', '__return_true' );
 
 add_action( 'genesis_meta', __NAMESPACE__ . '\blog_setup', 15 );
 /**
- * Description of expected behavior.
+ * Sets up the blog layout settings.
  *
  * @since 1.0.0
  *
@@ -27,7 +37,7 @@ function blog_setup() {
 }
 
 /**
- * Description of expected behavior.
+ * Removes entry elements.
  *
  * @since 1.0.0
  *
@@ -51,7 +61,7 @@ function remove_entry_elements() {
 }
 
 /**
- * Description of expected behavior.
+ * Adds ordered entry elements.
  *
  * @since 1.0.0
  *
@@ -74,11 +84,11 @@ function add_entry_elements() {
 }
 
 /**
- * Description of expected behavior.
+ * Displays the featured image.
  *
  * @since 1.0.0
  *
- * @param $atts
+ * @param array $atts Featured image attributes.
  *
  * @return mixed
  */
@@ -93,11 +103,11 @@ function featured_image_first( $atts ) {
 }
 
 /**
- * Description of expected behavior.
+ * Adds featured image spacing to link.
  *
  * @since 1.0.0
  *
- * @param array $atts
+ * @param array $atts Featured image link attributes.
  *
  * @return array
  */
@@ -112,7 +122,7 @@ function featured_image_spacing( $atts ) {
 }
 
 /**
- * Description of expected behavior.
+ * Loads masonry script.
  *
  * @since 1.0.0
  *
@@ -126,7 +136,7 @@ function load_isotope() {
 	wp_register_script(
 		_get_handle() . '-isotope',
 		_get_url() . 'assets/js/min/isotope.min.js',
-		[ 'jquery', 'genesis-customizer' ],
+		[ 'jquery', 'genesis-customizer-pro' ],
 		_get_asset_version( 'js/min/isotope.min.js' ),
 		true
 	);
@@ -141,18 +151,29 @@ function load_isotope() {
 	);
 }
 
+/**
+ * Adds masonry blog markup.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
 function add_masonry_wrap() {
 	if ( ! _get_value( 'archive_blog-layout_masonry' ) ) {
 		return;
 	}
 
-	add_action( 'genesis_before_loop', function () {
-		echo '<div class="masonry">';
-	}, 20 );
+	add_action(
+		'genesis_before_loop', function () {
+			echo '<div class="masonry">';
+		}, 20
+	);
 
-	add_action( 'genesis_after_endwhile', function () {
-		echo '</div>';
-	}, 20 );
+	add_action(
+		'genesis_after_endwhile', function () {
+			echo '</div>';
+		}, 20
+	);
 
 	remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
 	add_action( 'genesis_after_endwhile', 'genesis_posts_nav', 100 );

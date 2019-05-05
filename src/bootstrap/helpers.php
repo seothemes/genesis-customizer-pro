@@ -1,13 +1,23 @@
 <?php
+/**
+ * Genesis Customizer Pro.
+ *
+ * This file adds helpers functions to Genesis Customizer Pro.
+ *
+ * @package   GenesisCustomizerPro
+ * @author    SEO Themes
+ * @copyright 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace GenesisCustomizer;
 
 /**
- * Description of expected behavior.
+ * Retrieve plugin information.
  *
  * @since 1.0.0
  *
- * @param $header
+ * @param string $header File header information to retrieve.
  *
  * @return string|array|null
  */
@@ -59,7 +69,7 @@ function _get_pro_url() {
 }
 
 /**
- * Description of expected behavior.
+ * Returns the name of the plugin.
  *
  * @since 1.0.0
  *
@@ -70,7 +80,7 @@ function _get_pro_name() {
 }
 
 /**
- * Description of expected behavior.
+ * Returns the plugin handle.
  *
  * @since 1.0.0
  *
@@ -81,7 +91,7 @@ function _get_pro_handle() {
 }
 
 /**
- * Description of expected behavior.
+ * Returns the plugin version.
  *
  * @since 1.0.0
  *
@@ -92,18 +102,18 @@ function _get_pro_version() {
 }
 
 /**
- * Description of expected behavior.
+ * Returns the EDD store link.
  *
  * @since 1.0.0
  *
  * @return string
  */
-function _get_store_url() {
+function _get_store_link() {
 	return _get_pro_data( 'PluginURI' );
 }
 
 /**
- * Description of expected behavior.
+ * Return the EDD product ID.
  *
  * @since 1.0.0
  *
@@ -114,7 +124,7 @@ function _get_product_id() {
 }
 
 /**
- * Description of expected behavior.
+ * Return the license key or status.
  *
  * @since 1.0.0
  *
@@ -127,7 +137,7 @@ function _get_license( $key_or_status = 'key' ) {
 }
 
 /**
- * Description of expected behavior.
+ * Return array of Pro modules.
  *
  * @since 1.0.0
  *

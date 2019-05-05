@@ -1,14 +1,24 @@
 <?php
+/**
+ * Genesis Customizer Pro.
+ *
+ * This file adds the Typekit Fonts module to Genesis Customizer Pro.
+ *
+ * @package   GenesisCustomizerPro
+ * @author    SEO Themes
+ * @copyright 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace GenesisCustomizer;
 
 add_filter( 'genesis_customizer_font_choices', __NAMESPACE__ . '\add_typekit_group', 20 );
 /**
- * Description of expected behavior.
+ * Adds typekit font choices to typography controls.
  *
  * @since 1.0.0
  *
- * @param $custom
+ * @param array $custom Custom fonts.
  *
  * @return mixed
  */
@@ -32,7 +42,7 @@ function add_typekit_group( $custom ) {
 	}
 
 	$custom['families']['typekit'] = [
-		'text'     => esc_attr__( 'Typekit', 'genesis-customizer' ),
+		'text'     => esc_attr__( 'Typekit', 'genesis-customizer-pro' ),
 		'children' => $children,
 	];
 

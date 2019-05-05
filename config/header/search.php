@@ -6,14 +6,14 @@ return [
 	[
 		'type'      => 'radio',
 		'settings'  => 'enable',
-		'label'     => __( 'Enable on', 'genesis-customizer' ),
+		'label'     => __( 'Enable on', 'genesis-customizer-pro' ),
 		'default'   => 'hide',
 		'transport' => 'refresh',
 		'choices'   => [
-			'show'         => __( 'Desktop and Mobile', 'genesis-customizer' ),
-			'hide-mobile'  => __( 'Desktop', 'genesis-customizer' ),
-			'hide-desktop' => __( 'Mobile', 'genesis-customizer' ),
-			'hide'         => __( 'None', 'genesis-customizer' ),
+			'show'         => __( 'Desktop and Mobile', 'genesis-customizer-pro' ),
+			'hide-mobile'  => __( 'Desktop', 'genesis-customizer-pro' ),
+			'hide-desktop' => __( 'Mobile', 'genesis-customizer-pro' ),
+			'hide'         => __( 'None', 'genesis-customizer-pro' ),
 		],
 	],
 	[
@@ -31,16 +31,16 @@ return [
 	[
 		'type'     => 'multicolor',
 		'settings' => 'color',
-		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'label'    => __( 'Colors', 'genesis-customizer-pro' ),
 		'choices'  => [
-			'background'        => __( 'Header Search Background', 'genesis-customizer' ),
-			'toggle-background' => __( 'Search Toggle Background', 'genesis-customizer' ),
-			'toggle-text'       => __( 'Search Toggle Text', 'genesis-customizer' ),
-			'close-background'  => __( 'Search Close Background', 'genesis-customizer' ),
-			'close-text'        => __( 'Search Close Text', 'genesis-customizer' ),
-			'input-background'  => __( 'Input Background', 'genesis-customizer' ),
-			'input-text'        => __( 'Input Text', 'genesis-customizer' ),
-			'input-border'      => __( 'Input Border', 'genesis-customizer' ),
+			'background'        => __( 'Header Search Background', 'genesis-customizer-pro' ),
+			'toggle-background' => __( 'Search Toggle Background', 'genesis-customizer-pro' ),
+			'toggle-text'       => __( 'Search Toggle Text', 'genesis-customizer-pro' ),
+			'close-background'  => __( 'Search Close Background', 'genesis-customizer-pro' ),
+			'close-text'        => __( 'Search Close Text', 'genesis-customizer-pro' ),
+			'input-background'  => __( 'Input Background', 'genesis-customizer-pro' ),
+			'input-text'        => __( 'Input Text', 'genesis-customizer-pro' ),
+			'input-border'      => __( 'Input Border', 'genesis-customizer-pro' ),
 		],
 		'default'  => [
 			'background'        => _get_color( 'border' ),
@@ -103,35 +103,35 @@ return [
 	[
 		'type'     => 'select',
 		'settings' => 'location',
-		'label'    => __( 'Search toggle location', 'genesis-customizer' ),
+		'label'    => __( 'Search toggle location', 'genesis-customizer-pro' ),
 		'default'  => 'right',
 		'choices'  => [
-			'left'  => __( 'Left', 'genesis-customizer' ),
-			'right' => __( 'Right', 'genesis-customizer' ),
+			'left'  => __( 'Left', 'genesis-customizer-pro' ),
+			'right' => __( 'Right', 'genesis-customizer-pro' ),
 		],
 	],
 	[
 		'type'     => 'select',
 		'settings' => 'style',
-		'label'    => __( 'Header search style', 'genesis-customizer' ),
+		'label'    => __( 'Header search style', 'genesis-customizer-pro' ),
 		'default'  => 'push-down',
 		'choices'  => [
-			'push-down'   => __( 'Push Down', 'genesis-customizer' ),
-			'drop-down'   => __( 'Drop Down', 'genesis-customizer' ),
-			'full-screen' => __( 'Full Screen', 'genesis-customizer' ),
+			'push-down'   => __( 'Push Down', 'genesis-customizer-pro' ),
+			'drop-down'   => __( 'Drop Down', 'genesis-customizer-pro' ),
+			'full-screen' => __( 'Full Screen', 'genesis-customizer-pro' ),
 		],
 	],
 	[
 		'type'     => 'text',
 		'settings' => 'input-text',
-		'label'    => __( 'Input Text', 'genesis-customizer' ),
-		'default'  => __( 'Search this website', 'genesis-customizer' ),
+		'label'    => __( 'Input Text', 'genesis-customizer-pro' ),
+		'default'  => __( 'Search this website', 'genesis-customizer-pro' ),
 	],
 	[
 		'type'            => 'text',
 		'settings'        => 'button-text',
-		'label'           => __( 'Button Text', 'genesis-customizer' ),
-		'default'         => __( 'Search', 'genesis-customizer' ),
+		'label'           => __( 'Button Text', 'genesis-customizer-pro' ),
+		'default'         => __( 'Search', 'genesis-customizer-pro' ),
 		'active_callback' => [
 			'setting'  => _get_setting( 'button-type' ),
 			'value'    => 'text',
@@ -141,7 +141,7 @@ return [
 	[
 		'type'     => 'checkbox',
 		'settings' => 'enable-button',
-		'label'    => __( 'Display search form button', 'genesis-customizer' ),
+		'label'    => __( 'Display search form button', 'genesis-customizer-pro' ),
 		'default'  => false,
 	],
 	[
@@ -152,7 +152,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'search-form-width',
-		'label'    => __( 'Search Form Width', 'genesis-customizer' ),
+		'label'    => __( 'Search Form Width', 'genesis-customizer-pro' ),
 		'default'  => '500',
 		'choices'  => [
 			'min'  => 200,
@@ -170,7 +170,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'search-form-spacing',
-		'label'    => __( 'Search Form Spacing', 'genesis-customizer' ),
+		'label'    => __( 'Search Form Spacing', 'genesis-customizer-pro' ),
 		'default'  => _get_size( 'm', '' ),
 		'choices'  => [
 			'min'  => 0,
@@ -188,7 +188,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'search-input-spacing',
-		'label'    => __( 'Search Input Spacing', 'genesis-customizer' ),
+		'label'    => __( 'Search Input Spacing', 'genesis-customizer-pro' ),
 		'default'  => _get_size( 'm', '' ),
 		'choices'  => [
 			'min'  => 0,
@@ -206,7 +206,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'search-toggle-padding',
-		'label'    => __( 'Search Toggle Padding', 'genesis-customizer' ),
+		'label'    => __( 'Search Toggle Padding', 'genesis-customizer-pro' ),
 		'default'  => '0',
 		'choices'  => [
 			'min'  => 0,
@@ -224,7 +224,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'search-toggle-margin',
-		'label'    => __( 'Search Toggle Margin', 'genesis-customizer' ),
+		'label'    => __( 'Search Toggle Margin', 'genesis-customizer-pro' ),
 		'default'  => _get_size( 'l', '' ),
 		'choices'  => [
 			'min'  => 0,
@@ -261,7 +261,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'search-toggle-size',
-		'label'    => __( 'Search Toggle Size', 'genesis-customizer' ),
+		'label'    => __( 'Search Toggle Size', 'genesis-customizer-pro' ),
 		'default'  => _get_size( 'l', '' ),
 		'choices'  => [
 			'min'  => 4,
@@ -279,7 +279,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'search-close-spacing',
-		'label'    => __( 'Search Close Spacing', 'genesis-customizer' ),
+		'label'    => __( 'Search Close Spacing', 'genesis-customizer-pro' ),
 		'default'  => _get_size( 'l', '' ),
 		'choices'  => [
 			'min'  => 0,
@@ -297,7 +297,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'search-close-size',
-		'label'    => __( 'Search Close Size', 'genesis-customizer' ),
+		'label'    => __( 'Search Close Size', 'genesis-customizer-pro' ),
 		'default'  => _get_size( 'l', '' ),
 		'choices'  => [
 			'min'  => 4,

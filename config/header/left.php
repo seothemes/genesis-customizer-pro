@@ -6,14 +6,14 @@ return [
 	[
 		'type'      => 'radio',
 		'settings'  => 'enable',
-		'label'     => __( 'Enable on', 'genesis-customizer' ),
+		'label'     => __( 'Enable on', 'genesis-customizer-pro' ),
 		'default'   => 'hide-mobile',
 		'transport' => 'refresh',
 		'choices'   => [
-			'show'         => __( 'Desktop and Mobile', 'genesis-customizer' ),
-			'hide-mobile'  => __( 'Desktop', 'genesis-customizer' ),
-			'hide-desktop' => __( 'Mobile', 'genesis-customizer' ),
-			'hide'         => __( 'None', 'genesis-customizer' ),
+			'show'         => __( 'Desktop and Mobile', 'genesis-customizer-pro' ),
+			'hide-mobile'  => __( 'Desktop', 'genesis-customizer-pro' ),
+			'hide-desktop' => __( 'Mobile', 'genesis-customizer-pro' ),
+			'hide'         => __( 'None', 'genesis-customizer-pro' ),
 		],
 	],
 	[
@@ -21,19 +21,19 @@ return [
 		'settings' => 'tip',
 		'default'  => sprintf(
 			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
-			esc_html__( 'Quick Link: ', 'genesis-customizer' ),
-			esc_html__( 'Edit ', 'genesis-customizer' ),
+			esc_html__( 'Quick Link: ', 'genesis-customizer-pro' ),
+			esc_html__( 'Edit ', 'genesis-customizer-pro' ),
 			esc_attr( '"sidebar-widgets-header-left-widget"' ),
-			esc_html__( 'Header Left Widgets', 'genesis-customizer' )
+			esc_html__( 'Header Left Widgets', 'genesis-customizer-pro' )
 		),
 	],
 	[
 		'type'     => 'multicolor',
 		'settings' => 'colors',
-		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'label'    => __( 'Colors', 'genesis-customizer-pro' ),
 		'choices'  => [
-			'widget-title'   => __( 'Widget Title', 'genesis-customizer' ),
-			'widget-content' => __( 'Widget Content', 'genesis-customizer' ),
+			'widget-title'   => __( 'Widget Title', 'genesis-customizer-pro' ),
+			'widget-content' => __( 'Widget Content', 'genesis-customizer-pro' ),
 		],
 		'default'  => [
 			'widget-title'   => '',
@@ -60,7 +60,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'vertical-spacing',
-		'label'    => __( 'Vertical Spacing', 'genesis-customizer' ),
+		'label'    => __( 'Vertical Spacing', 'genesis-customizer-pro' ),
 		'default'  => '0',
 		'choices'  => [
 			'min'  => 0,
@@ -83,7 +83,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'spacing-left',
-		'label'    => __( 'Spacing Left', 'genesis-customizer' ),
+		'label'    => __( 'Spacing Left', 'genesis-customizer-pro' ),
 		'default'  => '20',
 		'choices'  => [
 			'min'  => 0,
@@ -101,7 +101,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'spacing-right',
-		'label'    => __( 'Spacing Right', 'genesis-customizer' ),
+		'label'    => __( 'Spacing Right', 'genesis-customizer-pro' ),
 		'default'  => '20',
 		'choices'  => [
 			'min'  => 0,

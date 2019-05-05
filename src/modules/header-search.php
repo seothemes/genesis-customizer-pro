@@ -1,4 +1,14 @@
 <?php
+/**
+ * Genesis Customizer Pro.
+ *
+ * This file adds the Header Search module to Genesis Customizer Pro.
+ *
+ * @package   GenesisCustomizerPro
+ * @author    SEO Themes
+ * @copyright 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace GenesisCustomizer;
 
@@ -7,7 +17,7 @@ add_filter( 'genesis-customizer_header_search_config', '__return_true' );
 
 add_action( 'genesis_after_title_area', __NAMESPACE__ . '\search_toggle', 20 );
 /**
- * Description of expected behavior.
+ * Display the search toggle button.
  *
  * @since 1.0.0
  *
@@ -23,7 +33,7 @@ function search_toggle() {
 
 add_action( 'genesis_after_header_wrap', __NAMESPACE__ . '\search_form', 20 );
 /**
- * Description of expected behavior.
+ * Display header search form.
  *
  * @since 1.0.0
  *
@@ -38,11 +48,11 @@ function search_form() {
 
 	$style = _get_value( 'header_search_style' );
 	$form  = get_search_form( false );
-	$close = '<svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 1006 1010"><path d="M603 504l362-362a69 69 0 1 0-98-98L505 406 143 44a69 69 0 1 0-98 98l362 362L45 866a69 69 0 1 0 98 98l362-362 362 362a69 69 0 1 0 98-98L603 504z"/></svg>';
+	$close = _get_svg( 'close-button' );
 
 	printf(
 		'<div class="header-search %s"><div class="wrap">%s</div><button class="header-search-close">%s</button></div>',
-		$style,
+		esc_attr( $style ),
 		$form,
 		$close
 	);
@@ -50,7 +60,7 @@ function search_form() {
 
 add_filter( 'genesis_search_text', __NAMESPACE__ . '\search_input_text' );
 /**
- * Description of expected behavior.
+ * Modify the search input text.
  *
  * @since 1.0.0
  *
@@ -62,7 +72,7 @@ function search_input_text() {
 
 add_filter( 'genesis_search_button_text', __NAMESPACE__ . '\search_button_text' );
 /**
- * Description of expected behavior.
+ * Modify the search button text.
  *
  * @since 1.0.0
  *
@@ -73,24 +83,22 @@ function search_button_text() {
 }
 
 /**
- * Description of expected behavior.
+ * Display search button.
  *
  * @since 1.0.0
  *
- * @param string $additional_classes
+ * @param string $additional_classes Additional button classes.
  *
  * @return string
  */
 function get_search_button( $additional_classes = '' ) {
-	$icon = sprintf( '<svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 1006 1010"><path d="M978 880L740 641a400 400 0 1 0-98 98l239 238c27 27 70 27 97 0s27-70 0-97zM200 624a300 300 0 1 1 425 0 300 300 0 0 1-425 0z"/></svg>' );
-
 	$location = _get_value( 'header_search_location' );
 	$classes  = trim( 'header-search-toggle ' . $location . ' ' . $additional_classes );
 
 	return sprintf(
 		'<button class="%s">%s</button>',
 		$classes,
-		$icon
+		_get_svg( 'search-button' )
 	);
 }
 
@@ -98,10 +106,10 @@ add_filter( 'wp_nav_menu_items', __NAMESPACE__ . '\nav_menu_search', 10, 2 );
 /**
  * Filter menu items, appending a search form.
  *
- * @since 1.1.0
+ * @since 1.0.0
  *
- * @param string   $menu HTML string of list items.
- * @param stdClass $args Menu arguments.
+ * @param string $menu HTML string of list items.
+ * @param object $args Menu arguments.
  *
  * @return string Amended HTML string of list items.
  */
@@ -131,13 +139,13 @@ function nav_menu_search( $menu, $args ) {
 
 add_filter( 'genesis_attr_search-form', __NAMESPACE__ . '\search_form_has_button' );
 /**
- * Description of expected behavior.
+ * Add button class to search form.
  *
  * @since 1.0.0
  *
- * @param $attr
+ * @param array $attr Search form attributes.
  *
- * @return void
+ * @return array
  */
 function search_form_has_button( $attr ) {
 	$enabled = _get_value( 'header_search_enable-button' );

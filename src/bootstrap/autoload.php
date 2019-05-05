@@ -1,10 +1,20 @@
 <?php
+/**
+ * Genesis Customizer Pro.
+ *
+ * This file adds the file autoloader to Genesis Customizer Pro.
+ *
+ * @package   GenesisCustomizerPro
+ * @author    SEO Themes
+ * @copyright 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace GenesisCustomizer;
 
 add_action( 'genesis_setup', __NAMESPACE__ . '\autoload_pro_files' );
 /**
- * Description of expected behavior.
+ * Loads pro files.
  *
  * @since 1.0.0
  *

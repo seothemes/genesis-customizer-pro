@@ -13,18 +13,864 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/bootstrap/compat.php:35
+#: config/archive/blog-layout.php:9
+msgid "Columns"
+msgstr ""
+
+#: config/archive/blog-layout.php:12
+msgid "1 Column"
+msgstr ""
+
+#: config/archive/blog-layout.php:13
+msgid "2 Column"
+msgstr ""
+
+#: config/archive/blog-layout.php:14
+msgid "3 Column"
+msgstr ""
+
+#: config/archive/blog-layout.php:15
+msgid "4 Column"
+msgstr ""
+
+#: config/archive/blog-layout.php:21
+msgid "Enable masonry layout"
+msgstr ""
+
+#: config/archive/blog-layout.php:27
+msgid "Remove featured image spacing"
+msgstr ""
+
+#: config/archive/blog-layout.php:35, config/archive/blog-layout.php:49, config/archive/blog-layout.php:84, config/code/css.php:22, config/header/above.php:11, config/header/below.php:11, config/header/primary.php:105, config/header/sticky.php:92, config/header/transparent.php:11, config/header/transparent.php:142
+msgid "Tip: "
+msgstr ""
+
+#: config/archive/blog-layout.php:36
+msgid "The Blog page layout can be changed from the "
+msgstr ""
+
+#: config/archive/blog-layout.php:38
+msgid "Edit Page screen"
+msgstr ""
+
+#: config/archive/blog-layout.php:50
+msgid "To change the Blog page layout, first set a Static Front Page and a Page for posts from "
+msgstr ""
+
+#: config/archive/blog-layout.php:52
+msgid "Reading Settings"
+msgstr ""
+
+#: config/archive/blog-layout.php:53
+msgid "page, then navigate to the Edit Page screen for the Posts Page and select the layout."
+msgstr ""
+
+#: config/archive/blog-layout.php:62
+msgid "Element Order"
+msgstr ""
+
+#: config/archive/blog-layout.php:63
+msgid "Drag and drop the sortable items below to change the order of post elements. Click the eye icon to toggle an elements visibility."
+msgstr ""
+
+#: config/archive/blog-layout.php:72
+msgid "Entry Title"
+msgstr ""
+
+#: config/archive/blog-layout.php:73
+msgid "Post Info"
+msgstr ""
+
+#: config/archive/blog-layout.php:74
+msgid "Featured Image"
+msgstr ""
+
+#: config/archive/blog-layout.php:75
+msgid "Entry Content"
+msgstr ""
+
+#: config/archive/blog-layout.php:76
+msgid "Post Meta"
+msgstr ""
+
+#: config/archive/blog-layout.php:85
+msgid "The Featured Image Size and the Content Limit settings can be changed from the"
+msgstr ""
+
+#: config/archive/blog-layout.php:87
+msgid "Content Archives Section"
+msgstr ""
+
+#: config/code/css.php:9
+msgid "Screen Size"
+msgstr ""
+
+#: config/code/css.php:12
+msgid "All"
+msgstr ""
+
+#: config/code/css.php:13, config/header/above.php:25, config/header/below.php:25, config/header/left.php:15, config/header/search.php:15, config/header/sticky.php:14, config/header/transparent.php:25
+msgid "Mobile"
+msgstr ""
+
+#: config/code/css.php:14, config/header/above.php:24, config/header/below.php:24, config/header/left.php:14, config/header/search.php:14, config/header/sticky.php:13, config/header/transparent.php:24
+msgid "Desktop"
+msgstr ""
+
+#: config/code/css.php:23
+msgid "The responsive breakpoint setting can be changed from the "
+msgstr ""
+
+#: config/code/css.php:25
+msgid "General Settings"
+msgstr ""
+
+#: config/code/css.php:26
+msgid "page"
+msgstr ""
+
+#: config/code/js.php:9
+msgid "Output"
+msgstr ""
+
+#: config/code/js.php:12
+msgid "Inline"
+msgstr ""
+
+#: config/code/js.php:13
+msgid "File"
+msgstr ""
+
+#: config/code/js.php:19
+msgid "Type"
+msgstr ""
+
+#: config/code/js.php:22
+msgid "jQuery"
+msgstr ""
+
+#: config/code/js.php:23
+msgid "Vanilla"
+msgstr ""
+
+#: config/content/above.php:9
+msgid "Display Above Content section"
+msgstr ""
+
+#: config/content/above.php:20, config/content/below.php:20, config/footer/above.php:20, config/footer/below.php:20, config/header/above.php:37, config/header/below.php:37
+msgid "Layout"
+msgstr ""
+
+#: config/content/above.php:44, config/content/below.php:44, config/footer/above.php:44, config/footer/below.php:44, config/footer/scroll-to-top.php:9, config/header/above.php:61, config/header/below.php:83, config/header/left.php:33, config/header/search.php:34, config/header/sticky.php:26, config/header/transparent.php:37, config/hero/settings.php:70, config/menus/mega.php:9
+msgid "Colors"
+msgstr ""
+
+#: config/content/above.php:46, config/content/below.php:46, config/footer/below.php:46, config/header/above.php:63, config/header/below.php:85, config/header/sticky.php:28, config/header/transparent.php:39, config/menus/mega.php:11
+msgid "Background"
+msgstr ""
+
+#: config/content/above.php:47, config/content/below.php:47, config/footer/above.php:46, config/footer/below.php:47, config/footer/scroll-to-top.php:74, config/header/above.php:64, config/header/below.php:87, config/header/sticky.php:31, config/header/transparent.php:42, config/hero/settings.php:72
+msgid "Text"
+msgstr ""
+
+#: config/content/above.php:48, config/content/below.php:48, config/footer/above.php:47, config/footer/below.php:48, config/header/below.php:86, config/hero/settings.php:73
+msgid "Headings"
+msgstr ""
+
+#: config/content/above.php:49, config/content/below.php:49, config/footer/above.php:48, config/footer/below.php:49, config/header/above.php:65, config/header/below.php:88, config/header/sticky.php:32, config/header/transparent.php:43, config/hero/settings.php:74
+msgid "Links"
+msgstr ""
+
+#: config/content/above.php:50, config/content/below.php:50, config/footer/above.php:49, config/footer/below.php:50, config/header/above.php:66, config/header/below.php:89, config/header/sticky.php:33, config/header/transparent.php:44, config/hero/settings.php:75
+msgid "Links Hover"
+msgstr ""
+
+#: config/content/above.php:51, config/content/below.php:51, config/footer/above.php:50, config/footer/below.php:51
+msgid "Border"
+msgstr ""
+
+#: config/content/above.php:109, config/content/below.php:109, config/footer/above.php:127, config/footer/below.php:109, config/header/below.php:174, config/menus/mega.php:64
+msgid "Spacing"
+msgstr ""
+
+#: config/content/above.php:137, config/content/below.php:137, config/footer/above.php:155, config/footer/below.php:137
+msgid "Border Width"
+msgstr ""
+
+#: config/content/above.php:144, config/content/below.php:144, config/footer/above.php:162, config/footer/below.php:144
+msgid "Border Top Width"
+msgstr ""
+
+#: config/content/above.php:145, config/content/below.php:145, config/footer/above.php:163, config/footer/below.php:145
+msgid "Border Bottom Width"
+msgstr ""
+
+#: config/content/below.php:9
+msgid "Display Below Content section"
+msgstr ""
+
+#: config/footer/above.php:9
+msgid "Display Above Footer section"
+msgstr ""
+
+#: config/footer/above.php:97, config/hero/settings.php:123
+msgid "Gradient Overlay"
+msgstr ""
+
+#: config/footer/above.php:100, config/hero/settings.php:126
+msgid "Background Left"
+msgstr ""
+
+#: config/footer/above.php:101, config/hero/settings.php:127
+msgid "Background Right"
+msgstr ""
+
+#: config/footer/above.php:111, config/hero/settings.php:137
+msgid "Gradient Angle"
+msgstr ""
+
+#: config/footer/above.php:187, config/header/below.php:197, config/menus/mega.php:93
+msgid "Background Image"
+msgstr ""
+
+#: config/footer/below.php:9
+msgid "Display Below Footer section"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:11
+msgid "Link Text"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:12
+msgid "Link Text Hover"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:13
+msgid "Button Background"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:14
+msgid "Button Icon"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:53
+msgid "Show scroll to top link"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:59
+msgid "Style"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:64
+msgid "Text Link"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:65
+msgid "Fixed Button"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:66, config/footer/scroll-to-top.php:87
+msgid "Custom HTML"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:75, config/footer/scroll-to-top.php:88
+msgid "Scroll to top"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:100
+msgid "Button Size"
+msgstr ""
+
+#: config/footer/scroll-to-top.php:130
+msgid "Border Radius"
+msgstr ""
+
+#: config/header/above.php:12, config/header/below.php:12
+msgid "This is a widget area. Add or remove widgets from the  "
+msgstr ""
+
+#: config/header/above.php:14
+msgid "Above Header Widgets Screen"
+msgstr ""
+
+#: config/header/above.php:20, config/header/below.php:20, config/header/left.php:9, config/header/search.php:9, config/hero/settings.php:9
+msgid "Enable on"
+msgstr ""
+
+#: config/header/above.php:23, config/header/below.php:23, config/header/left.php:13, config/header/search.php:13, config/header/sticky.php:12, config/header/transparent.php:23
+msgid "Desktop and Mobile"
+msgstr ""
+
+#: config/header/above.php:26, config/header/below.php:26, config/header/left.php:16, config/header/search.php:16, config/header/sticky.php:15, config/header/transparent.php:26
+msgid "None"
+msgstr ""
+
+#: config/header/above.php:105, config/header/below.php:141
+msgid "Typography"
+msgstr ""
+
+#: config/header/above.php:126
+msgid "Height"
+msgstr ""
+
+#: config/header/below.php:14
+msgid "Below Header Widgets Screen"
+msgstr ""
+
+#: config/header/below.php:61
+msgid "Text Alignment"
+msgstr ""
+
+#: config/header/below.php:64, config/header/search.php:109, config/menus/mobile.php:110
+msgid "Left"
+msgstr ""
+
+#: config/header/below.php:65, config/menus/mobile.php:111
+msgid "Center"
+msgstr ""
+
+#: config/header/below.php:66, config/header/search.php:110, config/menus/mobile.php:112
+msgid "Right"
+msgstr ""
+
+#: config/header/below.php:148
+msgid "Font Size Mobile"
+msgstr ""
+
+#: config/header/below.php:149
+msgid "Font Size Desktop"
+msgstr ""
+
+#: config/header/left.php:24
+msgid "Quick Link: "
+msgstr ""
+
+#: config/header/left.php:25
+msgid "Edit "
+msgstr ""
+
+#: config/header/left.php:27
+msgid "Header Left Widgets"
+msgstr ""
+
+#: config/header/left.php:35
+msgid "Widget Title"
+msgstr ""
+
+#: config/header/left.php:36
+msgid "Widget Content"
+msgstr ""
+
+#: config/header/left.php:63, config/header/primary.php:75
+msgid "Vertical Spacing"
+msgstr ""
+
+#: config/header/left.php:86
+msgid "Spacing Left"
+msgstr ""
+
+#: config/header/left.php:104
+msgid "Spacing Right"
+msgstr ""
+
+#: config/header/primary.php:9
+msgid "Desktop Layout"
+msgstr ""
+
+#: config/header/primary.php:29
+msgid "Mobile Layout"
+msgstr ""
+
+#: config/header/primary.php:42
+msgid "Header Width"
+msgstr ""
+
+#: config/header/primary.php:106
+msgid "Transparent header colors override the Primary Header defaults. They can be customized from the "
+msgstr ""
+
+#: config/header/primary.php:108
+msgid "Transparent Header Section"
+msgstr ""
+
+#: config/header/search.php:36
+msgid "Header Search Background"
+msgstr ""
+
+#: config/header/search.php:37
+msgid "Search Toggle Background"
+msgstr ""
+
+#: config/header/search.php:38
+msgid "Search Toggle Text"
+msgstr ""
+
+#: config/header/search.php:39
+msgid "Search Close Background"
+msgstr ""
+
+#: config/header/search.php:40
+msgid "Search Close Text"
+msgstr ""
+
+#: config/header/search.php:41
+msgid "Input Background"
+msgstr ""
+
+#: config/header/search.php:42, config/header/search.php:127
+msgid "Input Text"
+msgstr ""
+
+#: config/header/search.php:43
+msgid "Input Border"
+msgstr ""
+
+#: config/header/search.php:106
+msgid "Search toggle location"
+msgstr ""
+
+#: config/header/search.php:116
+msgid "Header search style"
+msgstr ""
+
+#: config/header/search.php:119
+msgid "Push Down"
+msgstr ""
+
+#: config/header/search.php:120
+msgid "Drop Down"
+msgstr ""
+
+#: config/header/search.php:121
+msgid "Full Screen"
+msgstr ""
+
+#: config/header/search.php:128
+msgid "Search this website"
+msgstr ""
+
+#: config/header/search.php:133
+msgid "Button Text"
+msgstr ""
+
+#: config/header/search.php:134, src/bootstrap/setup.php:113
+msgid "Search"
+msgstr ""
+
+#: config/header/search.php:144
+msgid "Display search form button"
+msgstr ""
+
+#: config/header/search.php:155
+msgid "Search Form Width"
+msgstr ""
+
+#: config/header/search.php:173
+msgid "Search Form Spacing"
+msgstr ""
+
+#: config/header/search.php:191
+msgid "Search Input Spacing"
+msgstr ""
+
+#: config/header/search.php:209
+msgid "Search Toggle Padding"
+msgstr ""
+
+#: config/header/search.php:227
+msgid "Search Toggle Margin"
+msgstr ""
+
+#: config/header/search.php:264
+msgid "Search Toggle Size"
+msgstr ""
+
+#: config/header/search.php:282
+msgid "Search Close Spacing"
+msgstr ""
+
+#: config/header/search.php:300
+msgid "Search Close Size"
+msgstr ""
+
+#: config/header/sticky.php:9, config/header/transparent.php:20
+msgid "Enable On"
+msgstr ""
+
+#: config/header/sticky.php:29, config/header/transparent.php:40
+msgid "Site Title"
+msgstr ""
+
+#: config/header/sticky.php:30, config/header/transparent.php:41
+msgid "Site Description"
+msgstr ""
+
+#: config/header/sticky.php:93, config/header/transparent.php:143
+msgid "The site title and tagline visibility can be toggled from the "
+msgstr ""
+
+#: config/header/sticky.php:95, config/header/transparent.php:145
+msgid "Site Identity Section"
+msgstr ""
+
+#: config/header/sticky.php:101, config/header/transparent.php:151
+msgid "Use different logo for transparent header"
+msgstr ""
+
+#: config/header/sticky.php:107, config/header/transparent.php:157
+msgid "Logo"
+msgstr ""
+
+#: config/header/sticky.php:135, config/header/transparent.php:185
+msgid "Logo Width Mobile"
+msgstr ""
+
+#: config/header/sticky.php:161, config/header/transparent.php:211
+msgid "Logo Width Desktop"
+msgstr ""
+
+#: config/header/sticky.php:187, config/header/transparent.php:237
+msgid "Logo Spacing"
+msgstr ""
+
+#: config/header/transparent.php:12
+msgid "The transparent header settings only apply to pages with a hero section. The hero section can be enabled from the "
+msgstr ""
+
+#: config/header/transparent.php:14
+msgid "Hero Section Settings"
+msgstr ""
+
+#: config/header/transparent.php:45
+msgid "Above Header Background"
+msgstr ""
+
+#: config/header/transparent.php:46
+msgid "Above Header Text"
+msgstr ""
+
+#: config/header/transparent.php:47
+msgid "Secondary Menu Background"
+msgstr ""
+
+#: config/header/transparent.php:48
+msgid "Secondary Menu Links"
+msgstr ""
+
+#: config/header/transparent.php:49
+msgid "Secondary Menu Links Hover"
+msgstr ""
+
+#: config/hero/settings.php:12
+msgid "Blog/Archives"
+msgstr ""
+
+#: config/hero/settings.php:13
+msgid "Single Pages"
+msgstr ""
+
+#: config/hero/settings.php:14
+msgid "Single Posts"
+msgstr ""
+
+#: config/hero/settings.php:25
+msgid "Use post/page featured image if available"
+msgstr ""
+
+#: config/hero/settings.php:31
+msgid "Move breadcrumbs inside hero section"
+msgstr ""
+
+#: config/hero/settings.php:37
+msgid "Show divider line below title"
+msgstr ""
+
+#: config/hero/settings.php:51
+msgid "Add negative spacing to content"
+msgstr ""
+
+#: config/hero/settings.php:76
+msgid "Inner Section"
+msgstr ""
+
+#: config/hero/settings.php:153
+msgid "Container Width"
+msgstr ""
+
+#: config/hero/settings.php:171
+msgid "Spacing Mobile"
+msgstr ""
+
+#: config/hero/settings.php:194
+msgid "Spacing Desktop"
+msgstr ""
+
+#: config/hero/settings.php:219
+msgid "Inner Section Vertical Spacing"
+msgstr ""
+
+#: config/hero/settings.php:242
+msgid "Inner Section Horizontal Spacing"
+msgstr ""
+
+#: config/hero/settings.php:270
+msgid "Alignment"
+msgstr ""
+
+#: config/hero/settings.php:322
+msgid "Latest Posts Title"
+msgstr ""
+
+#: config/hero/settings.php:323
+msgid "Latest Posts"
+msgstr ""
+
+#: config/hero/settings.php:328
+msgid "Latest Posts Subtitle"
+msgstr ""
+
+#: config/hero/settings.php:329
+msgid "Showing the latest posts"
+msgstr ""
+
+#: config/menus/mega.php:12
+msgid "Title"
+msgstr ""
+
+#: config/menus/mega.php:13
+msgid "Content"
+msgstr ""
+
+#: config/menus/mega.php:14
+msgid "Link"
+msgstr ""
+
+#: config/menus/mega.php:15
+msgid "Link Hover"
+msgstr ""
+
+#: config/menus/mega.php:84
+msgid "Tip:"
+msgstr ""
+
+#: config/menus/mega.php:85
+msgid "Add widgets to the mega menu widget area from the"
+msgstr ""
+
+#: config/menus/mega.php:87
+msgid "Mega Menu Widgets Section"
+msgstr ""
+
+#: config/menus/mobile.php:9
+msgid "Positioning"
+msgstr ""
+
+#: config/menus/mobile.php:12
+msgid "Absolute"
+msgstr ""
+
+#: config/menus/mobile.php:13
+msgid "Relative"
+msgstr ""
+
+#: config/menus/mobile.php:48
+msgid "Animation"
+msgstr ""
+
+#: config/menus/mobile.php:51
+msgid "Slide down from top"
+msgstr ""
+
+#: config/menus/mobile.php:52
+msgid "Slide in from left"
+msgstr ""
+
+#: config/menus/mobile.php:53
+msgid "Slide in from right"
+msgstr ""
+
+#: config/menus/mobile.php:54
+msgid "Fade in from center"
+msgstr ""
+
+#: config/menus/mobile.php:60
+msgid "Width"
+msgstr ""
+
+#: config/menus/mobile.php:107
+msgid "Menu Item Alignment"
+msgstr ""
+
+#: config/menus/mobile.php:113
+msgid "Full"
+msgstr ""
+
+#: src/admin/license.php:72
+msgid "An error occurred, please try again."
+msgstr ""
+
+#. translators: License expiry date.
+#: src/admin/license.php:82
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: src/admin/license.php:87
+msgid "Your license key has been disabled."
+msgstr ""
+
+#: src/admin/license.php:90
+msgid "Invalid license."
+msgstr ""
+
+#: src/admin/license.php:94
+msgid "Your license is not active for this URL."
+msgstr ""
+
+#. translators: Plugin name.
+#: src/admin/license.php:98
+msgid "This appears to be an invalid license key for %s."
+msgstr ""
+
+#: src/admin/license.php:101
+msgid "Your license key has reached its activation limit."
+msgstr ""
+
+#: src/admin/license.php:184
+msgid "Please activate your"
+msgstr ""
+
+#: src/admin/license.php:185
 msgid "Genesis Customizer Pro"
 msgstr ""
 
-#: src/bootstrap/compat.php:36
+#: src/admin/license.php:186
+msgid "license to enable automatic updates."
+msgstr ""
+
+#: src/admin/license.php:188
+msgid "License settings"
+msgstr ""
+
+#: src/admin/license.php:215
+msgid "License activated"
+msgstr ""
+
+#: src/admin/settings.php:31
+msgid "Settings"
+msgstr ""
+
+#: src/admin/settings.php:67, src/admin/settings.php:73
+msgid "Modules"
+msgstr ""
+
+#: src/admin/settings.php:68
+msgid "Enable or disable Genesis Customizer modules here."
+msgstr ""
+
+#: src/admin/settings.php:82
+msgid "License"
+msgstr ""
+
+#: src/admin/settings.php:83
+msgid "Enter your license key to enable automatic updates."
+msgstr ""
+
+#: src/admin/settings.php:88
+msgid "License Key"
+msgstr ""
+
+#: src/bootstrap/compat.php:50
 msgid "requires the Genesis Customizer plugin to run and has been deactivated."
 msgstr ""
 
-#: src/bootstrap/setup.php:65
+#: src/bootstrap/setup.php:89
+msgid "Custom Code"
+msgstr ""
+
+#: src/bootstrap/setup.php:90
 msgid "WooCommerce"
 msgstr ""
 
-#: src/bootstrap/setup.php:66
+#: src/bootstrap/setup.php:91
 msgid "Easy Digital Downloads"
+msgstr ""
+
+#: src/bootstrap/setup.php:108
+msgid "Header Left"
+msgstr ""
+
+#: src/bootstrap/setup.php:109
+msgid "Above Header"
+msgstr ""
+
+#: src/bootstrap/setup.php:110
+msgid "Below Header"
+msgstr ""
+
+#: src/bootstrap/setup.php:111
+msgid "Transparent Header"
+msgstr ""
+
+#: src/bootstrap/setup.php:112
+msgid "Sticky Header"
+msgstr ""
+
+#: src/bootstrap/setup.php:116
+msgid "Mega Menu"
+msgstr ""
+
+#: src/bootstrap/setup.php:119
+msgid "Above Content"
+msgstr ""
+
+#: src/bootstrap/setup.php:120
+msgid "Below Content"
+msgstr ""
+
+#: src/bootstrap/setup.php:123
+msgid "Blog Layout"
+msgstr ""
+
+#: src/bootstrap/setup.php:126
+msgid "Above Footer"
+msgstr ""
+
+#: src/bootstrap/setup.php:127
+msgid "Below Footer"
+msgstr ""
+
+#: src/bootstrap/setup.php:128
+msgid "Scroll to Top"
+msgstr ""
+
+#: src/bootstrap/setup.php:131
+msgid "Custom CSS"
+msgstr ""
+
+#: src/bootstrap/setup.php:132
+msgid "Custom JS"
+msgstr ""
+
+#: src/bootstrap/setup.php:135
+msgid "Test Setting"
+msgstr ""
+
+#: src/modules/custom-code.php:32, src/modules/custom-code.php:165
+msgid "Invalid nonce."
+msgstr ""
+
+#: src/modules/hero-section.php:216
+msgid "Not found, error 404"
+msgstr ""
+
+#: src/modules/hero-section.php:219
+msgid "Search results for: "
+msgstr ""
+
+#: src/modules/hero-section.php:424
+msgid "Post Type Archives"
+msgstr ""
+
+#: src/modules/typekit-fonts.php:45
+msgid "Typekit"
 msgstr ""

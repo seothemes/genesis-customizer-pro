@@ -1,4 +1,14 @@
 <?php
+/**
+ * Genesis Customizer Pro.
+ *
+ * This file adds the Hero Section module to Genesis Customizer Pro.
+ *
+ * @package   GenesisCustomizerPro
+ * @author    SEO Themes
+ * @copyright 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace GenesisCustomizer;
 
@@ -9,24 +19,26 @@ add_filter( 'genesis-customizer_hero_settings_config', '__return_true' );
 add_post_type_support( 'page', 'excerpt' );
 
 // Enable theme support by default.
-add_theme_support( 'custom-header', [
-	'header-selector'  => 'section.hero-section',
-	'default_image'    => _get_url() . 'assets/img/hero-section.jpg',
-	'header-text'      => false,
-	'width'            => 1280,
-	'height'           => 720,
-	'flex-height'      => true,
-	'flex-width'       => true,
-	'uploads'          => true,
-	'video'            => false,
-	'wp-head-callback' => __NAMESPACE__ . '\custom_header',
-] );
+add_theme_support(
+	'custom-header', [
+		'header-selector'  => 'section.hero-section',
+		'default_image'    => _get_url() . 'assets/img/hero-section.jpg',
+		'header-text'      => false,
+		'width'            => 1280,
+		'height'           => 720,
+		'flex-height'      => true,
+		'flex-width'       => true,
+		'uploads'          => true,
+		'video'            => false,
+		'wp-head-callback' => __NAMESPACE__ . '\custom_header',
+	]
+);
 
 add_action( 'genesis_meta', __NAMESPACE__ . '\hero_init' );
 /**
  * Initialize class.
  *
- * @since 3.3.0
+ * @since 1.0.0
  *
  * @return void
  */
@@ -40,11 +52,11 @@ function hero_init() {
 }
 
 /**
- * Description of expected behavior.
+ * Add hero specific body classes.
  *
  * @since 1.0.0
  *
- * @param $classes
+ * @param array $classes Default classes.
  *
  * @return array
  */
@@ -62,24 +74,24 @@ function hero_body_class( $classes ) {
 }
 
 /**
- * Description of expected behavior.
+ * Checks if hero section is enabled.
  *
  * @since 1.0.0
  *
- * @param $settings
+ * @param array $settings Plugin settings.
  *
  * @return bool|string
  */
 function hero_enabled( $settings ) {
 	$has = false;
 
-	if ( in_array( 'archive', $settings ) && _is_archive() ) {
+	if ( in_array( 'archive', $settings, true ) && _is_archive() ) {
 		$has = 'archive';
 
-	} elseif ( in_array( 'post', $settings ) && ( is_singular() && ! is_page() ) ) {
+	} elseif ( in_array( 'post', $settings, true ) && ( is_singular() && ! is_page() ) ) {
 		$has = 'post';
 
-	} elseif ( in_array( 'page', $settings ) && ( is_singular( 'page' ) && ! genesis_is_blog_template() || is_404() ) ) {
+	} elseif ( in_array( 'page', $settings, true ) && ( is_singular( 'page' ) && ! genesis_is_blog_template() || is_404() ) ) {
 		$has = 'page';
 
 	}
@@ -98,7 +110,7 @@ function hero_enabled( $settings ) {
 /**
  * Sets up hero section.
  *
- * @since  1.5.0
+ * @since  1.0.0
  *
  * @return void
  */
@@ -194,17 +206,17 @@ function hero_title_toggle() {
  * @return void
  */
 function hero_title() {
-	if ( class_exists( 'WooCommerce' ) && \is_shop() ) {
+	if ( _is_plugin_active( 'woocommerce' ) && \is_shop() ) {
 		$title = get_the_title( \wc_get_page_id( 'shop' ) );
 
 	} elseif ( is_home() && 'posts' === get_option( 'show_on_front' ) ) {
 		$title = _get_value( 'hero_settings_latest-posts-title' );
 
 	} elseif ( is_404() ) {
-		$title = apply_filters( 'genesis_404_entry_title', esc_html__( 'Not found, error 404', 'genesis-customizer' ) );
+		$title = apply_filters( 'genesis_404_entry_title', esc_html__( 'Not found, error 404', 'genesis-customizer-pro' ) );
 
 	} elseif ( is_search() ) {
-		$title = apply_filters( 'genesis_search_title_text', esc_html__( 'Search results for: ', 'genesis-customizer' ) . get_search_query() );
+		$title = apply_filters( 'genesis_search_title_text', esc_html__( 'Search results for: ', 'genesis-customizer-pro' ) . get_search_query() );
 
 	} elseif ( genesis_is_blog_template() ) {
 		ob_start();
@@ -216,12 +228,14 @@ function hero_title() {
 	}
 
 	if ( isset( $title ) && $title ) {
-		genesis_markup( [
-			'open'    => '<h1 %s itemprop="headline">',
-			'close'   => '</h1>',
-			'content' => $title,
-			'context' => 'hero-title',
-		] );
+		genesis_markup(
+			[
+				'open'    => '<h1 %s itemprop="headline">',
+				'close'   => '</h1>',
+				'content' => $title,
+				'context' => 'hero-title',
+			]
+		);
 	}
 }
 
@@ -262,12 +276,14 @@ function hero_excerpt() {
 	}
 
 	if ( $excerpt ) {
-		genesis_markup( [
-			'open'    => '<p %s itemprop="description">',
-			'close'   => '</p>',
-			'content' => $excerpt,
-			'context' => 'hero-subtitle',
-		] );
+		genesis_markup(
+			[
+				'open'    => '<p %s itemprop="description">',
+				'close'   => '</p>',
+				'content' => $excerpt,
+				'context' => 'hero-subtitle',
+			]
+		);
 	}
 }
 
@@ -283,12 +299,14 @@ function hero_excerpt() {
 function do_archive_headings_intro_text( $heading = '', $intro_text = '', $context = '' ) {
 
 	if ( $context && $intro_text ) {
-		genesis_markup( [
-			'open'    => '<p %s itemprop="description">',
-			'close'   => '</p>',
-			'content' => $intro_text,
-			'context' => 'hero-subtitle',
-		] );
+		genesis_markup(
+			[
+				'open'    => '<p %s itemprop="description">',
+				'close'   => '</p>',
+				'content' => $intro_text,
+				'context' => 'hero-subtitle',
+			]
+		);
 	}
 }
 
@@ -297,7 +315,7 @@ function do_archive_headings_intro_text( $heading = '', $intro_text = '', $conte
  *
  * @since 1.0.0
  *
- * @param $atts
+ * @param array $atts Hero title attributes.
  *
  * @return array
  */
@@ -313,7 +331,7 @@ function hero_archive_title_attr( $atts ) {
  *
  * @since 1.0.0
  *
- * @param $atts
+ * @param array $atts Hero entry attributes.
  *
  * @return array
  */
@@ -333,38 +351,48 @@ function hero_entry_attr( $atts ) {
  * @return void
  */
 function hero_display() {
-	genesis_markup( [
-		'open'    => '<section %s role="banner">',
-		'context' => 'hero-section',
-	] );
+	genesis_markup(
+		[
+			'open'    => '<section %s role="banner">',
+			'context' => 'hero-section',
+		]
+	);
 
 	genesis_structural_wrap( 'hero-section', 'open' );
 
-	genesis_markup( [
-		'open'    => '<div %s>',
-		'context' => 'hero-inner',
-	] );
+	genesis_markup(
+		[
+			'open'    => '<div %s>',
+			'context' => 'hero-inner',
+		]
+	);
 
 	do_action( 'genesis_customizer_hero_section' );
 
-	genesis_markup( [
-		'close'   => '</div>',
-		'context' => 'hero-inner',
-	] );
+	genesis_markup(
+		[
+			'close'   => '</div>',
+			'context' => 'hero-inner',
+		]
+	);
 
 	genesis_structural_wrap( 'hero-section', 'close' );
 
-	genesis_markup( [
-		'close'   => '</section>',
-		'context' => 'hero-section',
-	] );
+	genesis_markup(
+		[
+			'close'   => '</section>',
+			'context' => 'hero-section',
+		]
+	);
 }
 
 add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\archive_hero_images', 15, 1 );
 /**
- * Description of expected behavior.
+ * Adds image settings for each archive page to Customizer.
  *
  * @since 1.0.0
+ *
+ * @param array $sections Default sections.
  *
  * @return array
  */
@@ -378,20 +406,22 @@ function archive_hero_images( $sections ) {
 			'attachment',
 		];
 
-		if ( in_array( $post_type, $exclude ) ) {
+		if ( in_array( $post_type, $exclude, true ) ) {
 			continue;
 		}
 
-		\Kirki::add_field( _get_handle(), [
-			'type'     => 'image',
-			'label'    => $title,
-			'section'  => _get_handle() . '_hero_archives',
-			'settings' => $post_type . '-image',
-			'default'  => '',
-		] );
+		\Kirki::add_field(
+			_get_handle(), [
+				'type'     => 'image',
+				'label'    => $title,
+				'section'  => _get_handle() . '_hero_archives',
+				'settings' => $post_type . '-image',
+				'default'  => '',
+			]
+		);
 	}
 
-	$new_sections['hero']['archives'] = __( 'Post Type Archives', 'genesis-customizer' );
+	$new_sections['hero']['archives'] = __( 'Post Type Archives', 'genesis-customizer-pro' );
 
 	$merged = array_merge_recursive( $sections, $new_sections );
 
@@ -400,11 +430,11 @@ function archive_hero_images( $sections ) {
 
 add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\term_hero_images', 20, 1 );
 /**
- * Description of expected behavior.
+ * Adds term image settings to Customizer.
  *
  * @since 1.0.0
  *
- * @param $sections
+ * @param array $sections Default sections.
  *
  * @return array
  */
@@ -415,16 +445,22 @@ function term_hero_images( $sections ) {
 	foreach ( $taxonomies as $taxonomy => $title ) {
 		$new_sections['hero'][ $taxonomy ] = $title;
 
-		$terms = \Kirki_Helper::get_terms( [ 'taxonomy' => $taxonomy ] );
+		$terms = \Kirki_Helper::get_terms(
+			[
+				'taxonomy' => $taxonomy,
+			]
+		);
 
 		foreach ( $terms as $term => $name ) {
-			\Kirki::add_field( _get_handle(), [
-				'type'     => 'image',
-				'label'    => $name,
-				'section'  => _get_handle() . '_hero_' . $taxonomy,
-				'settings' => 'term-' . $term,
-				'default'  => '',
-			] );
+			\Kirki::add_field(
+				_get_handle(), [
+					'type'     => 'image',
+					'label'    => $name,
+					'section'  => _get_handle() . '_hero_' . $taxonomy,
+					'settings' => 'term-' . $term,
+					'default'  => '',
+				]
+			);
 		}
 	}
 

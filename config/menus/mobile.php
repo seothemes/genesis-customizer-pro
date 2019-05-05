@@ -6,11 +6,11 @@ return [
 	[
 		'type'            => 'radio-buttonset',
 		'settings'        => 'position',
-		'label'           => esc_html__( 'Positioning', 'genesis-customizer' ),
+		'label'           => esc_html__( 'Positioning', 'genesis-customizer-pro' ),
 		'default'         => 'absolute',
 		'choices'         => [
-			'absolute' => esc_html__( 'Absolute', 'genesis-customizer' ),
-			'relative' => esc_html__( 'Relative', 'genesis-customizer' ),
+			'absolute' => esc_html__( 'Absolute', 'genesis-customizer-pro' ),
+			'relative' => esc_html__( 'Relative', 'genesis-customizer-pro' ),
 		],
 		'output'          => [
 			[
@@ -45,19 +45,19 @@ return [
 	[
 		'type'     => 'radio',
 		'settings' => 'animation',
-		'label'    => __( 'Animation', 'genesis-customizer' ),
+		'label'    => __( 'Animation', 'genesis-customizer-pro' ),
 		'default'  => 'has-mobile-menu-top',
 		'choices'  => [
-			'has-mobile-menu-top'    => __( 'Slide down from top', 'genesis-customizer' ),
-			'has-mobile-menu-left'   => __( 'Slide in from left', 'genesis-customizer' ),
-			'has-mobile-menu-right'  => __( 'Slide in from right', 'genesis-customizer' ),
-			'has-mobile-menu-center' => __( 'Fade in from center', 'genesis-customizer' ),
+			'has-mobile-menu-top'    => __( 'Slide down from top', 'genesis-customizer-pro' ),
+			'has-mobile-menu-left'   => __( 'Slide in from left', 'genesis-customizer-pro' ),
+			'has-mobile-menu-right'  => __( 'Slide in from right', 'genesis-customizer-pro' ),
+			'has-mobile-menu-center' => __( 'Fade in from center', 'genesis-customizer-pro' ),
 		],
 	],
 	[
 		'type'     => 'slider',
 		'settings' => 'width',
-		'label'    => __( 'Width', 'genesis-customizer' ),
+		'label'    => __( 'Width', 'genesis-customizer-pro' ),
 		'default'  => '90',
 		'choices'  => [
 			'min'  => 50,
@@ -104,13 +104,13 @@ return [
 	[
 		'type'     => 'select',
 		'settings' => 'alignment',
-		'label'    => __( 'Menu Item Alignment', 'genesis-customizer' ),
+		'label'    => __( 'Menu Item Alignment', 'genesis-customizer-pro' ),
 		'default'  => 'space-between',
 		'choices'  => [
-			'flex-start'    => __( 'Left', 'genesis-customizer' ),
-			'center'        => __( 'Center', 'genesis-customizer' ),
-			'flex-end'      => __( 'Right', 'genesis-customizer' ),
-			'space-between' => __( 'Full', 'genesis-customizer' ),
+			'flex-start'    => __( 'Left', 'genesis-customizer-pro' ),
+			'center'        => __( 'Center', 'genesis-customizer-pro' ),
+			'flex-end'      => __( 'Right', 'genesis-customizer-pro' ),
+			'space-between' => __( 'Full', 'genesis-customizer-pro' ),
 		],
 	],
 ];

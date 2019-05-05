@@ -6,13 +6,13 @@ return [
 	[
 		'type'     => 'radio',
 		'settings' => 'enabled',
-		'label'    => __( 'Enable On', 'genesis-customizer' ),
+		'label'    => __( 'Enable On', 'genesis-customizer-pro' ),
 		'default'  => '',
 		'choices'  => [
-			'all'     => __( 'Desktop and Mobile', 'genesis-customizer' ),
-			'desktop' => __( 'Desktop', 'genesis-customizer' ),
-			'mobile'  => __( 'Mobile', 'genesis-customizer' ),
-			''        => __( 'None', 'genesis-customizer' ),
+			'all'     => __( 'Desktop and Mobile', 'genesis-customizer-pro' ),
+			'desktop' => __( 'Desktop', 'genesis-customizer-pro' ),
+			'mobile'  => __( 'Mobile', 'genesis-customizer-pro' ),
+			''        => __( 'None', 'genesis-customizer-pro' ),
 		],
 	],
 	[
@@ -23,14 +23,14 @@ return [
 	[
 		'type'     => 'multicolor',
 		'settings' => 'colors',
-		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'label'    => __( 'Colors', 'genesis-customizer-pro' ),
 		'choices'  => [
-			'background'       => __( 'Background', 'genesis-customizer' ),
-			'site-title'       => __( 'Site Title', 'genesis-customizer' ),
-			'site-description' => __( 'Site Description', 'genesis-customizer' ),
-			'text'             => __( 'Text', 'genesis-customizer' ),
-			'links'            => __( 'Links', 'genesis-customizer' ),
-			'links-hover'      => __( 'Links Hover', 'genesis-customizer' ),
+			'background'       => __( 'Background', 'genesis-customizer-pro' ),
+			'site-title'       => __( 'Site Title', 'genesis-customizer-pro' ),
+			'site-description' => __( 'Site Description', 'genesis-customizer-pro' ),
+			'text'             => __( 'Text', 'genesis-customizer-pro' ),
+			'links'            => __( 'Links', 'genesis-customizer-pro' ),
+			'links-hover'      => __( 'Links Hover', 'genesis-customizer-pro' ),
 		],
 		'default'  => [
 			'background'       => _get_color( 'white' ),
@@ -89,22 +89,22 @@ return [
 		'settings' => 'tip',
 		'default'  => sprintf(
 			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
-			esc_html__( 'Tip: ', 'genesis-customizer' ),
-			esc_html__( 'The site title and tagline visibility can be toggled from the ', 'genesis-customizer' ),
+			esc_html__( 'Tip: ', 'genesis-customizer-pro' ),
+			esc_html__( 'The site title and tagline visibility can be toggled from the ', 'genesis-customizer-pro' ),
 			esc_attr( '"title_tagline"' ),
-			esc_html__( 'Site Identity Section', 'genesis-customizer' )
+			esc_html__( 'Site Identity Section', 'genesis-customizer-pro' )
 		),
 	],
 	[
 		'type'     => 'checkbox',
 		'settings' => 'different-logo',
-		'label'    => __( 'Use different logo for transparent header', 'genesis-customizer' ),
+		'label'    => __( 'Use different logo for transparent header', 'genesis-customizer-pro' ),
 		'default'  => false,
 	],
 	[
 		'type'            => 'image',
 		'settings'        => 'logo',
-		'label'           => __( 'Logo', 'genesis-customizer' ),
+		'label'           => __( 'Logo', 'genesis-customizer-pro' ),
 		'default'         => '',
 		'choices'         => [
 			'save_as' => 'id',
@@ -132,7 +132,7 @@ return [
 	[
 		'type'            => 'slider',
 		'settings'        => 'logo-width-mobile',
-		'label'           => __( 'Logo Width Mobile', 'genesis-customizer' ),
+		'label'           => __( 'Logo Width Mobile', 'genesis-customizer-pro' ),
 		'default'         => '200',
 		'choices'         => [
 			'min'  => 0,
@@ -158,7 +158,7 @@ return [
 	[
 		'type'            => 'slider',
 		'settings'        => 'logo-width-desktop',
-		'label'           => __( 'Logo Width Desktop', 'genesis-customizer' ),
+		'label'           => __( 'Logo Width Desktop', 'genesis-customizer-pro' ),
 		'default'         => '200',
 		'choices'         => [
 			'min'  => 0,
@@ -184,7 +184,7 @@ return [
 	[
 		'type'            => 'slider',
 		'settings'        => 'logo-spacing',
-		'label'           => __( 'Logo Spacing', 'genesis-customizer' ),
+		'label'           => __( 'Logo Spacing', 'genesis-customizer-pro' ),
 		'default'         => '16',
 		'choices'         => [
 			'min'  => - 20,

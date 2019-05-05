@@ -6,7 +6,7 @@ return [
 	[
 		'type'     => 'checkbox',
 		'settings' => 'enabled',
-		'label'    => __( 'Display Above Footer section', 'genesis-customizer' ),
+		'label'    => __( 'Display Above Footer section', 'genesis-customizer-pro' ),
 		'default'  => true,
 	],
 	[
@@ -17,7 +17,7 @@ return [
 	[
 		'type'        => 'radio-image',
 		'settings'    => 'layout',
-		'label'       => __( 'Layout', 'genesis-customizer' ),
+		'label'       => __( 'Layout', 'genesis-customizer-pro' ),
 		'default'     => 'space-between',
 		'collapsible' => true,
 		'choices'     => [
@@ -41,13 +41,13 @@ return [
 	[
 		'type'     => 'multicolor',
 		'settings' => 'colors',
-		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'label'    => __( 'Colors', 'genesis-customizer-pro' ),
 		'choices'  => [
-			'text'        => __( 'Text', 'genesis-customizer' ),
-			'headings'    => __( 'Headings', 'genesis-customizer' ),
-			'links'       => __( 'Links', 'genesis-customizer' ),
-			'links-hover' => __( 'Links Hover', 'genesis-customizer' ),
-			'border'      => __( 'Border', 'genesis-customizer' ),
+			'text'        => __( 'Text', 'genesis-customizer-pro' ),
+			'headings'    => __( 'Headings', 'genesis-customizer-pro' ),
+			'links'       => __( 'Links', 'genesis-customizer-pro' ),
+			'links-hover' => __( 'Links Hover', 'genesis-customizer-pro' ),
+			'border'      => __( 'Border', 'genesis-customizer-pro' ),
 		],
 		'default'  => [
 			'text'        => '',
@@ -94,11 +94,11 @@ return [
 	[
 		'type'      => 'multicolor',
 		'settings'  => 'gradient',
-		'label'     => __( 'Gradient Overlay', 'genesis-customizer' ),
+		'label'     => __( 'Gradient Overlay', 'genesis-customizer-pro' ),
 		'transport' => 'refresh',
 		'choices'   => [
-			'left'  => __( 'Background Left', 'genesis-customizer' ),
-			'right' => __( 'Background Right', 'genesis-customizer' ),
+			'left'  => __( 'Background Left', 'genesis-customizer-pro' ),
+			'right' => __( 'Background Right', 'genesis-customizer-pro' ),
 		],
 		'default'   => [
 			'left'  => '',
@@ -108,7 +108,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'angle',
-		'label'    => __( 'Gradient Angle', 'genesis-customizer' ),
+		'label'    => __( 'Gradient Angle', 'genesis-customizer-pro' ),
 		'default'  => '135',
 		'choices'  => [
 			'min'  => 0,
@@ -124,7 +124,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'spacing',
-		'label'    => __( 'Spacing', 'genesis-customizer' ),
+		'label'    => __( 'Spacing', 'genesis-customizer-pro' ),
 		'default'  => '60',
 		'choices'  => [
 			'min'  => 0,
@@ -152,15 +152,15 @@ return [
 	[
 		'type'     => 'dimensions',
 		'settings' => 'border-width',
-		'label'    => __( 'Border Width', 'genesis-customizer' ),
+		'label'    => __( 'Border Width', 'genesis-customizer-pro' ),
 		'default'  => [
 			'border-top-width'    => '',
 			'border-bottom-width' => '1px',
 		],
 		'choices'  => [
 			'labels' => [
-				'border-top-width'    => __( 'Border Top Width', 'genesis-customizer' ),
-				'border-bottom-width' => __( 'Border Bottom Width', 'genesis-customizer' ),
+				'border-top-width'    => __( 'Border Top Width', 'genesis-customizer-pro' ),
+				'border-bottom-width' => __( 'Border Bottom Width', 'genesis-customizer-pro' ),
 			],
 		],
 		'output'   => [
@@ -184,7 +184,7 @@ return [
 	[
 		'type'     => 'background',
 		'settings' => 'background',
-		'label'    => __( 'Background Image', 'genesis-customizer' ),
+		'label'    => __( 'Background Image', 'genesis-customizer-pro' ),
 		'default'  => [
 			'background-image'      => '',
 			'background-repeat'     => '',

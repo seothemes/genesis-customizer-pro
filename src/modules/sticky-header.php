@@ -1,17 +1,27 @@
 <?php
+/**
+ * Genesis Customizer Pro.
+ *
+ * This file adds the Sticky Header module to Genesis Customizer Pro.
+ *
+ * @package   GenesisCustomizerPro
+ * @author    SEO Themes
+ * @copyright 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace GenesisCustomizer;
 
 // Enable config.
-add_filter('genesis-customizer_header_sticky_config', '__return_true' );
+add_filter( 'genesis-customizer_header_sticky_config', '__return_true' );
 
 add_filter( 'body_class', __NAMESPACE__ . '\sticky_header_logo_class', 1000 );
 /**
- * Description of expected behavior.
+ * Add sticky header logo class to body.
  *
  * @since 1.0.0
  *
- * @param $classes
+ * @param array $classes Body classes.
  *
  * @return array
  */

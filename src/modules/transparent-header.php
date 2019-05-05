@@ -1,23 +1,33 @@
 <?php
+/**
+ * Genesis Customizer Pro.
+ *
+ * This file adds the Transparent Header module to Genesis Customizer Pro.
+ *
+ * @package   GenesisCustomizerPro
+ * @author    SEO Themes
+ * @copyright 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace GenesisCustomizer;
 
 // Enable config.
-add_filter('genesis-customizer_header_transparent_config', '__return_true' );
+add_filter( 'genesis-customizer_header_transparent_config', '__return_true' );
 
 add_filter( 'body_class', __NAMESPACE__ . '\transparent_header_logo_class', 1000 );
 /**
- * Description of expected behavior.
+ * Add transparent header body class.
  *
  * @since 1.0.0
  *
- * @param $classes
+ * @param array $classes Body classes.
  *
  * @return array
  */
 function transparent_header_logo_class( $classes ) {
-	$has_different_logo  = _get_value( 'header_transparent_different-logo' );
-	$different_logo      = _get_value( 'header_transparent_logo' );
+	$has_different_logo = _get_value( 'header_transparent_different-logo' );
+	$different_logo     = _get_value( 'header_transparent_logo' );
 
 	if ( _has_transparent_header() && $has_different_logo && $different_logo ) {
 		$classes[] = 'wp-custom-logo';

@@ -6,12 +6,12 @@ return [
 	[
 		'type'     => 'multicheck',
 		'settings' => 'enable',
-		'label'    => __( 'Enable on', 'genesis-customizer' ),
+		'label'    => __( 'Enable on', 'genesis-customizer-pro' ),
 		'default'  => [],
 		'choices'  => [
-			'archive' => __( 'Blog/Archives', 'genesis-customizer' ),
-			'page'    => __( 'Single Pages', 'genesis-customizer' ),
-			'post'    => __( 'Single Posts', 'genesis-customizer' ),
+			'archive' => __( 'Blog/Archives', 'genesis-customizer-pro' ),
+			'page'    => __( 'Single Pages', 'genesis-customizer-pro' ),
+			'post'    => __( 'Single Posts', 'genesis-customizer-pro' ),
 		],
 	],
 	[
@@ -22,19 +22,19 @@ return [
 	[
 		'type'     => 'checkbox',
 		'settings' => 'featured-image',
-		'label'    => __( 'Use post/page featured image if available', 'genesis-customizer' ),
+		'label'    => __( 'Use post/page featured image if available', 'genesis-customizer-pro' ),
 		'default'  => true,
 	],
 	[
 		'type'     => 'checkbox',
 		'settings' => 'breadcrumbs',
-		'label'    => __( 'Move breadcrumbs inside hero section', 'genesis-customizer' ),
+		'label'    => __( 'Move breadcrumbs inside hero section', 'genesis-customizer-pro' ),
 		'default'  => false,
 	],
 	[
 		'type'     => 'checkbox',
 		'settings' => 'divider',
-		'label'    => __( 'Show divider line below title', 'genesis-customizer' ),
+		'label'    => __( 'Show divider line below title', 'genesis-customizer-pro' ),
 		'default'  => false,
 		'output'   => [
 			[
@@ -48,7 +48,7 @@ return [
 	[
 		'type'     => 'checkbox',
 		'settings' => 'negative',
-		'label'    => __( 'Add negative spacing to content', 'genesis-customizer' ),
+		'label'    => __( 'Add negative spacing to content', 'genesis-customizer-pro' ),
 		'default'  => false,
 		'output'   => [
 			[
@@ -67,13 +67,13 @@ return [
 	[
 		'type'     => 'multicolor',
 		'settings' => 'colors',
-		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'label'    => __( 'Colors', 'genesis-customizer-pro' ),
 		'choices'  => [
-			'text'          => __( 'Text', 'genesis-customizer' ),
-			'headings'      => __( 'Headings', 'genesis-customizer' ),
-			'links'         => __( 'Links', 'genesis-customizer' ),
-			'links-hover'   => __( 'Links Hover', 'genesis-customizer' ),
-			'inner-section' => __( 'Inner Section', 'genesis-customizer' ),
+			'text'          => __( 'Text', 'genesis-customizer-pro' ),
+			'headings'      => __( 'Headings', 'genesis-customizer-pro' ),
+			'links'         => __( 'Links', 'genesis-customizer-pro' ),
+			'links-hover'   => __( 'Links Hover', 'genesis-customizer-pro' ),
+			'inner-section' => __( 'Inner Section', 'genesis-customizer-pro' ),
 		],
 		'default'  => [
 			'text'          => _get_color( 'white' ),
@@ -120,11 +120,11 @@ return [
 	[
 		'type'      => 'multicolor',
 		'settings'  => 'gradient',
-		'label'     => __( 'Gradient Overlay', 'genesis-customizer' ),
+		'label'     => __( 'Gradient Overlay', 'genesis-customizer-pro' ),
 		'transport' => 'refresh',
 		'choices'   => [
-			'left'  => __( 'Background Left', 'genesis-customizer' ),
-			'right' => __( 'Background Right', 'genesis-customizer' ),
+			'left'  => __( 'Background Left', 'genesis-customizer-pro' ),
+			'right' => __( 'Background Right', 'genesis-customizer-pro' ),
 		],
 		'default'   => [
 			'left'  => _get_color( 'overlay' ),
@@ -134,7 +134,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'angle',
-		'label'    => __( 'Gradient Angle', 'genesis-customizer' ),
+		'label'    => __( 'Gradient Angle', 'genesis-customizer-pro' ),
 		'default'  => 135,
 		'choices'  => [
 			'min'  => 0,
@@ -150,7 +150,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'container-width',
-		'label'    => __( 'Container Width', 'genesis-customizer' ),
+		'label'    => __( 'Container Width', 'genesis-customizer-pro' ),
 		'default'  => '1152',
 		'choices'  => [
 			'min'  => 256,
@@ -168,7 +168,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'spacing-mobile',
-		'label'    => __( 'Spacing Mobile', 'genesis-customizer' ),
+		'label'    => __( 'Spacing Mobile', 'genesis-customizer-pro' ),
 		'default'  => '60',
 		'choices'  => [
 			'min'  => 0,
@@ -191,7 +191,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'spacing-desktop',
-		'label'    => __( 'Spacing Desktop', 'genesis-customizer' ),
+		'label'    => __( 'Spacing Desktop', 'genesis-customizer-pro' ),
 		'default'  => '100',
 		'choices'  => [
 			'min'  => 0,
@@ -216,7 +216,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'spacing-inner-vertical',
-		'label'    => __( 'Inner Section Vertical Spacing', 'genesis-customizer' ),
+		'label'    => __( 'Inner Section Vertical Spacing', 'genesis-customizer-pro' ),
 		'default'  => '0',
 		'choices'  => [
 			'min'  => 0,
@@ -239,7 +239,7 @@ return [
 	[
 		'type'     => 'slider',
 		'settings' => 'spacing-inner-horizontal',
-		'label'    => __( 'Inner Section Horizontal Spacing', 'genesis-customizer' ),
+		'label'    => __( 'Inner Section Horizontal Spacing', 'genesis-customizer-pro' ),
 		'default'  => '0',
 		'choices'  => [
 			'min'  => 0,
@@ -267,7 +267,7 @@ return [
 	[
 		'type'     => 'radio-buttonset',
 		'settings' => 'alignment',
-		'label'    => __( 'Alignment', 'genesis-customizer' ),
+		'label'    => __( 'Alignment', 'genesis-customizer-pro' ),
 		'default'  => 'center',
 		'choices'  => [
 			'flex-start' => _get_svg( 'alignleft' ),
@@ -319,13 +319,13 @@ return [
 	[
 		'type'     => 'text',
 		'settings' => 'latest-posts-title',
-		'label'    => __( 'Latest Posts Title', 'genesis-customizer' ),
-		'default'  => __( 'Latest Posts', 'genesis-customizer' ),
+		'label'    => __( 'Latest Posts Title', 'genesis-customizer-pro' ),
+		'default'  => __( 'Latest Posts', 'genesis-customizer-pro' ),
 	],
 	[
 		'type'     => 'text',
 		'settings' => 'latest-posts-subtitle',
-		'label'    => __( 'Latest Posts Subtitle', 'genesis-customizer' ),
-		'default'  => __( 'Showing the latest posts', 'genesis-customizer' ),
+		'label'    => __( 'Latest Posts Subtitle', 'genesis-customizer-pro' ),
+		'default'  => __( 'Showing the latest posts', 'genesis-customizer-pro' ),
 	],
 ];

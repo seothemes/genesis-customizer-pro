@@ -1,4 +1,14 @@
 <?php
+/**
+ * Genesis Customizer Pro.
+ *
+ * This file checks for plugin compatibility before loading Genesis Customizer Pro.
+ *
+ * @package   GenesisCustomizerPro
+ * @author    SEO Themes
+ * @copyright 2019 SEO Themes
+ * @license   GPL-3.0-or-later
+ */
 
 namespace GenesisCustomizer;
 
@@ -22,7 +32,7 @@ function pro() {
 
 add_action( 'admin_notices', __NAMESPACE__ . '\pro_deactivation_notice' );
 /**
- * Description of expected behavior.
+ * Display deactivation notice.
  *
  * @since 1.0.0
  *
@@ -36,8 +46,8 @@ function pro_deactivation_notice() {
 
 		return printf(
 			'<div class="notice notice-error"><p><b>%s</b> %s</p></div>',
-			_get_pro_name(),
-			__( 'requires the Genesis Customizer plugin to run and has been deactivated.', 'genesis-customizer-pro' )
+			esc_html( _get_pro_name() ),
+			esc_html__( 'requires the Genesis Customizer plugin to run and has been deactivated.', 'genesis-customizer-pro' )
 		);
 
 	} else {
@@ -46,7 +56,7 @@ function pro_deactivation_notice() {
 }
 
 /**
- * Description of expected behavior.
+ * Check if Pro is compatible.
  *
  * @since 1.0.0
  *
