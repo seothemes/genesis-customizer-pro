@@ -140,7 +140,7 @@ function add_pro_sections( $defaults ) {
 	return array_merge_recursive( $defaults, $modules );
 }
 
-register_activation_hook( _get_pro_path() . _get_pro_handle() . '.php', __NAMESPACE__ . '\pro_activation_hook' );
+add_action( 'admin_init', __NAMESPACE__ . '\pro_activation_hook' );
 /**
  * Runs on activation.
  *
@@ -149,11 +149,15 @@ register_activation_hook( _get_pro_path() . _get_pro_handle() . '.php', __NAMESP
  * @return void
  */
 function pro_activation_hook() {
+	if ( _get_option( 'modules', [] ) ) {
+		return;
+	}
+
 	$modules = _get_pro_modules();
 	$new     = [];
 
-	foreach ( $modules as $module => $title ) {
-		$new[ $module ] = true;
+	foreach ( $modules as $id => $title ) {
+		$new[] = $id;
 	}
 
 	update_option( 'genesis-customizer-modules', $new );
