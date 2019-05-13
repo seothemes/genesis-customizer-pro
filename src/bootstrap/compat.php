@@ -12,56 +12,62 @@
 
 namespace GenesisCustomizer;
 
-add_action( 'plugins_loaded', __NAMESPACE__ . '\pro' );
-/**
- * Check compatibility (after base plugin is loaded).
- *
- * @since 1.0.0
- *
- * @return void
- */
-function pro() {
-	if ( ! pro_is_compatible() ) {
-		if ( ! function_exists( 'deactivate_plugins' ) ) {
-			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		}
-
-		deactivate_plugins( plugin_dir_path( dirname( __DIR__ ) ) . 'genesis-customizer-pro.php' );
-	}
+if ( ! function_exists( 'is_plugin_active' ) ) {
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
 }
 
-add_action( 'admin_notices', __NAMESPACE__ . '\pro_deactivation_notice' );
-/**
- * Display deactivation notice.
- *
- * @since 1.0.0
- *
- * @return string
- */
-function pro_deactivation_notice() {
-	if ( ! pro_is_compatible() ) {
-		if ( isset( $_GET['activate'] ) ) {
-			unset( $_GET['activate'] );
-		}
+if ( ! is_plugin_active( 'genesis-customizer/genesis-customizer.php' ) ) {
 
-		return printf(
+	add_action( 'plugins_loaded', __NAMESPACE__ . '\pro_init_deactivation' );
+	/**
+	 * Initialize deactivation functions.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	function pro_init_deactivation() {
+		if ( current_user_can( 'activate_plugins' ) ) {
+			add_action( 'admin_init', __NAMESPACE__ . '\pro_deactivate' );
+			add_action( 'admin_notices', __NAMESPACE__ . '\pro_deactivation_notice' );
+		}
+	}
+
+	/**
+	 * Deactivate the plugin.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	function pro_deactivate() {
+		$file = 'genesis-customizer-pro/genesis-customizer-pro.php';
+
+		deactivate_plugins( plugin_basename( $file ) );
+	}
+
+	/**
+	 * Show deactivation admin notice.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	function pro_deactivation_notice() {
+		printf(
 			'<div class="notice notice-error"><p><b>%s</b> %s</p></div>',
-			esc_html( _get_pro_name() ),
+			esc_html__( 'Genesis Customizer Pro', 'genesis-customizer-pro' ),
 			esc_html__( 'requires the Genesis Customizer plugin to run and has been deactivated.', 'genesis-customizer-pro' )
 		);
 
-	} else {
-		return '';
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( isset( $_GET['activate'] ) ) {
+			unset( $_GET['activate'] );
+		}
 	}
+
+	return false;
 }
 
-/**
- * Check if Pro is compatible.
- *
- * @since 1.0.0
- *
- * @return bool
- */
-function pro_is_compatible() {
-	return function_exists( __NAMESPACE__ . '\autoload_files' );
-}
+// Return true if checks passed.
+return true;

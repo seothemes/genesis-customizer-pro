@@ -140,15 +140,15 @@ function add_pro_sections( $defaults ) {
 	return array_merge_recursive( $defaults, $modules );
 }
 
-add_action( 'admin_init', __NAMESPACE__ . '\pro_activation_hook' );
+add_action( 'admin_init', __NAMESPACE__ . '\set_default_modules' );
 /**
- * Runs on activation.
+ * Sets default modules.
  *
  * @since 1.0.0
  *
  * @return void
  */
-function pro_activation_hook() {
+function set_default_modules() {
 	if ( _get_option( 'modules', [] ) ) {
 		return;
 	}

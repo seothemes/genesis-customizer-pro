@@ -3,7 +3,7 @@
  * Genesis Customizer Pro
  *
  * Plugin Name: Genesis Customizer Pro
- * Version:     0.4.0
+ * Version:     0.4.1
  * Text Domain: genesis-customizer-pro
  * Plugin URI:  https://genesiscustomizer.com/
  * Description: Pro add-on for the Genesis Customizer theme.
@@ -21,8 +21,12 @@
  * @license   GPL-3.0-or-later
  */
 
+namespace GenesisCustomizer;
+
 // Check compatibility.
-require_once __DIR__ . '/src/bootstrap/compat.php';
+if ( ! require_once __DIR__ . '/src/bootstrap/compat.php' ) {
+	return;
+}
 
 // Load helper functions.
 require_once __DIR__ . '/src/bootstrap/helpers.php';
