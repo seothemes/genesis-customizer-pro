@@ -41,7 +41,7 @@ msgstr ""
 msgid "Remove featured image spacing"
 msgstr ""
 
-#: config/archive/blog-layout.php:35, config/archive/blog-layout.php:49, config/archive/blog-layout.php:84, config/code/css.php:22, config/header/above.php:11, config/header/below.php:11, config/header/primary.php:105, config/header/sticky.php:92, config/header/transparent.php:11, config/header/transparent.php:142
+#: config/archive/blog-layout.php:35, config/archive/blog-layout.php:49, config/archive/blog-layout.php:84, config/code/css.php:22, config/header/above.php:11, config/header/below.php:11, config/header/primary.php:105, config/header/sticky.php:92, config/header/transparent.php:131
 msgid "Tip: "
 msgstr ""
 
@@ -109,11 +109,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: config/code/css.php:13, config/header/above.php:25, config/header/below.php:25, config/header/left.php:15, config/header/search.php:15, config/header/sticky.php:14, config/header/transparent.php:25
+#: config/code/css.php:13, config/header/above.php:25, config/header/below.php:25, config/header/left.php:15, config/header/search.php:15, config/header/sticky.php:14, config/header/transparent.php:14
 msgid "Mobile"
 msgstr ""
 
-#: config/code/css.php:14, config/header/above.php:24, config/header/below.php:24, config/header/left.php:14, config/header/search.php:14, config/header/sticky.php:13, config/header/transparent.php:24
+#: config/code/css.php:14, config/header/above.php:24, config/header/below.php:24, config/header/left.php:14, config/header/search.php:14, config/header/sticky.php:13, config/header/transparent.php:13
 msgid "Desktop"
 msgstr ""
 
@@ -161,15 +161,15 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: config/content/above.php:44, config/content/below.php:44, config/footer/above.php:44, config/footer/below.php:44, config/footer/scroll-to-top.php:9, config/header/above.php:61, config/header/below.php:83, config/header/left.php:33, config/header/search.php:34, config/header/sticky.php:26, config/header/transparent.php:37, config/hero/settings.php:70, config/menus/mega.php:9
+#: config/content/above.php:44, config/content/below.php:44, config/footer/above.php:44, config/footer/below.php:44, config/footer/scroll-to-top.php:9, config/header/above.php:61, config/header/below.php:83, config/header/left.php:33, config/header/search.php:34, config/header/sticky.php:26, config/header/transparent.php:26, config/hero/settings.php:70, config/menus/mega.php:9
 msgid "Colors"
 msgstr ""
 
-#: config/content/above.php:46, config/content/below.php:46, config/footer/below.php:46, config/header/above.php:63, config/header/below.php:85, config/header/sticky.php:28, config/header/transparent.php:39, config/menus/mega.php:11
+#: config/content/above.php:46, config/content/below.php:46, config/footer/below.php:46, config/header/above.php:63, config/header/below.php:85, config/header/sticky.php:28, config/header/transparent.php:28, config/menus/mega.php:11
 msgid "Background"
 msgstr ""
 
-#: config/content/above.php:47, config/content/below.php:47, config/footer/above.php:46, config/footer/below.php:47, config/footer/scroll-to-top.php:74, config/header/above.php:64, config/header/below.php:87, config/header/sticky.php:31, config/header/transparent.php:42, config/hero/settings.php:72
+#: config/content/above.php:47, config/content/below.php:47, config/footer/above.php:46, config/footer/below.php:47, config/footer/scroll-to-top.php:74, config/header/above.php:64, config/header/below.php:87, config/header/sticky.php:31, config/header/transparent.php:31, config/hero/settings.php:72
 msgid "Text"
 msgstr ""
 
@@ -177,11 +177,11 @@ msgstr ""
 msgid "Headings"
 msgstr ""
 
-#: config/content/above.php:49, config/content/below.php:49, config/footer/above.php:48, config/footer/below.php:49, config/header/above.php:65, config/header/below.php:88, config/header/sticky.php:32, config/header/transparent.php:43, config/hero/settings.php:74
+#: config/content/above.php:49, config/content/below.php:49, config/footer/above.php:48, config/footer/below.php:49, config/header/above.php:65, config/header/below.php:88, config/header/sticky.php:32, config/header/transparent.php:32, config/hero/settings.php:74
 msgid "Links"
 msgstr ""
 
-#: config/content/above.php:50, config/content/below.php:50, config/footer/above.php:49, config/footer/below.php:50, config/header/above.php:66, config/header/below.php:89, config/header/sticky.php:33, config/header/transparent.php:44, config/hero/settings.php:75
+#: config/content/above.php:50, config/content/below.php:50, config/footer/above.php:49, config/footer/below.php:50, config/header/above.php:66, config/header/below.php:89, config/header/sticky.php:33, config/header/transparent.php:33, config/hero/settings.php:75
 msgid "Links Hover"
 msgstr ""
 
@@ -297,11 +297,11 @@ msgstr ""
 msgid "Enable on"
 msgstr ""
 
-#: config/header/above.php:23, config/header/below.php:23, config/header/left.php:13, config/header/search.php:13, config/header/sticky.php:12, config/header/transparent.php:23
+#: config/header/above.php:23, config/header/below.php:23, config/header/left.php:13, config/header/search.php:13, config/header/sticky.php:12, config/header/transparent.php:12
 msgid "Desktop and Mobile"
 msgstr ""
 
-#: config/header/above.php:26, config/header/below.php:26, config/header/left.php:16, config/header/search.php:16, config/header/sticky.php:15, config/header/transparent.php:26
+#: config/header/above.php:26, config/header/below.php:26, config/header/left.php:16, config/header/search.php:16, config/header/sticky.php:15, config/header/transparent.php:15
 msgid "None"
 msgstr ""
 
@@ -310,7 +310,15 @@ msgid "Typography"
 msgstr ""
 
 #: config/header/above.php:126
+msgid "Menu Typography"
+msgstr ""
+
+#: config/header/above.php:147
 msgid "Height"
+msgstr ""
+
+#: config/header/above.php:165
+msgid "Menu Item Horizontal Spacing"
 msgstr ""
 
 #: config/header/below.php:14
@@ -321,7 +329,7 @@ msgstr ""
 msgid "Text Alignment"
 msgstr ""
 
-#: config/header/below.php:64, config/header/search.php:109, config/menus/mobile.php:110
+#: config/header/below.php:64, config/header/search.php:123, config/menus/mobile.php:110
 msgid "Left"
 msgstr ""
 
@@ -329,7 +337,7 @@ msgstr ""
 msgid "Center"
 msgstr ""
 
-#: config/header/below.php:66, config/header/search.php:110, config/menus/mobile.php:112
+#: config/header/below.php:66, config/header/search.php:124, config/menus/mobile.php:112
 msgid "Right"
 msgstr ""
 
@@ -417,7 +425,7 @@ msgstr ""
 msgid "Input Background"
 msgstr ""
 
-#: config/header/search.php:42, config/header/search.php:127
+#: config/header/search.php:42, config/header/search.php:141
 msgid "Input Text"
 msgstr ""
 
@@ -425,140 +433,144 @@ msgstr ""
 msgid "Input Border"
 msgstr ""
 
-#: config/header/search.php:106
-msgid "Search toggle location"
+#: config/header/search.php:44
+msgid "Submit Background"
 msgstr ""
 
-#: config/header/search.php:116
-msgid "Header search style"
-msgstr ""
-
-#: config/header/search.php:119
-msgid "Push Down"
+#: config/header/search.php:45
+msgid "Submit Text"
 msgstr ""
 
 #: config/header/search.php:120
-msgid "Drop Down"
+msgid "Search toggle location"
 msgstr ""
 
-#: config/header/search.php:121
-msgid "Full Screen"
-msgstr ""
-
-#: config/header/search.php:128
-msgid "Search this website"
+#: config/header/search.php:130
+msgid "Header search style"
 msgstr ""
 
 #: config/header/search.php:133
+msgid "Push Down"
+msgstr ""
+
+#: config/header/search.php:134
+msgid "Drop Down"
+msgstr ""
+
+#: config/header/search.php:135
+msgid "Full Screen"
+msgstr ""
+
+#: config/header/search.php:142
+msgid "Search this website"
+msgstr ""
+
+#: config/header/search.php:147
 msgid "Button Text"
 msgstr ""
 
-#: config/header/search.php:134, src/bootstrap/setup.php:113
+#: config/header/search.php:148, src/bootstrap/setup.php:113
 msgid "Search"
 msgstr ""
 
-#: config/header/search.php:144
+#: config/header/search.php:158
 msgid "Display search form button"
 msgstr ""
 
-#: config/header/search.php:155
+#: config/header/search.php:169
 msgid "Search Form Width"
 msgstr ""
 
-#: config/header/search.php:173
+#: config/header/search.php:187
 msgid "Search Form Spacing"
 msgstr ""
 
-#: config/header/search.php:191
+#: config/header/search.php:205
 msgid "Search Input Spacing"
 msgstr ""
 
-#: config/header/search.php:209
+#: config/header/search.php:223
 msgid "Search Toggle Padding"
 msgstr ""
 
-#: config/header/search.php:227
+#: config/header/search.php:241
 msgid "Search Toggle Margin"
 msgstr ""
 
-#: config/header/search.php:264
+#: config/header/search.php:278
 msgid "Search Toggle Size"
 msgstr ""
 
-#: config/header/search.php:282
+#: config/header/search.php:296
 msgid "Search Close Spacing"
 msgstr ""
 
-#: config/header/search.php:300
+#: config/header/search.php:314
 msgid "Search Close Size"
 msgstr ""
 
-#: config/header/sticky.php:9, config/header/transparent.php:20
+#: config/header/sticky.php:9, config/header/transparent.php:9
 msgid "Enable On"
 msgstr ""
 
-#: config/header/sticky.php:29, config/header/transparent.php:40
+#: config/header/sticky.php:29, config/header/transparent.php:29
 msgid "Site Title"
 msgstr ""
 
-#: config/header/sticky.php:30, config/header/transparent.php:41
+#: config/header/sticky.php:30, config/header/transparent.php:30
 msgid "Site Description"
 msgstr ""
 
-#: config/header/sticky.php:93, config/header/transparent.php:143
+#: config/header/sticky.php:93, config/header/transparent.php:132
 msgid "The site title and tagline visibility can be toggled from the "
 msgstr ""
 
-#: config/header/sticky.php:95, config/header/transparent.php:145
+#: config/header/sticky.php:95, config/header/transparent.php:134
 msgid "Site Identity Section"
 msgstr ""
 
-#: config/header/sticky.php:101, config/header/transparent.php:151
-msgid "Use different logo for transparent header"
+#: config/header/sticky.php:101
+msgid "Use different logo for sticky header"
 msgstr ""
 
-#: config/header/sticky.php:107, config/header/transparent.php:157
+#: config/header/sticky.php:107, config/header/transparent.php:146
 msgid "Logo"
 msgstr ""
 
-#: config/header/sticky.php:135, config/header/transparent.php:185
+#: config/header/sticky.php:135, config/header/transparent.php:174
 msgid "Logo Width Mobile"
 msgstr ""
 
-#: config/header/sticky.php:161, config/header/transparent.php:211
+#: config/header/sticky.php:161, config/header/transparent.php:200
 msgid "Logo Width Desktop"
 msgstr ""
 
-#: config/header/sticky.php:187, config/header/transparent.php:237
+#: config/header/sticky.php:187, config/header/transparent.php:226
 msgid "Logo Spacing"
 msgstr ""
 
-#: config/header/transparent.php:12
-msgid "The transparent header settings only apply to pages with a hero section. The hero section can be enabled from the "
-msgstr ""
-
-#: config/header/transparent.php:14
-msgid "Hero Section Settings"
-msgstr ""
-
-#: config/header/transparent.php:45
+#: config/header/transparent.php:34
 msgid "Above Header Background"
 msgstr ""
 
-#: config/header/transparent.php:46
+#: config/header/transparent.php:35
 msgid "Above Header Text"
 msgstr ""
 
-#: config/header/transparent.php:47
+#: config/header/transparent.php:36
 msgid "Secondary Menu Background"
 msgstr ""
 
-#: config/header/transparent.php:48
+#: config/header/transparent.php:37
 msgid "Secondary Menu Links"
 msgstr ""
 
-#: config/header/transparent.php:49
+#: config/header/transparent.php:38
 msgid "Secondary Menu Links Hover"
+msgstr ""
+
+#: config/header/transparent.php:140
+msgid "Use different logo for transparent header"
 msgstr ""
 
 #: config/hero/settings.php:12
@@ -622,14 +634,22 @@ msgid "Latest Posts Title"
 msgstr ""
 
 #: config/hero/settings.php:323
+msgid "If the home page is set to display latests posts, this setting will change the default title text."
+msgstr ""
+
+#: config/hero/settings.php:324
 msgid "Latest Posts"
 msgstr ""
 
-#: config/hero/settings.php:328
+#: config/hero/settings.php:329
 msgid "Latest Posts Subtitle"
 msgstr ""
 
-#: config/hero/settings.php:329
+#: config/hero/settings.php:330
+msgid "Same as above, this setting changes the latests posts subtitle."
+msgstr ""
+
+#: config/hero/settings.php:331
 msgid "Showing the latest posts"
 msgstr ""
 
@@ -772,7 +792,7 @@ msgid "License"
 msgstr ""
 
 #: src/admin/settings.php:83
-msgid "Enter your license key to enable automatic updates."
+msgid "Enter your license key below and click \"Save Settings\". Once your settings have been saved, click \"Activate License\"."
 msgstr ""
 
 #: src/admin/settings.php:88
@@ -859,15 +879,15 @@ msgstr ""
 msgid "Invalid nonce."
 msgstr ""
 
-#: src/modules/hero-section.php:216
+#: src/modules/hero-section.php:219
 msgid "Not found, error 404"
 msgstr ""
 
-#: src/modules/hero-section.php:219
+#: src/modules/hero-section.php:222
 msgid "Search results for: "
 msgstr ""
 
-#: src/modules/hero-section.php:424
+#: src/modules/hero-section.php:419
 msgid "Post Type Archives"
 msgstr ""
 

@@ -48,7 +48,7 @@ return [
 			],
 			[
 				'choice'   => 'site-title',
-				'element'  => '.has-sticky-header .site-header.shrink .site-title a',
+				'element'  => '.has-sticky-header .site-header.shrink .site-title-link',
 				'property' => 'color',
 			],
 			[
@@ -98,7 +98,7 @@ return [
 	[
 		'type'     => 'checkbox',
 		'settings' => 'different-logo',
-		'label'    => __( 'Use different logo for transparent header', 'genesis-customizer-pro' ),
+		'label'    => __( 'Use different logo for sticky header', 'genesis-customizer-pro' ),
 		'default'  => false,
 	],
 	[

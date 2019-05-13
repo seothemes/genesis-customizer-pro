@@ -4,17 +4,6 @@ namespace GenesisCustomizer;
 
 return [
 	[
-		'type'     => 'custom',
-		'settings' => 'tip',
-		'default'  => sprintf(
-			'<p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
-			esc_html__( 'Tip: ', 'genesis-customizer-pro' ),
-			esc_html__( 'The transparent header settings only apply to pages with a hero section. The hero section can be enabled from the ', 'genesis-customizer-pro' ),
-			esc_attr( '"genesis-customizer_hero_settings"' ),
-			esc_html__( 'Hero Section Settings', 'genesis-customizer-pro' )
-		),
-	],
-	[
 		'type'     => 'radio',
 		'settings' => 'enabled',
 		'label'    => __( 'Enable On', 'genesis-customizer-pro' ),
@@ -69,7 +58,7 @@ return [
 			],
 			[
 				'choice'   => 'site-title',
-				'element'  => '.has-transparent-header .site-title a',
+				'element'  => '.has-transparent-header .site-header .site-title-link',
 				'property' => 'color',
 			],
 			[

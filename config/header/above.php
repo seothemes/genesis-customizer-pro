@@ -121,6 +121,27 @@ return [
 		'default'  => '<hr>',
 	],
 	[
+		'type'     => 'typography',
+		'settings' => 'menu-typography',
+		'label'    => __( 'Menu Typography', 'genesis-customizer-pro' ),
+		'default'  => [
+			'font-family' => '',
+			'font-size'   => _get_size( 'xs' ),
+			'variant'     => '',
+			'line-height' => '1',
+		],
+		'output'   => [
+			[
+				'element' => '.above-header .menu',
+			],
+		],
+	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider',
+		'default'  => '<hr>',
+	],
+	[
 		'type'     => 'slider',
 		'settings' => 'height',
 		'label'    => __( 'Height', 'genesis-customizer-pro' ),
@@ -134,6 +155,29 @@ return [
 			[
 				'element'  => '.above-header',
 				'property' => 'height',
+				'units'    => 'px',
+			],
+		],
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'menu-item-horizontal-spacing',
+		'label'    => __( 'Menu Item Horizontal Spacing', 'genesis-customizer-pro' ),
+		'default'  => _get_size( 'xxs', '' ),
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 200,
+			'step' => 1,
+		],
+		'output'   => [
+			[
+				'element'  => '.above-header .menu-item',
+				'property' => 'padding-left',
+				'units'    => 'px',
+			],
+			[
+				'element'  => '.above-header .menu-item',
+				'property' => 'padding-right',
 				'units'    => 'px',
 			],
 		],

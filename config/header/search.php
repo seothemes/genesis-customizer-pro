@@ -41,6 +41,8 @@ return [
 			'input-background'  => __( 'Input Background', 'genesis-customizer-pro' ),
 			'input-text'        => __( 'Input Text', 'genesis-customizer-pro' ),
 			'input-border'      => __( 'Input Border', 'genesis-customizer-pro' ),
+			'submit-background' => __( 'Submit Background', 'genesis-customizer-pro' ),
+			'submit-text'       => __( 'Submit Text', 'genesis-customizer-pro' ),
 		],
 		'default'  => [
 			'background'        => _get_color( 'border' ),
@@ -51,6 +53,8 @@ return [
 			'input-background'  => '',
 			'input-text'        => '',
 			'input-border'      => '',
+			'submit-background' => '',
+			'submit-text'       => '',
 		],
 		'output'   => [
 			[
@@ -92,6 +96,16 @@ return [
 				'choice'   => 'input-border',
 				'element'  => '.header-search .search-form-input',
 				'property' => 'border-color',
+			],
+			[
+				'choice'   => 'submit-background',
+				'element'  => '.header-search .search-form-submit',
+				'property' => 'background-color',
+			],
+			[
+				'choice'   => 'submit-text',
+				'element'  => '.header-search .search-form-submit',
+				'property' => 'color',
 			],
 		],
 	],
@@ -236,13 +250,13 @@ return [
 				'element'     => '.header-search-toggle.left',
 				'property'    => 'margin-left',
 				'units'       => 'px',
-				'media_query' => _get_media_query('max'),
+				'media_query' => _get_media_query( 'max' ),
 			],
 			[
 				'element'     => '.header-search-toggle.right',
 				'property'    => 'margin-right',
 				'units'       => 'px',
-				'media_query' => _get_media_query('max'),
+				'media_query' => _get_media_query( 'max' ),
 			],
 			[
 				'element'     => '.header-search-toggle.left',

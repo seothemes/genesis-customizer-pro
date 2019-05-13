@@ -133,17 +133,19 @@ function load_isotope() {
 		return;
 	}
 
+	$handle = _get_handle() . '-isotope';
+
 	wp_register_script(
-		_get_handle() . '-isotope',
+		$handle,
 		_get_url() . 'assets/js/min/isotope.min.js',
-		[ 'jquery', 'genesis-customizer-pro' ],
+		[ 'jquery', 'genesis-customizer' ],
 		_get_asset_version( 'js/min/isotope.min.js' ),
 		true
 	);
-	wp_enqueue_script( _get_handle() . '-isotope' );
+	wp_enqueue_script( $handle );
 
 	wp_localize_script(
-		_get_handle() . '-isotope',
+		$handle,
 		'genesis_customizer_isotope',
 		[
 			'gutter' => _get_value( 'base_global_gutter' ),

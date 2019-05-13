@@ -75,7 +75,7 @@ function responsive_css_output() {
  * @return mixed|string
  */
 function generate_css() {
-	$breakpoint = _get_option( 'breakpoint' ) . 'px';
+	$breakpoint = _get_option( 'breakpoint', _get_breakpoint() ) . 'px';
 	$all        = _get_value( 'code_css_all' );
 	$mobile     = _get_value( 'code_css_mobile' );
 	$desktop    = _get_value( 'code_css_desktop' );

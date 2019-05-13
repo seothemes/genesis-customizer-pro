@@ -317,15 +317,17 @@ return [
 		'default'  => '<hr>',
 	],
 	[
-		'type'     => 'text',
-		'settings' => 'latest-posts-title',
-		'label'    => __( 'Latest Posts Title', 'genesis-customizer-pro' ),
-		'default'  => __( 'Latest Posts', 'genesis-customizer-pro' ),
+		'type'        => 'text',
+		'settings'    => 'latest-posts-title',
+		'label'       => __( 'Latest Posts Title', 'genesis-customizer-pro' ),
+		'description' => __( 'If the home page is set to display latests posts, this setting will change the default title text.', 'genesis-customizer-pro' ),
+		'default'     => __( 'Latest Posts', 'genesis-customizer-pro' ),
 	],
 	[
 		'type'     => 'text',
 		'settings' => 'latest-posts-subtitle',
 		'label'    => __( 'Latest Posts Subtitle', 'genesis-customizer-pro' ),
+		'description' => __( 'Same as above, this setting changes the latests posts subtitle.', 'genesis-customizer-pro' ),
 		'default'  => __( 'Showing the latest posts', 'genesis-customizer-pro' ),
 	],
 ];

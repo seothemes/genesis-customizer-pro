@@ -21,7 +21,7 @@ add_post_type_support( 'page', 'excerpt' );
 // Enable theme support by default.
 add_theme_support(
 	'custom-header', [
-		'header-selector'  => 'section.hero-section',
+		'header-selector'  => '.hero-section',
 		'default_image'    => _get_url() . 'assets/img/hero-section.jpg',
 		'header-text'      => false,
 		'width'            => 1280,
@@ -154,7 +154,10 @@ function hero_setup() {
 	add_filter( 'genesis_attr_archive-title', __NAMESPACE__ . '\hero_archive_title_attr' );
 	add_filter( 'genesis_attr_entry', __NAMESPACE__ . '\hero_entry_attr' );
 
-	add_action( 'genesis_before_hero-section_wrap', 'the_custom_header_markup' );
+	if ( ! is_customize_preview() ) {
+		add_action( 'genesis_before_hero-section_wrap', 'the_custom_header_markup' );
+	}
+
 	add_action( 'genesis_customizer_hero_section', 'genesis_do_posts_page_heading' );
 	add_action( 'genesis_customizer_hero_section', 'genesis_do_date_archive_title' );
 	add_action( 'genesis_customizer_hero_section', 'genesis_do_taxonomy_title_description' );
@@ -351,44 +354,36 @@ function hero_entry_attr( $atts ) {
  * @return void
  */
 function hero_display() {
-	genesis_markup(
-		[
-			'open'    => '<section %s role="banner">',
-			'context' => 'hero-section',
-		]
-	);
+	genesis_markup( [
+		'open'    => '<section %s role="banner">',
+		'context' => 'hero-section',
+	] );
 
 	genesis_structural_wrap( 'hero-section', 'open' );
 
-	genesis_markup(
-		[
-			'open'    => '<div %s>',
-			'context' => 'hero-inner',
-		]
-	);
+	genesis_markup( [
+		'open'    => '<div %s>',
+		'context' => 'hero-inner',
+	] );
 
 	do_action( 'genesis_customizer_hero_section' );
 
-	genesis_markup(
-		[
-			'close'   => '</div>',
-			'context' => 'hero-inner',
-		]
-	);
+	genesis_markup( [
+		'close'   => '</div>',
+		'context' => 'hero-inner',
+	] );
 
 	genesis_structural_wrap( 'hero-section', 'close' );
 
-	genesis_markup(
-		[
-			'close'   => '</section>',
-			'context' => 'hero-section',
-		]
-	);
+	genesis_markup( [
+		'close'   => '</section>',
+		'context' => 'hero-section',
+	] );
 }
 
-add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\archive_hero_images', 15, 1 );
+add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\post_type_hero_images', 15, 1 );
 /**
- * Adds image settings for each archive page to Customizer.
+ * Adds image settings for each post type archive to Customizer.
  *
  * @since 1.0.0
  *
@@ -396,7 +391,7 @@ add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\archive_hero_images
  *
  * @return array
  */
-function archive_hero_images( $sections ) {
+function post_type_hero_images( $sections ) {
 	$post_types = \Kirki_Helper::get_post_types();
 
 	foreach ( $post_types as $post_type => $title ) {

@@ -80,7 +80,7 @@ function pro_settings_fields( $settings ) {
 
 	$settings['license'] = [
 		'title'       => __( 'License', 'genesis-customizer-pro' ),
-		'description' => __( 'Enter your license key to enable automatic updates.', 'genesis-customizer-pro' ),
+		'description' => __( 'Enter your license key below and click "Save Settings". Once your settings have been saved, click "Activate License".', 'genesis-customizer-pro' ),
 		'priority'    => 3,
 		'fields'      => [
 			[

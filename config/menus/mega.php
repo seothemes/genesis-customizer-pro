@@ -24,7 +24,7 @@ return [
 		'output'   => [
 			[
 				'choice'   => 'background',
-				'element'  => '.mega-menu .wrap',
+				'element'  => '.mega-menu .wrap:before',
 				'property' => 'background-color',
 			],
 			[
@@ -99,7 +99,7 @@ return [
 		],
 		'output'      => [
 			[
-				'element' => '.mega-menu',
+				'element' => '.mega-menu .wrap',
 			],
 		],
 	],
