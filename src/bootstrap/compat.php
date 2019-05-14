@@ -16,7 +16,9 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/plugin.php';
 }
 
-if ( ! is_plugin_active( 'genesis-customizer/genesis-customizer.php' ) ) {
+$parent_theme = wp_get_theme()->parent();
+
+if ( ! is_plugin_active( 'genesis-customizer/genesis-customizer.php' ) || ! $parent_theme || 'Genesis' !== $parent_theme->get( 'Name' ) ) {
 
 	add_action( 'plugins_loaded', __NAMESPACE__ . '\pro_init_deactivation' );
 	/**
