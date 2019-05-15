@@ -3,7 +3,7 @@
  * Genesis Customizer Pro
  *
  * Plugin Name: Genesis Customizer Pro
- * Version:     0.4.1
+ * Version:     1.0.0
  * Text Domain: genesis-customizer-pro
  * Plugin URI:  https://genesiscustomizer.com/
  * Description: Pro add-on for the Genesis Customizer theme.
