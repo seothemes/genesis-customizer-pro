@@ -58,30 +58,6 @@ function search_form() {
 	);
 }
 
-add_filter( 'genesis_search_text', __NAMESPACE__ . '\search_input_text' );
-/**
- * Modify the search input text.
- *
- * @since 1.0.0
- *
- * @return string
- */
-function search_input_text() {
-	return _get_value( 'header_search_input-text' );
-}
-
-add_filter( 'genesis_search_button_text', __NAMESPACE__ . '\search_button_text' );
-/**
- * Modify the search button text.
- *
- * @since 1.0.0
- *
- * @return string
- */
-function search_button_text() {
-	return _get_value( 'header_search_button-text' );
-}
-
 /**
  * Display search button.
  *

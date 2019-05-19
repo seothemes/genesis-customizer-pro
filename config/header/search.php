@@ -136,23 +136,6 @@ return [
 		],
 	],
 	[
-		'type'     => 'text',
-		'settings' => 'input-text',
-		'label'    => __( 'Input Text', 'genesis-customizer-pro' ),
-		'default'  => __( 'Search this website', 'genesis-customizer-pro' ),
-	],
-	[
-		'type'            => 'text',
-		'settings'        => 'button-text',
-		'label'           => __( 'Button Text', 'genesis-customizer-pro' ),
-		'default'         => __( 'Search', 'genesis-customizer-pro' ),
-		'active_callback' => [
-			'setting'  => _get_setting( 'button-type' ),
-			'value'    => 'text',
-			'operator' => '===',
-		],
-	],
-	[
 		'type'     => 'checkbox',
 		'settings' => 'enable-button',
 		'label'    => __( 'Display search form button', 'genesis-customizer-pro' ),
